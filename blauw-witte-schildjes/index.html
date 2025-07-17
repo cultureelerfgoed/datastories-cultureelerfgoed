@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="Beschermd erfgoed: het blauw-witte schildje in Nederland">
+  <meta name="author" content="Rijksdienst voor het Cultureel Erfgoed (RCE)">
+  <title>Datastory – Beschermd erfgoed: het blauw-witte schildje</title>
+
+  <!-- Bootstrap 5 CSS voor RCE-stijl -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/assets/css/rce-stories.css">
+</head>
+<body>
+
+  <!-- RCE navigatiebalk -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top shadow-sm">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="https://www.cultureelerfgoed.nl">
+        <img src="/assets/imgs/rce-logo.svg" alt="RCE logo" height="40">
+      </a>
+      <span class="navbar-text fw-bold">Datastory: Blauw-witte schildjes</span>
+    </div>
+  </nav>
+
+  <main class="container mt-5 pt-4">
+    <h1 class="mt-4">Beschermd erfgoed: het blauw-witte schildje in Nederland</h1>
+    <p class="lead">
+      Op 14 mei 1954 werd in Den Haag het <strong>Haags Verdrag</strong> gesloten over bescherming van cultureel erfgoed in tijden van oorlog. 
+      Het blauw-witte schildje markeert gebouwen en collecties die internationale bescherming genieten.
+    </p>
+
+    <section>
+      <h2>Inleiding</h2>
+      <p>
+        Dit verdrag verplicht landen om cultureel erfgoed zoals monumenten, musea en archieven te beschermen tegen plundering of vernieling tijdens gewapende conflicten. 
+        Het blauw-witte schildje is het officiële herkenningsteken. In Nederland zijn duizenden rijksmonumenten voorzien van zo’n schildje.
+      </p>
+      <p>
+        In deze datastory ziet u hoeveel rijksmonumenten een blauw-wit schildje dragen, waar ze staan, wat hun functie is en hoe deze beschermde status in Nederland wordt toegepast.
+      </p>
+    </section>
+
+    <section>
+      <h2>Overzicht van aantallen schildjes per provincie</h2>
+      <query data-endpoint="https://api.linkeddata.cultureelerfgoed.nl/datasets/rce/cho/sparql" 
+             data-query-ref="queries/internationaal-kenteken-per-provincie.rq"
+             data-output="geo"></query>
+    </section>
+
+    <section>
+      <h2>Top 20 gemeenten met de meeste rijksmonumenten met blauw-wit schildje</h2>
+      <query data-endpoint="https://api.linkeddata.cultureelerfgoed.nl/datasets/rce/cho/sparql" 
+             data-query-ref="queries/top-20-gemeenten-met-de-meeste-blauwe.rq"></query>
+    </section>
+
+    <section>
+      <h2>Blauw-witte schildjes per type rijksmonument</h2>
+      <query data-endpoint="https://api.linkeddata.cultureelerfgoed.nl/datasets/rce/cho/sparql" 
+             data-query-ref="queries/internationaal-kenteken-verdeeld-functie.rq"></query>
+    </section>
+
+    <section>
+      <h2>Bouwstijlen van rijksmonumenten met blauw-wit schildje</h2>
+      <query data-endpoint="https://api.linkeddata.cultureelerfgoed.nl/datasets/rce/cho/sparql"
+             data-query-ref="queries/per-bouwstijl-indien-aanwezig.rq"></query>
+    </section>
+
+    <section>
+      <h2>Verdeling van schildjes over jaartallen (bouwjaar)</h2>
+      <query data-endpoint="https://api.linkeddata.cultureelerfgoed.nl/datasets/rce/cho/sparql"
+             data-query-ref="queries/verdeling-schildjes-over-jaartallen-bouw.rq"></query>
+    </section>
+
+    <section>
+      <h2>Wat betekent het blauw-witte schildje?</h2>
+      <p>
+        Het schildje geeft aan dat een gebouw, collectie of locatie bijzondere bescherming verdient. Het is verbonden aan het <em>Haags Verdrag van 1954</em> en wordt in Nederland sinds de jaren zestig toegepast op rijksmonumenten, archieven en musea.
+      </p>
+      <p>
+        Niet elk rijksmonument heeft een schildje. Alleen gebouwen die destijds door de overheid zijn geselecteerd mogen het voeren. De registratie is in 2021 stopgezet, maar bestaande schildjes blijven geldig.
+      </p>
+    </section>
+
+    <section>
+      <h2>Methode en bronnen</h2>
+      <p>
+        Deze datastory is gebaseerd op Linked Open Data uit de <strong>Cultureel Erfgoed Objecten (CHO)</strong> dataset van de RCE. We filterden op objecten met <code>internationaalKenteken = true</code> en gebruikten SPARQL-queries om aantallen per provincie, functie en bouwstijl te berekenen.
+      </p>
+      <ul>
+        <li>Dataset: RCE CHO via TriplyDB</li>
+        <li>Thesauri: OWMS voor gemeenten en provincies</li>
+        <li>Kaartdata: geometrie van objecten in CHO</li>
+      </ul>
+    </section>
+
+    <hr>
+    <footer class="my-4 text-muted small">
+      &copy; Rijksdienst voor het Cultureel Erfgoed – Datastories | Gebouwd met Linked Data
+    </footer>
+  </main>
+
+  <!-- Bootstrap + YASGUI polyfill -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="//nightly.yasgui.triply.cc/yasgui.polyfill.min.js"></script>
+  <script src="/assets/js/stories.min.js"></script>
+  <script>
+    window.onload = function() {
+      stories();
+    };
+  </script>
+</body>
+</html>
