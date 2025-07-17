@@ -1,0 +1,19 @@
+#+Author: Eric de Ruijter
+#+Description: Books written in Esperanto and published between 1919-1940.
+
+PREFIX iisgv: <https://iisg.amsterdam/vocab/>
+PREFIX schema: <http://schema.org/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+SELECT ?author ?title ?year
+WHERE {
+  ?sub schema:author ?authoruri .
+  ?authoruri schema:name ?author .
+  ?sub schema:name ?title .
+  ?sub rdf:type <http://purl.org/dc/dcmitype/Text> .
+  ?sub schema:inLanguage <http://lexvo.org/id/iso639-3/epo> .
+  ?sub iisgv:dateOfPublication ?year .
+  FILTER (?year > '1918'^^xsd:date && ?year < '1940'^^xsd:date)
+} 
+ORDER by ?year 
+LIMIT 5

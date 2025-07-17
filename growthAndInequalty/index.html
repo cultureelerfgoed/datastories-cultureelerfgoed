@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="CLARIAH Data Stories: Growth and Inequality">
+    <meta name="author" content="Richard Zijdeman">
+    <link href="/assets/imgs/clariah-logo-square.png" rel="icon" type="image/png">
+    <title>CLARIAH Data Stories ― Growth and Inequality</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <link href="/assets/css/main.css" rel="stylesheet" type="text/css">
+    <link href="/assets/css/stories.min.css" rel="stylesheet" type="text/css">
+    <link href="/assets/css/yasgui.bootstrap.css" rel="stylesheet" type="text/css">
+  </head>
+  <body class="withNavbar">
+    <nav class="navbar fixed-top ">
+      <div class="navbar-content">
+        <div class="navbar-icon">
+          <a class="navbar-brand" href="/">
+            <img alt="CLARIAH Data Stories home" src="/assets/imgs/clariah-logo-square.png">
+          </a>
+        </div>
+        <div class="navbar-title">
+          <a class="navbar-brand" href="/">CLARIAH Data Stories</a>
+        </div>
+      </div>
+    </nav>
+    <div class="container story">
+      <h1>Growth and inequality</h1>
+
+
+      <p>Why are some countries rich and others poor? Because economic growth is a long-term process, history is part of the answer.
+        To help understand long-term economic growth, economic historians have been working on reconstructing historical national
+        accounts. Collecting such data in a comparable way (expressing them in at one level of prices) was started by Angus
+        Maddison. Today it is a collaborative project that continues under his name. The differences in today's world are very
+        big. A small group of rich countries is up to ten times richer than a lot of poor countries.
+      </p>
+      <query data-config-ref="https://druid.datalegend.net/dataLegend/-/queries/2010-gdp-per-country">
+      </query>
+
+
+      <p>In 1900 these differences were much smaller:</p>
+      <query data-config-ref="https://druid.datalegend.net/dataLegend/-/queries/1900-gdp-per-country">
+      </query>
+
+
+      <p>And in 1800 they were smaller still.</p>
+      <query data-config-ref="https://druid.datalegend.net/dataLegend/-/queries/1800-gdp-per-country">
+      </query>
+
+
+      <p>Locations on map: Africa and Asia very poor now mostly Africa:</p>
+      <query data-config-ref="https://druid.datalegend.net/dataLegend/-/queries/gdp-on-map">
+      </query>
+
+
+      <p>Old-school growth theory (Rostow) suggested "take-of", some moment where modern economic growth began, e.g. growth china's industrialistion is a good example.</p>
+      <query data-config-ref="https://druid.datalegend.net/dataLegend/-/queries/gdp-growth">
+      </query>
+
+
+      <p>Today we know that this is incorrect for the first industrialising countries. They were richer before industrialisation than many of today's developing countries.</p>
+      <query data-config-ref="https://druid.datalegend.net/dataLegend/-/queries/gdp-growth-nld-gbr-uganda">
+      </query>
+
+
+      <p>Maddison's data should be used with some care. Besides more detailed issues about e.g. price indics applicability of a concept
+        like GDP and, there is the fact that for a lot of countries, we lack good historical data. Such data was originally
+        imputed and some of those values have survived. Best case scenario is that they are using proxies, but often they are
+        just assumptions about income levels in such countries. Great care should for instance be take with all values of exactly
+        "X00"</p>
+        <query data-config-ref="https://druid.datalegend.net/dataLegend/-/queries/gdp-values">
+        </query>
+      <p>Unfortunately, some of those are non-imputed values after all. These things are not precisely recorded in the dataset itself because of unknown reasons.</p>
+    </div>
+    <script src="https://cdn.jsdelivr.net/gh/thednp/bootstrap.native@2.0.24/dist/bootstrap-native-v4.min.js" crossorigin="anonymous"></script>
+    <script src="//nightly.yasgui.triply.cc/yasgui.polyfill.min.js"></script>
+    <script src='/assets/js/stories.min.js'></script>
+    <script>
+      window.onload = function () {
+        stories()
+      };
+    </script>
+  </body>
+</html>
