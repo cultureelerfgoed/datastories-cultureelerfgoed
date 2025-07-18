@@ -5,16 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="Beschermd erfgoed: het blauw-witte schildje in Nederland">
     <meta name="author" content="Rijksdienst voor het Cultureel Erfgoed">
-
+    
+    <!-- Favicon -->
     <link href="../assets/imgs/rce-logo.png" rel="icon" type="image/png">
+    
     <title>Datastory: Blauw-witte schildjes</title>
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" crossorigin="anonymous">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    
+    <!-- Lokale styles (relatieve paden!) -->
     <link href="../assets/css/main.css" rel="stylesheet" type="text/css">
     <link href="../assets/css/stories.min.css" rel="stylesheet" type="text/css">
     <link href="../assets/css/yasgui.bootstrap.css" rel="stylesheet" type="text/css">
   </head>
-
+  
   <body class="withNavbar">
     <nav class="navbar fixed-top">
       <div class="navbar-content">
@@ -29,40 +34,75 @@
       </div>
     </nav>
 
-    <div class="container story" data-endpoint="https://api.linkeddata.cultureelerfgoed.nl/datasets/rce/cho/services/cho/sparql">
+    <!-- Story container -->
+    <div class="container story"
+         data-endpoint="https://api.linkeddata.cultureelerfgoed.nl/datasets/rce/cho/services/cho/sparql">
+
       <h1>Datastory: Blauw-witte schildjes</h1>
-      <p>Het blauw-witte schildje markeert gebouwen en collecties die internationale bescherming genieten volgens het Haags Verdrag van 1954.</p>
+      <p>
+        Op 14 mei 1954 werd in Den Haag het Haags Verdrag gesloten over bescherming van cultureel erfgoed in tijden van oorlog. 
+        Het blauw-witte schildje markeert gebouwen en collecties die internationale bescherming genieten.
+      </p>
 
       <h2>Inleiding</h2>
-      <p>Dit verdrag verplicht landen om cultureel erfgoed te beschermen tijdens conflicten. In Nederland dragen duizenden rijksmonumenten een blauw-wit schildje.</p>
+      <p>
+        Dit verdrag verplicht landen om cultureel erfgoed zoals monumenten, musea en archieven te beschermen tegen plundering of vernieling tijdens gewapende conflicten. 
+        Het blauw-witte schildje is het officiële herkenningsteken. In Nederland zijn duizenden rijksmonumenten voorzien van zo’n schildje.
+      </p>
+      <p>
+        In deze datastory ziet u hoeveel rijksmonumenten een blauw-wit schildje dragen, waar ze staan, wat hun functie is en hoe deze beschermde status in Nederland wordt toegepast.
+      </p>
 
       <h3>Overzicht van aantallen schildjes per provincie</h3>
-      <query data-config='{"endpoint":"https://api.linkeddata.cultureelerfgoed.nl/datasets/rce/cho/services/cho/sparql","query":"PREFIX graph: <https://linkeddata.cultureelerfgoed.nl/graph/> PREFIX ceo: <https://linkeddata.cultureelerfgoed.nl/def/ceo#> PREFIX skos: <http://www.w3.org/2004/02/skos/core#> PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> SELECT ?provincie (COUNT(?cho) AS ?aantal) WHERE { GRAPH graph:instanties-rce { ?cho a ceo:Rijksmonument ; ceo:internationaalKenteken 'true'^^xsd:boolean ; ceo:heeftBasisregistratieRelatie [ ceo:heeftProvincie ?provincieURI ] . } GRAPH graph:owms { ?provincieURI skos:prefLabel ?provincie . } } GROUP BY ?provincie ORDER BY DESC(?aantal)"}'></query>
+      <query data-query-ref="queries/internationaal-kenteken-per-provincie.rq"></query>
 
       <h3>Top 20 gemeenten met de meeste rijksmonumenten</h3>
-      <query data-config='{"endpoint":"https://api.linkeddata.cultureelerfgoed.nl/datasets/rce/cho/services/cho/sparql","query":"PREFIX graph: <https://linkeddata.cultureelerfgoed.nl/graph/> PREFIX ceo: <https://linkeddata.cultureelerfgoed.nl/def/ceo#> PREFIX skos: <http://www.w3.org/2004/02/skos/core#> PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> SELECT ?gemeente (COUNT(?cho) AS ?aantal) WHERE { GRAPH graph:instanties-rce { ?cho a ceo:Rijksmonument ; ceo:internationaalKenteken 'true'^^xsd:boolean ; ceo:heeftBasisregistratieRelatie [ ceo:heeftGemeente ?gemeenteURI ] . } GRAPH graph:owms { ?gemeenteURI skos:prefLabel ?gemeente . } } GROUP BY ?gemeente ORDER BY DESC(?aantal) LIMIT 20"}'></query>
+      <query data-query-ref="queries/top-20-gemeenten-met-de-meeste-blauwe.rq"></query>
 
       <h3>Blauw-witte schildjes per type rijksmonument</h3>
-      <query data-config='{"endpoint":"https://api.linkeddata.cultureelerfgoed.nl/datasets/rce/cho/services/cho/sparql","query":"PREFIX graph: <https://linkeddata.cultureelerfgoed.nl/graph/> PREFIX ceo: <https://linkeddata.cultureelerfgoed.nl/def/ceo#> PREFIX skos: <http://www.w3.org/2004/02/skos/core#> SELECT ?functie (COUNT(?cho) AS ?aantal) WHERE { GRAPH graph:instanties-rce { ?cho a ceo:Rijksmonument ; ceo:internationaalKenteken 'true'^^xsd:boolean ; ceo:heeftOorspronkelijkeFunctie/ceo:heeftFunctieNaam ?functieURI . ?functieURI skos:prefLabel ?functie_ . BIND(REPLACE(?functie_, \\\"\\\\s\\\\(.*\\\\)|\\\\(.*\\\\)\\\", \\\"\\\") AS ?functie) } } GROUP BY ?functie ORDER BY DESC(?aantal)"}'></query>
+      <query data-query-ref="queries/internationaal-kenteken-verdeeld-functie.rq"></query>
 
       <h3>Bouwstijlen van rijksmonumenten met blauw-wit schildje</h3>
-      <query data-config='{"endpoint":"https://api.linkeddata.cultureelerfgoed.nl/datasets/rce/cho/services/cho/sparql","query":"PREFIX graph: <https://linkeddata.cultureelerfgoed.nl/graph/> PREFIX ceo: <https://linkeddata.cultureelerfgoed.nl/def/ceo#> PREFIX skos: <http://www.w3.org/2004/02/skos/core#> SELECT ?bouwstijl (COUNT(?cho) AS ?aantal) WHERE { GRAPH graph:instanties-rce { ?cho a ceo:Rijksmonument ; ceo:internationaalKenteken 'true'^^xsd:boolean ; ceo:heeftStijlEnCultuur ?sc . ?sc ceo:heeftStijlEnCultuurNaam/skos:prefLabel ?stijl . OPTIONAL { ?sc ceo:heeftZuiverheid/skos:prefLabel ?zuiverheid . } BIND(CONCAT(COALESCE(?zuiverheid,''), ' - ', COALESCE(?stijl,'')) AS ?bouwstijl) } } GROUP BY ?bouwstijl ORDER BY DESC(?aantal)"}'></query>
+      <query data-query-ref="queries/per-bouwstijl-indien-aanwezig.rq"></query>
 
       <h3>Verdeling van schildjes over jaartallen (bouwjaar)</h3>
-      <query data-config='{"endpoint":"https://api.linkeddata.cultureelerfgoed.nl/datasets/rce/cho/services/cho/sparql","query":"PREFIX graph: <https://linkeddata.cultureelerfgoed.nl/graph/> PREFIX ceo: <https://linkeddata.cultureelerfgoed.nl/def/ceo#> PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> SELECT ?jaar (COUNT(?cho) AS ?aantal) WHERE { GRAPH graph:instanties-rce { ?cho a ceo:Rijksmonument ; ceo:internationaalKenteken 'true'^^xsd:boolean ; ceo:heeftGebeurtenis ?gebeurtenis . ?gebeurtenis ceo:heeftGebeurtenisNaam ?naam ; ceo:heeftDatering/ceo:heeftBeginDatering/ceo:datum ?beginDatum . FILTER(CONTAINS(LCASE(STR(?naam)), 'vervaardiging')) BIND(YEAR(xsd:dateTime(?beginDatum)) AS ?jaar) } } GROUP BY ?jaar ORDER BY ASC(?jaar)"}'></query>
-
-      <h3>Kaart: Rijksmonumenten met blauw-wit schildje</h3>
-      <p>Klik op een marker voor meer informatie.</p>
-      <query data-output="geo" data-config='{"endpoint":"https://api.linkeddata.cultureelerfgoed.nl/datasets/rce/cho/services/cho/sparql","query":"PREFIX graph: <https://linkeddata.cultureelerfgoed.nl/graph/> PREFIX ceo: <https://linkeddata.cultureelerfgoed.nl/def/ceo#> PREFIX geo: <http://www.opengis.net/ont/geosparql#> PREFIX skos: <http://www.w3.org/2004/02/skos/core#> PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?cho ?rijksmonumentnummer ?adres ?gemeente ?provincie ?functie ?omschrijving ?datering ?bouwstijl ?geo ?geoLabel WHERE { GRAPH graph:instanties-rce { ?cho a ceo:Rijksmonument ; ceo:rijksmonumentnummer ?rijksmonumentnummer ; ceo:internationaalKenteken 'true'^^xsd:boolean ; ceo:heeftOmschrijving ?omschrijvingURI . ?omschrijvingURI ceo:omschrijving ?omschrijving ; ceo:heeftOmschrijvingstype <https://data.cultureelerfgoed.nl/term/id/rn/0273a12d-7259-4391-aee2-5dac264aebe9> . ?cho ceo:heeftBasisregistratieRelatie [ ceo:heeftBAGRelatie/ceo:volledigAdres ?adres ; ceo:heeftGemeente ?gemeenteURI ; ceo:heeftProvincie ?provincieURI ] . OPTIONAL { ?cho ceo:heeftOorspronkelijkeFunctie/ceo:heeftFunctieNaam/skos:prefLabel ?functie_ . BIND(REPLACE(?functie_, '\\\\s\\\\(.*\\\\)|\\\\(.*\\\\)', '') AS ?functie) } OPTIONAL { ?cho ceo:heeftStijlEnCultuur ?sc . ?sc ceo:heeftStijlEnCultuurNaam/skos:prefLabel ?stijl . OPTIONAL { ?sc ceo:heeftZuiverheid/skos:prefLabel ?zuiverheid . } BIND(CONCAT(COALESCE(?zuiverheid,''), ' - ', COALESCE(?stijl,'')) AS ?bouwstijl) } OPTIONAL { ?cho ceo:heeftGebeurtenis ?gebeurtenis . ?gebeurtenis ceo:heeftGebeurtenisNaam/skos:prefLabel ?gebeurtenisNaam ; ceo:heeftDatering ?dateringStruct . FILTER CONTAINS(LCASE(?gebeurtenisNaam),'vervaardiging') ?dateringStruct ceo:heeftBeginDatering/ceo:datum ?beginDatum ; ceo:heeftEindDatering/ceo:datum ?eindDatum . BIND(CONCAT(STR(YEAR(xsd:dateTime(?beginDatum))), '-', STR(YEAR(xsd:dateTime(?eindDatum)))) AS ?datering) } } GRAPH graph:owms { ?gemeenteURI skos:prefLabel ?gemeente . ?provincieURI skos:prefLabel ?provincie . } GRAPH graph:punten { ?cho ceo:heeftGeometrie/geo:asWKT ?geo . } BIND(STRDT(CONCAT('<div style=\\\"background-color:rgba(0,0,0,.05);padding:5mm;\\\">','<div style=\\\"text-align:center;\\\">','<img src=\\\"https://linkeddata.cultureelerfgoed.nl/rce/Asset-dataset/assets/685193d17ddccf19de4f9d82\\\" alt=\\\"Blauw-wit schildje\\\" style=\\\"width:40px;height:auto;margin-bottom:5px;\\\" />','</div>','<ul>','<li><b>Rijksmonument: </b><a href=\\\"https://monumentenregister.cultureelerfgoed.nl/monumenten/',STR(?rijksmonumentnummer),'\\\" target=\\\"_blank\\\">',STR(?rijksmonumentnummer),'</a></li>','<li><b>Datering:</b> ',COALESCE(?datering,'-'),'</li>','<li><b>Bouwstijl:</b> ',COALESCE(?bouwstijl,'-'),'</li>','<li><b>Adres:</b> ',COALESCE(?adres,'-'),'</li>','<li><b>Functie:</b> ',COALESCE(?functie,'-'),'</li>','<li><b>Gemeente/Provincie:</b> ',COALESCE(?gemeente,'-'),', ',COALESCE(?provincie,'-'),'</li>','</ul><b>Omschrijving:</b><br>',IF(STRLEN(STR(?omschrijving)) > 250, CONCAT(SUBSTR(STR(?omschrijving),1,250),'... <a href=\\\"https://monumentenregister.cultureelerfgoed.nl/monumenten/',STR(?rijksmonumentnummer),'\\\" target=\\\"_blank\\\">lees verder</a>'),STR(?omschrijving)),'</div>'),rdf:HTML) AS ?geoLabel) }"}'></query>
+      <query data-query-ref="queries/verdeling-schildjes-over-jaartallen-bouw.rq"></query>
 
       <h2>Wat betekent het blauw-witte schildje?</h2>
-      <p>Het schildje geeft aan dat een gebouw bijzondere bescherming geniet onder het Haags Verdrag van 1954.</p>
+      <p>
+        Het schildje geeft aan dat een gebouw, collectie of locatie bijzondere bescherming verdient. Het is verbonden aan het Haags Verdrag van 1954 en wordt in Nederland sinds de jaren zestig toegepast op rijksmonumenten, archieven en musea.
+      </p>
+      <p>
+        Niet elk rijksmonument heeft een schildje. Alleen gebouwen die destijds door de overheid zijn geselecteerd mogen het voeren. De registratie is in 2021 stopgezet, maar bestaande schildjes blijven geldig.
+      </p>
+
+      <h2>Methode en bronnen</h2>
+      <p>
+        Deze datastory is gebaseerd op Linked Open Data uit de Cultureel Erfgoed Objecten (CHO) dataset van de RCE. 
+        We filterden op objecten met <code>internationaalKenteken = true</code> en gebruikten SPARQL-queries om aantallen per provincie, functie en bouwstijl te berekenen.
+      </p>
+      <ul>
+        <li>Dataset: RCE CHO via TriplyDB</li>
+        <li>Thesauri: OWMS voor gemeenten en provincies</li>
+        <li>Kaartdata: geometrie van objecten in CHO</li>
+      </ul>
+
+      <h2>Colofon</h2>
+      <p>Deze datastory is gemaakt door de Rijksdienst voor het Cultureel Erfgoed.</p>
     </div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/thednp/bootstrap.native@2.0.24/dist/bootstrap-native-v4.min.js"></script>
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/gh/thednp/bootstrap.native@2.0.24/dist/bootstrap-native-v4.min.js" crossorigin="anonymous"></script>
     <script src="https://yasgui.triply.cc/yasgui.polyfill.min.js"></script>
+    
+    <!-- Lokale stories.js via relatieve paden -->
     <script src="../assets/js/stories.min.js"></script>
-    <script>window.onload = function () { stories(); };</script>
+
+    <script>
+      window.onload = function () {
+        stories();
+      };
+    </script>
   </body>
 </html>
