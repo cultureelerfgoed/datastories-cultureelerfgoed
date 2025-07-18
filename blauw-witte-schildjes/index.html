@@ -3,42 +3,40 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="Beschermd erfgoed: het blauw-witte schildje in Nederland">
+    <meta name="description" content="Datastory: Blauw-witte schildjes">
     <meta name="author" content="Rijksdienst voor het Cultureel Erfgoed">
-    
-    <!-- Favicon -->
-    <link href="../assets/imgs/rce-logo.png" rel="icon" type="image/png">
-    
+
+    <link rel="icon" href="assets/imgs/rce-logo.png" type="image/png">
     <title>Datastory: Blauw-witte schildjes</title>
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
-    
-    <!-- Lokale styles (relatieve paden!) -->
-    <link href="../assets/css/main.css" rel="stylesheet" type="text/css">
-    <link href="../assets/css/stories.min.css" rel="stylesheet" type="text/css">
-    <link href="../assets/css/yasgui.bootstrap.css" rel="stylesheet" type="text/css">
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/stories.min.css">
+    <link rel="stylesheet" href="assets/css/yasgui.bootstrap.css">
   </head>
-  
+
   <body class="withNavbar">
+    <!-- Navbar -->
     <nav class="navbar fixed-top">
       <div class="navbar-content">
         <div class="navbar-icon">
-          <a class="navbar-brand" href="../">
-            <img alt="RCE Home" src="../assets/imgs/rce-logo.png" style="height:40px;">
+          <a class="navbar-brand" href="../index.html">
+            <img alt="RCE logo" src="assets/imgs/rce-logo.png" style="height:40px;">
           </a>
         </div>
         <div class="navbar-title">
-          <a class="navbar-brand" href="../">RCE Datastories</a>
+          <a class="navbar-brand" href="../index.html">RCE Datastories</a>
         </div>
       </div>
     </nav>
 
-    <!-- Story container -->
+    <!-- Content -->
     <div class="container story"
          data-endpoint="https://api.linkeddata.cultureelerfgoed.nl/datasets/rce/cho/services/cho/sparql">
 
       <h1>Datastory: Blauw-witte schildjes</h1>
+
       <p>
         Op 14 mei 1954 werd in Den Haag het Haags Verdrag gesloten over bescherming van cultureel erfgoed in tijden van oorlog. 
         Het blauw-witte schildje markeert gebouwen en collecties die internationale bescherming genieten.
@@ -46,34 +44,37 @@
 
       <h2>Inleiding</h2>
       <p>
-        Dit verdrag verplicht landen om cultureel erfgoed zoals monumenten, musea en archieven te beschermen tegen plundering of vernieling tijdens gewapende conflicten. 
+        Dit verdrag verplicht landen om cultureel erfgoed zoals monumenten, musea en archieven te beschermen tegen plundering of vernieling tijdens gewapende conflicten.
         Het blauw-witte schildje is het officiële herkenningsteken. In Nederland zijn duizenden rijksmonumenten voorzien van zo’n schildje.
       </p>
+
       <p>
         In deze datastory ziet u hoeveel rijksmonumenten een blauw-wit schildje dragen, waar ze staan, wat hun functie is en hoe deze beschermde status in Nederland wordt toegepast.
       </p>
 
       <h3>Overzicht van aantallen schildjes per provincie</h3>
-      <query data-query-ref="queries/internationaal-kenteken-per-provincie.rq"></query>
+      <query data-query-ref="queries/schildjes-per-provincie.rq"></query>
 
-      <h3>Top 20 gemeenten met de meeste rijksmonumenten</h3>
-      <query data-query-ref="queries/top-20-gemeenten-met-de-meeste-blauwe.rq"></query>
+      <h3>Top 20 gemeenten met de meeste rijksmonumenten met blauw-wit schildje</h3>
+      <query data-query-ref="queries/top20-gemeenten.rq"></query>
 
       <h3>Blauw-witte schildjes per type rijksmonument</h3>
-      <query data-query-ref="queries/internationaal-kenteken-verdeeld-functie.rq"></query>
+      <query data-query-ref="queries/schildjes-type.rq"></query>
 
       <h3>Bouwstijlen van rijksmonumenten met blauw-wit schildje</h3>
-      <query data-query-ref="queries/per-bouwstijl-indien-aanwezig.rq"></query>
+      <query data-query-ref="queries/schildjes-bouwstijl.rq"></query>
 
       <h3>Verdeling van schildjes over jaartallen (bouwjaar)</h3>
-      <query data-query-ref="queries/verdeling-schildjes-over-jaartallen-bouw.rq"></query>
+      <query data-query-ref="queries/schildjes-bouwjaar.rq"></query>
 
       <h2>Wat betekent het blauw-witte schildje?</h2>
       <p>
-        Het schildje geeft aan dat een gebouw, collectie of locatie bijzondere bescherming verdient. Het is verbonden aan het Haags Verdrag van 1954 en wordt in Nederland sinds de jaren zestig toegepast op rijksmonumenten, archieven en musea.
+        Het schildje geeft aan dat een gebouw, collectie of locatie bijzondere bescherming verdient. Het is verbonden aan het Haags Verdrag van 1954 
+        en wordt in Nederland sinds de jaren zestig toegepast op rijksmonumenten, archieven en musea.
       </p>
       <p>
-        Niet elk rijksmonument heeft een schildje. Alleen gebouwen die destijds door de overheid zijn geselecteerd mogen het voeren. De registratie is in 2021 stopgezet, maar bestaande schildjes blijven geldig.
+        Niet elk rijksmonument heeft een schildje. Alleen gebouwen die destijds door de overheid zijn geselecteerd mogen het voeren. 
+        De registratie is in 2021 stopgezet, maar bestaande schildjes blijven geldig.
       </p>
 
       <h2>Methode en bronnen</h2>
@@ -81,23 +82,39 @@
         Deze datastory is gebaseerd op Linked Open Data uit de Cultureel Erfgoed Objecten (CHO) dataset van de RCE. 
         We filterden op objecten met <code>internationaalKenteken = true</code> en gebruikten SPARQL-queries om aantallen per provincie, functie en bouwstijl te berekenen.
       </p>
-      <ul>
-        <li>Dataset: RCE CHO via TriplyDB</li>
-        <li>Thesauri: OWMS voor gemeenten en provincies</li>
-        <li>Kaartdata: geometrie van objecten in CHO</li>
-      </ul>
+
+      <p>
+        Dataset: RCE CHO via TriplyDB<br>
+        Thesauri: OWMS voor gemeenten en provincies<br>
+        Kaartdata: geometrie van objecten in CHO
+      </p>
+
+      <hr>
+
+      <!-- NIEUWE EXTRA SECTIE MET GEO-OUTPUT -->
+      <h2>Kaart: Rijksmonumenten met blauw-wit schildje</h2>
+      <p>
+        Op deze kaart ziet u alle rijksmonumenten met een blauw-wit schildje (internationaal kenteken), inclusief locatie, adres, bouwstijl en datering.
+        Klik op een marker voor meer informatie.
+      </p>
+      <query 
+        data-query-ref="queries/internationaal-kenteken-geo.rq"
+        data-config="https://api.linkeddata.cultureelerfgoed.nl/datasets/rce/cho/services/cho/sparql"
+        data-requestmethod="POST"
+        data-output="geo">
+      </query>
+
+      <hr>
 
       <h2>Colofon</h2>
       <p>Deze datastory is gemaakt door de Rijksdienst voor het Cultureel Erfgoed.</p>
     </div>
 
     <!-- Scripts -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/gh/thednp/bootstrap.native@2.0.24/dist/bootstrap-native-v4.min.js" crossorigin="anonymous"></script>
+    <script src="assets/js/tether.min.js"></script>
+    <script src="assets/js/bootstrap-native-v4.min.js"></script>
     <script src="https://yasgui.triply.cc/yasgui.polyfill.min.js"></script>
-    
-    <!-- Lokale stories.js via relatieve paden -->
-    <script src="../assets/js/stories.min.js"></script>
+    <script src="assets/js/stories.min.js"></script>
 
     <script>
       window.onload = function () {
@@ -106,3 +123,4 @@
     </script>
   </body>
 </html>
+S
