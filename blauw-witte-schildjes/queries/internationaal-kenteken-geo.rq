@@ -1,1 +1,110 @@
-https://yasgui.triply.cc/#query=PREFIX%20graph%3A%20%3Chttps%3A%2F%2Flinkeddata.cultureelerfgoed.nl%2Fgraph%2F%3E%0APREFIX%20ceo%3A%20%20%20%3Chttps%3A%2F%2Flinkeddata.cultureelerfgoed.nl%2Fdef%2Fceo%23%3E%0APREFIX%20geo%3A%20%20%20%3Chttp%3A%2F%2Fwww.opengis.net%2Font%2Fgeosparql%23%3E%0APREFIX%20skos%3A%20%20%3Chttp%3A%2F%2Fwww.w3.org%2F2004%2F02%2Fskos%2Fcore%23%3E%0APREFIX%20xsd%3A%20%20%20%3Chttp%3A%2F%2Fwww.w3.org%2F2001%2FXMLSchema%23%3E%0APREFIX%20rdf%3A%20%20%20%3Chttp%3A%2F%2Fwww.w3.org%2F1999%2F02%2F22-rdf-syntax-ns%23%3E%0A%0ASELECT%20DISTINCT%0A%20%20%3Fcho%0A%20%20%3Frijksmonumentnummer%0A%20%20%3Fadres%0A%20%20%3Fgemeente%0A%20%20%3Fprovincie%0A%20%20%3Ffunctie%0A%20%20%3Fomschrijving%0A%20%20%3Fdatering%0A%20%20%3Fbouwstijl%0A%20%20%3Fgeo%0A%20%20%3FgeoLabel%0AWHERE%20%7B%0A%0A%20%20%23%20----------%20hoofdbron%3A%20RCE%20----------%0A%20%20GRAPH%20graph%3Ainstanties-rce%20%7B%0A%0A%20%20%20%20%23%20verplichte%20eigenschappen%0A%20%20%20%20%3Fcho%20a%20ceo%3ARijksmonument%20%3B%0A%20%20%20%20%20%20%20%20%20ceo%3Arijksmonumentnummer%20%20%20%20%20%20%20%20%3Frijksmonumentnummer%20%3B%0A%20%20%20%20%20%20%20%20%20ceo%3AinternationaalKenteken%20%20%20%20%20%22true%22%5E%5Exsd%3Aboolean%20%3B%0A%20%20%20%20%20%20%20%20%20ceo%3AheeftOmschrijving%20%20%20%20%20%20%20%20%20%20%3FomschrijvingURI%20.%0A%0A%20%20%20%20%3FomschrijvingURI%0A%20%20%20%20%20%20%20%20%20ceo%3Aomschrijving%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Fomschrijving%20%3B%0A%20%20%20%20%20%20%20%20%20ceo%3AheeftOmschrijvingstype%20%20%20%20%3Chttps%3A%2F%2Fdata.cultureelerfgoed.nl%2Fterm%2Fid%2Frn%2F0273a12d-7259-4391-aee2-5dac264aebe9%3E%20.%0A%0A%20%20%20%20%23%20---%20adres%2C%20gemeente%2C%20provincie%20---%0A%20%20%20%20%20%20%3Fcho%20ceo%3AheeftBasisregistratieRelatie%20%5B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20ceo%3AheeftBAGRelatie%2Fceo%3AvolledigAdres%20%3Fadres%20%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20ceo%3AheeftGemeente%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3FgemeenteURI%20%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20ceo%3AheeftProvincie%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3FprovincieURI%0A%20%20%20%20%20%20%20%20%20%20%20%5D%20.%0A%20%20%20%20%7D%0A%0A%20%20%20%20%23%20---%20functie%20---%0A%20%20%20%20OPTIONAL%20%7B%0A%20%20%20%20%20%20%3Fcho%20ceo%3AheeftOorspronkelijkeFunctie%2F%0A%20%20%20%20%20%20%20%20%20%20%20ceo%3AheeftFunctieNaam%20%3Ffuncties%20.%0A%20%20%20%20%20%20%20%20%20%20%3Ffuncties%20skos%3AprefLabel%20%3Ffunctie_%20.%0A%20%20%20%20%20%20%20%20BIND(REPLACE(%3Ffunctie_%2C%20%22%5C%5Cs%5C%5C(.*%5C%5C)%7C%5C%5C(.*%5C%5C)%22%2C%20%22%22)%20AS%20%3Ffunctie)%0A%20%20%20%20%7D%0A%0A%20%20%20%20%23%20---%20bouwstijl%20---%0A%20%20%20%20OPTIONAL%20%7B%0A%20%20%20%20%20%20%3Fcho%20ceo%3AheeftStijlEnCultuur%20%3Fsc%20.%0A%20%20%20%20%20%20%3Fsc%20%20ceo%3AheeftStijlEnCultuurNaam%2Fskos%3AprefLabel%20%3Fstijl%20.%0A%20%20%20%20%20%20OPTIONAL%20%7B%20%3Fsc%20ceo%3AheeftZuiverheid%2Fskos%3AprefLabel%20%3Fzuiverheid%20.%20%7D%0A%20%20%20%20%20%20BIND(CONCAT(COALESCE(%3Fzuiverheid%2C%20'')%2C%20'%20-%20'%2C%20COALESCE(%3Fstijl%2C%20%20''))%20AS%20%3Fbouwstijl)%0A%20%20%20%20%7D%0A%0A%20%20%20%20%23%20---%20datering%20vervaardiging%20---%0A%20%20%20%20OPTIONAL%20%7B%0A%20%20%20%20%20%20%3Fcho%20ceo%3AheeftGebeurtenis%20%3Fgebeurtenis%20.%0A%20%20%20%20%20%20%3Fgebeurtenis%0A%20%20%20%20%20%20%20%20%20%20ceo%3AheeftGebeurtenisNaam%2Fskos%3AprefLabel%20%3FgebeurtenisNaam%20%3B%0A%20%20%20%20%20%20%20%20%20%20ceo%3AheeftDatering%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3FdateringStruct%20.%0A%20%20%20%20%20%20FILTER%20CONTAINS(LCASE(%3FgebeurtenisNaam)%2C%20'vervaardiging')%0A%0A%20%20%20%20%20%20%3FdateringStruct%0A%20%20%20%20%20%20%20%20%20%20ceo%3AheeftBeginDatering%2Fceo%3Adatum%20%3FbeginDatum%20%3B%0A%20%20%20%20%20%20%20%20%20%20ceo%3AheeftEindDatering%2Fceo%3Adatum%20%20%3FeindDatum%20.%0A%0A%20%20%20%20%20%20BIND(CONCAT(%0A%20%20%20%20%20%20%20%20%20%20%20%20STR(YEAR(xsd%3AdateTime(%3FbeginDatum)))%2C%20'-'%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20STR(YEAR(xsd%3AdateTime(%3FeindDatum)))%0A%20%20%20%20%20%20%20%20%20%20)%20AS%20%3Fdatering)%0A%20%20%20%20%7D%0A%20%20%0A%0A%20%20%23%20----------%20OWMS%3A%20namen%20gemeente%20%26%20provincie%20----------%0A%20%20GRAPH%20graph%3Aowms%20%7B%0A%20%3FgemeenteURI%20%20skos%3AprefLabel%20%3Fgemeente%20.%20%0A%20%20%3FprovincieURI%20skos%3AprefLabel%20%3Fprovincie%20.%20%0A%20%20%7D%0A%0A%20%20%23%20----------%20puntenlaag%3A%20geometrie%20----------%0A%20%20GRAPH%20graph%3Apunten%20%7B%0A%20%20%20%20%3Fcho%20ceo%3AheeftGeometrie%2Fgeo%3AasWKT%20%3Fgeo%20.%0A%20%20%7D%0A%0A%20%20%23%20----------%20popup-html%20----------%0ABIND(STRDT(%0A%20%20CONCAT(%0A%20%20%20%20'%3Cdiv%20style%3D%22background-color%3Argba(0%2C0%2C0%2C.05)%3Bpadding%3A5mm%3B%22%3E'%2C%0A%20%20%20%20'%3Cdiv%20style%3D%22text-align%3Acenter%3B%22%3E'%2C%0A%20%20%20%20'%3Cimg%20src%3D%22https%3A%2F%2Flinkeddata.cultureelerfgoed.nl%2Frce%2FAsset-dataset%2Fassets%2F685193d17ddccf19de4f9d82%22%20alt%3D%22Blauw-wit%20schildje%22%20style%3D%22width%3A40px%3Bheight%3Aauto%3Bmargin-bottom%3A5px%3B%22%20%2F%3E'%2C%0A%20%20%20%20'%3C%2Fdiv%3E'%2C%0A%20%20%20%20'%3Cul%3E'%2C%0A%20%20%20%20'%3Cli%3E%3Cb%3ERijksmonument%3A%20%3C%2Fb%3E%3Ca%20href%3D%22https%3A%2F%2Fmonumentenregister.cultureelerfgoed.nl%2Fmonumenten%2F'%2C%20STR(%3Frijksmonumentnummer)%2C%20'%22%20target%3D%22_blank%22%3E'%2C%20STR(%3Frijksmonumentnummer)%2C%20'%3C%2Fa%3E%3C%2Fli%3E'%2C%0A%20%20%20%20'%3Cli%3E%3Cb%3EDatering%3A%3C%2Fb%3E%20'%2C%20COALESCE(%3Fdatering%2C%20'-')%2C%20'%3C%2Fli%3E'%2C%0A%20%20%20%20'%3Cli%3E%3Cb%3EBouwstijl%3A%3C%2Fb%3E%20'%2C%20COALESCE(%3Fbouwstijl%2C%20'-')%2C%20'%3C%2Fli%3E'%2C%0A%20%20%20%20'%3Cli%3E%3Cb%3EAdres%3A%3C%2Fb%3E%20'%2C%20COALESCE(%3Fadres%2C%20'-')%2C%20'%3C%2Fli%3E'%2C%0A%20%20%20%20'%3Cli%3E%3Cb%3EFunctie%3A%3C%2Fb%3E%20'%2C%20COALESCE(%3Ffunctie%2C%20'-')%2C%20'%3C%2Fli%3E'%2C%0A%20%20%20%20'%3Cli%3E%3Cb%3EGemeente%2FProvincie%3A%3C%2Fb%3E%20'%2C%20COALESCE(%3Fgemeente%2C%20'-')%2C%20'%2C%20'%2C%20COALESCE(%3Fprovincie%2C%20'-')%2C%20'%3C%2Fli%3E'%2C%0A%20%20%20%20'%3C%2Ful%3E%3Cb%3EOmschrijving%3A%3C%2Fb%3E%3Cbr%3E'%2C%0A%20%20%20%20IF(STRLEN(STR(%3Fomschrijving))%20%3E%20250%2C%0A%20%20%20%20%20%20%20CONCAT(SUBSTR(STR(%3Fomschrijving)%2C1%2C250)%2C'...%20%3Ca%20href%3D%22https%3A%2F%2Fmonumentenregister.cultureelerfgoed.nl%2Fmonumenten%2F'%2C%20STR(%3Frijksmonumentnummer)%2C%20'%22%20target%3D%22_blank%22%3Elees%20verder%3C%2Fa%3E')%2C%0A%20%20%20%20%20%20%20STR(%3Fomschrijving)%0A%20%20%20%20)%2C%0A%20%20%20%20'%3C%2Fdiv%3E'%0A%20%20)%2C%0A%20%20rdf%3AHTML)%20AS%20%3FgeoLabel)%0A%7D%0A&endpoint=https%3A%2F%2Fapi.linkeddata.cultureelerfgoed.nl%2Fdatasets%2Frce%2Fcho%2Fservices%2Fcho%2Fsparql&requestMethod=POST&tabTitle=Query&headers=%7B%7D&contentTypeConstruct=application%2Fn-triples%2C*%2F*%3Bq%3D0.9&contentTypeSelect=application%2Fsparql-results%2Bjson%2C*%2F*%3Bq%3D0.9&outputFormat=geo&outputSettings=%7B%7D
+PREFIX graph: <https://linkeddata.cultureelerfgoed.nl/graph/>
+PREFIX ceo:   <https://linkeddata.cultureelerfgoed.nl/def/ceo#>
+PREFIX geo:   <http://www.opengis.net/ont/geosparql#>
+PREFIX skos:  <http://www.w3.org/2004/02/skos/core#>
+PREFIX xsd:   <http://www.w3.org/2001/XMLSchema#>
+PREFIX rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+
+SELECT DISTINCT
+  ?cho
+  ?rijksmonumentnummer
+  ?adres
+  ?gemeente
+  ?provincie
+  ?functie
+  ?omschrijving
+  ?datering
+  ?bouwstijl
+  ?geo
+  ?geoLabel
+WHERE {
+
+  # ---------- hoofdbron: RCE ----------
+  GRAPH graph:instanties-rce {
+    ?cho a ceo:Rijksmonument ;
+         ceo:rijksmonumentnummer ?rijksmonumentnummer ;
+         ceo:internationaalKenteken "true"^^xsd:boolean ;
+         ceo:heeftOmschrijving ?omschrijvingURI .
+
+    ?omschrijvingURI
+      ceo:omschrijving ?omschrijving ;
+      ceo:heeftOmschrijvingstype <https://data.cultureelerfgoed.nl/term/id/rn/0273a12d-7259-4391-aee2-5dac264aebe9> .
+
+    # --- adres, gemeente, provincie ---
+    ?cho ceo:heeftBasisregistratieRelatie [
+      ceo:heeftBAGRelatie/ceo:volledigAdres ?adres ;
+      ceo:heeftGemeente ?gemeenteURI ;
+      ceo:heeftProvincie ?provincieURI
+    ] .
+  }
+
+  # --- functie ---
+  OPTIONAL {
+    ?cho ceo:heeftOorspronkelijkeFunctie/ceo:heeftFunctieNaam ?functies .
+    ?functies skos:prefLabel ?functie_ .
+    BIND(REPLACE(?functie_, "\\s\\(.*\\)|\\(.*\\)", "") AS ?functie)
+  }
+
+  # --- bouwstijl ---
+  OPTIONAL {
+    ?cho ceo:heeftStijlEnCultuur ?sc .
+    ?sc ceo:heeftStijlEnCultuurNaam/skos:prefLabel ?stijl .
+    OPTIONAL { ?sc ceo:heeftZuiverheid/skos:prefLabel ?zuiverheid . }
+    BIND(CONCAT(COALESCE(?zuiverheid, ''), ' - ', COALESCE(?stijl, '')) AS ?bouwstijl)
+  }
+
+  # --- datering vervaardiging ---
+  OPTIONAL {
+    ?cho ceo:heeftGebeurtenis ?gebeurtenis .
+    ?gebeurtenis
+      ceo:heeftGebeurtenisNaam/skos:prefLabel ?gebeurtenisNaam ;
+      ceo:heeftDatering ?dateringStruct .
+    FILTER CONTAINS(LCASE(?gebeurtenisNaam), "vervaardiging")
+
+    ?dateringStruct
+      ceo:heeftBeginDatering/ceo:datum ?beginDatum ;
+      ceo:heeftEindDatering/ceo:datum ?eindDatum .
+
+    BIND(CONCAT(
+      STR(YEAR(xsd:dateTime(?beginDatum))), "-",
+      STR(YEAR(xsd:dateTime(?eindDatum)))
+    ) AS ?datering)
+  }
+
+  # ---------- OWMS: namen gemeente & provincie ----------
+  GRAPH graph:owms {
+    ?gemeenteURI skos:prefLabel ?gemeente .
+    ?provincieURI skos:prefLabel ?provincie .
+  }
+
+  # ---------- puntenlaag: geometrie ----------
+  GRAPH graph:punten {
+    ?cho ceo:heeftGeometrie/geo:asWKT ?geo .
+  }
+
+  # ---------- popup-html ----------
+  BIND(STRDT(
+    CONCAT(
+      '<div style="background-color:rgba(0,0,0,.05);padding:5mm;">',
+        '<div style="text-align:center;">',
+          '<img src="https://linkeddata.cultureelerfgoed.nl/rce/Asset-dataset/assets/685193d17ddccf19de4f9d82" alt="Blauw-wit schildje" style="width:40px;height:auto;margin-bottom:5px;" />',
+        '</div>',
+        '<ul>',
+          '<li><b>Rijksmonument: </b><a href="https://monumentenregister.cultureelerfgoed.nl/monumenten/',
+            STR(?rijksmonumentnummer),
+          '" target="_blank">', STR(?rijksmonumentnummer), '</a></li>',
+          '<li><b>Datering:</b> ', COALESCE(?datering, '-'), '</li>',
+          '<li><b>Bouwstijl:</b> ', COALESCE(?bouwstijl, '-'), '</li>',
+          '<li><b>Adres:</b> ', COALESCE(?adres, '-'), '</li>',
+          '<li><b>Functie:</b> ', COALESCE(?functie, '-'), '</li>',
+          '<li><b>Gemeente/Provincie:</b> ', COALESCE(?gemeente, '-'), ', ', COALESCE(?provincie, '-'), '</li>',
+        '</ul><b>Omschrijving:</b><br>',
+        IF(STRLEN(STR(?omschrijving)) > 250,
+          CONCAT(SUBSTR(STR(?omschrijving),1,250),'... <a href="https://monumentenregister.cultureelerfgoed.nl/monumenten/', STR(?rijksmonumentnummer),'" target="_blank">lees verder</a>'),
+          STR(?omschrijving)
+        ),
+      '</div>'
+    ),
+    rdf:HTML
+  ) AS ?geoLabel)
+}
