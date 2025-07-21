@@ -45,38 +45,84 @@
       <img src="../assets/imgs/Monumentenschildje_blauw_wit.svg"
            alt="Rijksmonument met blauw schildje"
            style="float: right; margin: 0 0 10px 20px; width: 220px;" />
-      <p>
-        Op 14 mei 1954 werd in Den Haag het Haags Verdrag gesloten over bescherming van cultureel erfgoed in tijden van oorlog. 
-        Het blauw-witte schildje markeert gebouwen en collecties die internationale bescherming genieten.
-      </p>
-        Dit verdrag verplicht landen om cultureel erfgoed zoals monumenten, musea en archieven te beschermen tegen plundering of vernieling tijdens gewapende conflicten. 
-        Het blauw-witte schildje is het officiële herkenningsteken. In Nederland zijn duizenden rijksmonumenten voorzien van zo’n schildje.
-      </p>
-      <p>
-        In deze datastory ziet u hoeveel rijksmonumenten een blauw-wit schildje dragen, waar ze staan, wat hun functie is en hoe deze beschermde status in Nederland wordt toegepast.
-      </p>
+<p>
+  Op 14 mei 1954 werd in Den Haag een belangrijk verdrag gesloten: het Verdrag inzake de bescherming van culturele goederen in het geval van een gewapend conflict.
+  Dit UNESCO-verdrag heeft één duidelijk doel: cultureel erfgoed beschermen in tijden van oorlog. Denk aan monumenten, musea en andere plekken met historische waarde. Ze mogen niet worden geplunderd, beschadigd of ingenomen.
+</p>
 
+<p>
+  Een belangrijk symbool uit dit verdrag is het blauw-witte schildje. Dit herkenningsteken geeft aan dat een gebouw cultureel erfgoed is en bescherming verdient.
+  Ook in Nederland zijn rijksmonumenten voorzien van zo'n schildje. Veel mensen herkennen het niet of weten niet waar het voor staat.
+</p>
+
+<h4>Wat je in deze data story vindt</h4>
+
+<p>
+  In deze data story verkennen we hoe het blauw-witte schildje wordt toegepast in Nederland. We gebruiken linked open data om inzicht te geven in:
+</p>
+
+<ul>
+  <li>Welke rijksmonumenten een blauw-witte schildje hebben, of ervoor in aanmerking komen</li>
+  <li>Waar deze monumenten staan</li>
+  <li>Wat hun functie is en welke beschermde status ze hebben</li>
+</ul>
+
+<p>
+  We koppelen gegevens over locaties, gebruik en wetgeving aan het internationale verdrag.
+  Zo zie je hoe het blauw-witte schildje past binnen het erfgoedbeleid van Nederland en hoe ons land omgaat met de verantwoordelijkheid om erfgoed te beschermen, ook in tijden van crisis.
+</p>
+<p></p>
+<h2>Geschiedenis van het blauw-witte schildje</h2>
+
+<p>
+  Tijdens de Tweede Wereldoorlog raakte veel erfgoed beschadigd of verloren. Deze ervaring leidde tot het Haags Verdrag van 1954. Dat verdrag verplicht landen om cultureel erfgoed te beschermen tijdens gewapende conflicten.
+</p>
+
+<p>
+  Het blauw-witte schildje is het officiële herkenningsteken van dit verdrag. Het geeft aan dat een gebouw of collectie internationale bescherming geniet. In Nederland zijn zo’n 4500 locaties voorzien van dit teken.
+</p>
+
+<p>
+  Op onze kennisbank vindt u een uitgebreidere toelichting op het  <a href="https://kennis.cultureelerfgoed.nl/index.php/Haags_Verdrag_1954_en_de_blauw-witte_schildjes" target="_blank"> Haags Verdrag 1954 en de blauw-witte schildjes</a>.
+</p>
+
+<h4>Wat regelt het verdrag?</h4>
+
+<p>
+  Het verdrag verplicht landen om erfgoed te beschermen, tenzij er sprake is van militaire noodzaak. Dat kan bijvoorbeeld door gebouwen te markeren met het blauw-witte schildje, door evacuatie van voorwerpen of door speciale militaire instructies.
+</p>
+
+<p>
+  Ook wil het verdrag voorkomen dat cultuurgoederen uit bezette gebieden worden uitgevoerd. Als dat toch gebeurt, moeten landen deze goederen teruggeven aan het land van herkomst zodra dat veilig kan.
+</p>
+
+<h4>Hoe zit het in Nederland?</h4>
+
+<p>
+  Nederland heeft het verdrag ondertekend. Er zijn wereldwijd 133 landen aangesloten bij het verdrag.
+</p>
+
+<p></p>
       <h3>Overzicht van aantallen schildjes per provincie</h3>
       <query data-config="https://api.linkeddata.cultureelerfgoed.nl/datasets/rce/cho/services/cho/sparql#query=PREFIX%20graph%3A%20%3Chttps%3A%2F%2Flinkeddata.cultureelerfgoed.nl%2Fgraph%2F%3E%0APREFIX%20ceo%3A%20%20%20%3Chttps%3A%2F%2Flinkeddata.cultureelerfgoed.nl%2Fdef%2Fceo%23%3E%0APREFIX%20skos%3A%20%20%3Chttp%3A%2F%2Fwww.w3.org%2F2004%2F02%2Fskos%2Fcore%23%3E%0APREFIX%20xsd%3A%20%20%20%3Chttp%3A%2F%2Fwww.w3.org%2F2001%2FXMLSchema%23%3E%0A%0ASELECT%20%3Fprovincie%20(COUNT(DISTINCT%20%3Fcho)%20AS%20%3FaantalMonumentenMetKenteken)%0AWHERE%20%7B%0A%0A%20%20GRAPH%20graph%3Ainstanties-rce%20%7B%0A%20%20%20%20%3Fcho%20a%20ceo%3ARijksmonument%20%3B%0A%20%20%20%20%20%20%20%20%20ceo%3AinternationaalKenteken%20%22true%22%5E%5Exsd%3Aboolean%20%3B%0A%20%20%20%20%20%20%20%20%20ceo%3AheeftBasisregistratieRelatie%20%5B%0A%20%20%20%20%20%20%20%20%20%20%20ceo%3AheeftProvincie%20%3FprovincieURI%0A%20%20%20%20%20%20%20%20%20%5D%20.%0A%20%20%7D%0A%0A%20%20GRAPH%20graph%3Aowms%20%7B%0A%20%20%20%20%3FprovincieURI%20skos%3AprefLabel%20%3Fprovincie%20.%0A%20%20%7D%0A%0A%7D%0AGROUP%20BY%20%3Fprovincie%0AORDER%20BY%20DESC(%3FaantalMonumentenMetKenteken)&endpoint=https%3A%2F%2Fapi.linkeddata.cultureelerfgoed.nl%2Fdatasets%2Frce%2Fcho%2Fservices%2Fcho%2Fsparql&requestMethod=POST&tabTitle=Query&headers=%7B%7D&contentTypeConstruct=application%2Fn-triples%2C*%2F*%3Bq%3D0.9&contentTypeSelect=application%2Fsparql-results%2Bjson%2C*%2F*%3Bq%3D0.9&outputFormat=gchart&outputSettings=%7B%22chartConfig%22%3A%7B%22options%22%3A%7B%22legacyScatterChartLabels%22%3Atrue%2C%22tooltip%22%3A%7B%22isHtml%22%3Atrue%2C%22ignoreBounds%22%3Atrue%7D%2C%22isStacked%22%3Afalse%2C%22booleanRole%22%3A%22certainty%22%2C%22vAxes%22%3A%5B%7B%22minValue%22%3Anull%2C%22maxValue%22%3Anull%2C%22viewWindow%22%3Anull%2C%22viewWindowMode%22%3Anull%2C%22useFormatFromData%22%3Atrue%7D%2C%7B%22useFormatFromData%22%3Atrue%7D%5D%2C%22hAxis%22%3A%7B%22viewWindow%22%3A%7B%22max%22%3Anull%2C%22min%22%3Anull%7D%2C%22minValue%22%3Anull%2C%22maxValue%22%3Anull%2C%22useFormatFromData%22%3Atrue%2C%22title%22%3A%22Aantal%22%7D%2C%22legend%22%3A%22right%22%2C%22width%22%3A%22100%25%22%2C%22height%22%3A%22100%25%22%2C%22title%22%3A%22Overzicht%20per%20provincie%22%7D%2C%22state%22%3A%7B%7D%2C%22view%22%3A%7B%22columns%22%3Anull%2C%22rows%22%3Anull%7D%2C%22isDefaultVisualization%22%3Afalse%2C%22chartType%22%3A%22BarChart%22%7D%7D">
       </query>
-      
+<p></p>    
       <h3>Top 20 gemeenten met de meeste rijksmonumenten</h3>
       <query data-config="https://api.linkeddata.cultureelerfgoed.nl/datasets/rce/cho/services/cho/sparql#query=prefix%20ceo%3A%20%3Chttps%3A%2F%2Flinkeddata.cultureelerfgoed.nl%2Fdef%2Fceo%23%3E%0Aprefix%20skos%3A%20%3Chttp%3A%2F%2Fwww.w3.org%2F2004%2F02%2Fskos%2Fcore%23%3E%0APREFIX%20owms%3A%20%20%3Chttps%3A%2F%2Flinkeddata.cultureelerfgoed.nl%2Fgraph%2Fowms%3E%0Aprefix%20rn%3A%20%3Chttps%3A%2F%2Fdata.cultureelerfgoed.nl%2Fterm%2Fid%2Frn%2F%3E%0A%0ASELECT%20%3Fgemeente%20(COUNT(DISTINCT%20%3Frijksmonument)%20AS%20%3Faantal)%0AWHERE%20%7B%0A%20%20%3Frijksmonument%0A%20%20%20%20ceo%3AinternationaalKenteken%20true%20%3B%0A%20%20%20%20%20%20%20%20%20%20ceo%3AheeftJuridischeStatus%20rn%3Ab2d9a59a-fe1e-4552-9a05-3c2acddff864%20%3B%0A%20%20%20%20ceo%3Arijksmonumentnummer%20%3Frijksmonumentnummer%20%3B%0A%20%20%20%20ceo%3AheeftBasisregistratieRelatie%20%3Fbasisrel%20.%0A%0A%20%20%3Fbasisrel%0A%20%20%20%20ceo%3AheeftGemeente%20%3Fgem%20%3B%0A%20%20%20%20ceo%3AheeftProvincie%20%3Fprov%20.%0A%0A%20%20GRAPH%20owms%3A%20%7B%0A%20%20%20%20%3Fgem%20%20skos%3AprefLabel%20%3Fgemeente%20.%0A%20%20%20%20%3Fprov%20skos%3AprefLabel%20%3Fprovincie%20.%0A%20%20%7D%0A%7D%0AGROUP%20BY%20%3Fgemeente%0AORDER%20BY%20DESC(%3Faantal)%0ALIMIT%2020%0A&endpoint=https%3A%2F%2Fapi.linkeddata.cultureelerfgoed.nl%2Fdatasets%2Frce%2Fcho%2Fservices%2Fcho%2Fsparql&requestMethod=POST&tabTitle=Query&headers=%7B%7D&contentTypeConstruct=application%2Fn-triples%2C*%2F*%3Bq%3D0.9&contentTypeSelect=application%2Fsparql-results%2Bjson%2C*%2F*%3Bq%3D0.9&outputFormat=gchart&outputSettings=%7B%22chartConfig%22%3A%7B%22options%22%3A%7B%22legacyScatterChartLabels%22%3Atrue%2C%22tooltip%22%3A%7B%22isHtml%22%3Atrue%2C%22ignoreBounds%22%3Afalse%7D%2C%22isStacked%22%3Afalse%2C%22booleanRole%22%3A%22certainty%22%2C%22vAxes%22%3A%5B%7B%22minValue%22%3Anull%2C%22maxValue%22%3Anull%2C%22viewWindow%22%3Anull%2C%22viewWindowMode%22%3Anull%2C%22useFormatFromData%22%3Atrue%7D%2C%7B%22useFormatFromData%22%3Atrue%7D%5D%2C%22hAxis%22%3A%7B%22viewWindow%22%3A%7B%22max%22%3Anull%2C%22min%22%3Anull%7D%2C%22minValue%22%3Anull%2C%22maxValue%22%3Anull%2C%22useFormatFromData%22%3Atrue%2C%22title%22%3A%22Aantal%22%7D%2C%22legend%22%3A%22right%22%2C%22width%22%3A%22100%25%22%2C%22height%22%3A%22100%25%22%2C%22title%22%3A%22Overzicht%20per%20gemeente%20-%20top%2020%22%7D%2C%22state%22%3A%7B%7D%2C%22view%22%3A%7B%22columns%22%3Anull%2C%22rows%22%3Anull%7D%2C%22isDefaultVisualization%22%3Afalse%2C%22chartType%22%3A%22BarChart%22%7D%7D">
       </query>
-
+<p></p>
       <h3>Blauw-witte schildjes per type rijksmonument</h3>
       <query data-config="https://api.linkeddata.cultureelerfgoed.nl/datasets/rce/cho/services/cho/sparql#query=PREFIX%20graph%3A%20%3Chttps%3A%2F%2Flinkeddata.cultureelerfgoed.nl%2Fgraph%2F%3E%0APREFIX%20ceo%3A%20%20%20%3Chttps%3A%2F%2Flinkeddata.cultureelerfgoed.nl%2Fdef%2Fceo%23%3E%0APREFIX%20skos%3A%20%20%3Chttp%3A%2F%2Fwww.w3.org%2F2004%2F02%2Fskos%2Fcore%23%3E%0APREFIX%20xsd%3A%20%20%20%3Chttp%3A%2F%2Fwww.w3.org%2F2001%2FXMLSchema%23%3E%0A%0ASELECT%20%3Ffunctie%20(COUNT(DISTINCT%20%3Fcho)%20AS%20%3Faantal)%0AWHERE%20%7B%0A%20%20GRAPH%20graph%3Ainstanties-rce%20%7B%0A%20%20%20%20%3Fcho%20a%20ceo%3ARijksmonument%20%3B%0A%20%20%20%20%20%20%20%20%20ceo%3AinternationaalKenteken%20%22true%22%5E%5Exsd%3Aboolean%20.%0A%0A%20%20%20%20%23%20Functie%20is%20optioneel%2C%20maar%20we%20willen%20alleen%20gevallen%20waar%20hij%20bestaat%0A%20%20%20%20%3Fcho%20ceo%3AheeftOorspronkelijkeFunctie%2Fceo%3AheeftFunctieNaam%20%3Ffuncties.%0A%20%20%20%20%3Fcho%20ceo%3AheeftOorspronkelijkeFunctie%20%3Fstandpunt_functie.%0A%20%20%20%20%3Fstandpunt_functie%20ceo%3Ahoofdfunctie%20true.%0A%20%20%20%20%3Ffuncties%20skos%3AprefLabel%20%3Ffunctie_%20.%0A%20%20%20%20%20%20%20%20BIND(REPLACE(%3Ffunctie_%2C%20%22%5C%5Cs%5C%5C(.*%5C%5C)%7C%5C%5C(.*%5C%5C)%22%2C%20%22%22)%20AS%20%3Ffunctie)%0A%20%20%7D%0A%7D%0AGROUP%20BY%20%3Ffunctie%0AORDER%20BY%20DESC(%3Faantal)%0A&endpoint=https%3A%2F%2Fapi.linkeddata.cultureelerfgoed.nl%2Fdatasets%2Frce%2Fcho%2Fservices%2Fcho%2Fsparql&requestMethod=POST&tabTitle=Query&headers=%7B%7D&contentTypeConstruct=application%2Fn-triples%2C*%2F*%3Bq%3D0.9&contentTypeSelect=application%2Fsparql-results%2Bjson%2C*%2F*%3Bq%3D0.9&outputFormat=gchart&outputSettings=%7B%22chartConfig%22%3A%7B%22options%22%3A%7B%22legacyScatterChartLabels%22%3Atrue%2C%22title%22%3A%22Overzicht%20per%20functie%22%2C%22tooltip%22%3A%7B%22isHtml%22%3Atrue%7D%2C%22is3D%22%3Atrue%2C%22pieHole%22%3A0%2C%22booleanRole%22%3A%22certainty%22%2C%22vAxes%22%3A%5B%7B%22viewWindow%22%3A%7B%22max%22%3Anull%2C%22min%22%3Anull%7D%2C%22minValue%22%3Anull%2C%22maxValue%22%3Anull%2C%22useFormatFromData%22%3Atrue%7D%2C%7B%22viewWindow%22%3A%7B%22max%22%3Anull%2C%22min%22%3Anull%7D%2C%22minValue%22%3Anull%2C%22maxValue%22%3Anull%2C%22useFormatFromData%22%3Atrue%7D%5D%2C%22hAxis%22%3A%7B%22viewWindow%22%3A%7B%22max%22%3Anull%2C%22min%22%3Anull%7D%2C%22minValue%22%3Anull%2C%22maxValue%22%3Anull%2C%22useFormatFromData%22%3Atrue%7D%2C%22width%22%3A%22100%25%22%2C%22height%22%3A%22100%25%22%7D%2C%22state%22%3A%7B%7D%2C%22view%22%3A%7B%22columns%22%3Anull%2C%22rows%22%3Anull%7D%2C%22isDefaultVisualization%22%3Afalse%2C%22chartType%22%3A%22PieChart%22%7D%7D">
       </query>
-
+<p></p>
       <h3>Bouwstijlen van rijksmonumenten met blauw-wit schildje</h3>
       <query data-config="https://api.linkeddata.cultureelerfgoed.nl/datasets/rce/cho/services/cho/sparql#query=prefix%20ceo%3A%20%3Chttps%3A%2F%2Flinkeddata.cultureelerfgoed.nl%2Fdef%2Fceo%23%3E%0Aprefix%20skos%3A%20%3Chttp%3A%2F%2Fwww.w3.org%2F2004%2F02%2Fskos%2Fcore%23%3E%0A%0ASELECT%20%3FbouwstijlLabel%20%3Fzuiverheid%20(COUNT(DISTINCT%20%3Frijksmonument)%20AS%20%3Faantal)%20%3Ftoelichting%0AWHERE%20%7B%0A%20%20%3Frijksmonument%20ceo%3AinternationaalKenteken%20true%20%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20ceo%3Arijksmonumentnummer%20%3Frijksmonumentnummer%20%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20ceo%3AheeftStijlEnCultuur%20%3Fbouwstijl%20.%0A%0A%20%20%3Fbouwstijl%20ceo%3AheeftStijlEnCultuurNaam%20%3FbouwstijlUri%20.%0A%20%20%3FbouwstijlUri%20skos%3AprefLabel%20%3FbouwstijlLabel%20.%0A%20%20%3Fbouwstijl%20ceo%3AheeftZuiverheid%2Fskos%3AprefLabel%20%3Fzuiverheid%20.%0A%0A%20%20OPTIONAL%20%7B%20%3Fbouwstijl%20ceo%3AkennisregistratieToelichting%20%3Ftoelichting.%20%7D%0A%7D%0AGROUP%20BY%20%3FbouwstijlLabel%20%3Fzuiverheid%20%3Ftoelichting%0AORDER%20BY%20DESC(%3Faantal)%0A%0A&endpoint=https%3A%2F%2Fapi.linkeddata.cultureelerfgoed.nl%2Fdatasets%2Frce%2Fcho%2Fservices%2Fcho%2Fsparql&requestMethod=POST&tabTitle=Query&headers=%7B%7D&contentTypeConstruct=application%2Fn-triples%2C*%2F*%3Bq%3D0.9&contentTypeSelect=application%2Fsparql-results%2Bjson%2C*%2F*%3Bq%3D0.9&outputFormat=gchart&outputSettings=%7B%22chartConfig%22%3A%7B%22options%22%3A%7B%22annotations%22%3A%7B%22domain%22%3A%7B%22style%22%3A%22line%22%7D%7D%2C%22hAxis%22%3A%7B%22viewWindow%22%3A%7B%22max%22%3Anull%2C%22min%22%3Anull%7D%2C%22useFormatFromData%22%3Atrue%2C%22minValue%22%3Anull%2C%22maxValue%22%3Anull%7D%2C%22legacyScatterChartLabels%22%3Atrue%2C%22title%22%3A%22%22%2C%22tooltip%22%3A%7B%22isHtml%22%3Atrue%7D%2C%22vAxes%22%3A%5B%7B%22viewWindow%22%3A%7B%22max%22%3Anull%2C%22min%22%3Anull%7D%2C%22minValue%22%3Anull%2C%22maxValue%22%3Anull%2C%22useFormatFromData%22%3Atrue%7D%2C%7B%22viewWindow%22%3A%7B%22max%22%3Anull%2C%22min%22%3Anull%7D%2C%22minValue%22%3Anull%2C%22maxValue%22%3Anull%2C%22useFormatFromData%22%3Atrue%7D%5D%2C%22booleanRole%22%3A%22certainty%22%2C%22width%22%3A%22100%25%22%2C%22showRowNumber%22%3Afalse%2C%22sortColumn%22%3A%222%22%2C%22sortAscending%22%3Afalse%2C%22page%22%3A%22enable%22%2C%22pageSize%22%3A%2220%22%2C%22height%22%3A%22100%25%22%7D%2C%22state%22%3A%7B%7D%2C%22view%22%3A%7B%22columns%22%3A%5B0%2C%7B%22sourceColumn%22%3A1%2C%22properties%22%3A%7B%22role%22%3A%22annotation%22%7D%2C%22label%22%3A%22zuiverheid%22%7D%2C2%2C%7B%22sourceColumn%22%3A3%2C%22properties%22%3A%7B%22role%22%3A%22annotation%22%7D%2C%22label%22%3A%22toelichting%22%7D%5D%2C%22rows%22%3Anull%7D%2C%22isDefaultVisualization%22%3Afalse%2C%22chartType%22%3A%22Table%22%7D%7D">
       </query>
-
+<p></p>
       <h3>Verdeling van schildjes over jaartallen (bouwjaar)</h3>
       <query data-config="https://api.linkeddata.cultureelerfgoed.nl/datasets/rce/cho/services/cho/sparql#query=prefix%20ceo%3A%20%3Chttps%3A%2F%2Flinkeddata.cultureelerfgoed.nl%2Fdef%2Fceo%23%3E%0Aprefix%20skos%3A%20%3Chttp%3A%2F%2Fwww.w3.org%2F2004%2F02%2Fskos%2Fcore%23%3E%0Aprefix%20xsd%3A%20%3Chttp%3A%2F%2Fwww.w3.org%2F2001%2FXMLSchema%23%3E%0A%0ASELECT%20%3Fjaar%20(COUNT(DISTINCT%20%3Frijksmonument)%20AS%20%3Faantal)%0AWHERE%20%7B%0A%20%20%3Frijksmonument%20ceo%3AinternationaalKenteken%20true%20%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20ceo%3Arijksmonumentnummer%20%3Frijksmonumentnummer%20%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20ceo%3AheeftGebeurtenis%20%3Fgebeurtenis%20.%0A%0A%20%20%3Fgebeurtenis%20ceo%3AheeftGebeurtenisNaam%2Fskos%3AprefLabel%20%3FgebeurtenisNaam%20.%0A%0A%20%20OPTIONAL%20%7B%0A%20%20%20%20%3Fgebeurtenis%20ceo%3AheeftDatering%20%3Fdatering%20.%0A%20%20%20%20OPTIONAL%20%7B%0A%20%20%20%20%20%20%3Fdatering%20ceo%3AheeftBeginDatering%20%3FbeginDatering%20.%0A%20%20%20%20%20%20%3FbeginDatering%20ceo%3Adatum%20%3FbeginDatum%20.%0ABIND(STR(xsd%3Ainteger(SUBSTR(STR(%3FbeginDatum)%2C%201%2C%204)))%20AS%20%3Fjaar)%20%20%20%20%7D%0A%20%20%7D%0A%0A%20%20FILTER(BOUND(%3Fjaar))%0A%7D%0AGROUP%20BY%20%3Fjaar%0AORDER%20BY%20ASC(%3Fjaar)%0A&endpoint=https%3A%2F%2Fapi.linkeddata.cultureelerfgoed.nl%2Fdatasets%2Frce%2Fcho%2Fservices%2Fcho%2Fsparql&requestMethod=POST&tabTitle=Query&headers=%7B%7D&contentTypeConstruct=application%2Fn-triples%2C*%2F*%3Bq%3D0.9&contentTypeSelect=application%2Fsparql-results%2Bjson%2C*%2F*%3Bq%3D0.9&outputFormat=gchart&outputSettings=%7B%22chartConfig%22%3A%7B%22options%22%3A%7B%22annotations%22%3A%7B%22domain%22%3A%7B%7D%7D%2C%22hAxis%22%3A%7B%22useFormatFromData%22%3Atrue%2C%22minValue%22%3Anull%2C%22maxValue%22%3Anull%2C%22viewWindow%22%3Anull%2C%22viewWindowMode%22%3Anull%2C%22title%22%3A%22%22%2C%22slantedTextAngle%22%3A60%2C%22slantedText%22%3Atrue%7D%2C%22legacyScatterChartLabels%22%3Atrue%2C%22legend%22%3A%22right%22%2C%22title%22%3A%22Per%20jaar%22%2C%22tooltip%22%3A%7B%22isHtml%22%3Atrue%7D%2C%22vAxes%22%3A%5B%7B%22viewWindow%22%3A%7B%22max%22%3Anull%2C%22min%22%3Anull%7D%2C%22minValue%22%3Anull%2C%22maxValue%22%3Anull%2C%22useFormatFromData%22%3Atrue%2C%22logScale%22%3Afalse%7D%2C%7B%22viewWindow%22%3A%7B%22max%22%3Anull%2C%22min%22%3Anull%7D%2C%22minValue%22%3Anull%2C%22maxValue%22%3Anull%2C%22useFormatFromData%22%3Atrue%2C%22logScale%22%3Afalse%7D%5D%2C%22isStacked%22%3Afalse%2C%22booleanRole%22%3A%22certainty%22%2C%22width%22%3A%22100%25%22%2C%22height%22%3A%22100%25%22%2C%22series%22%3A%7B%220%22%3A%7B%22color%22%3A%22%23f1c232%22%7D%7D%7D%2C%22state%22%3A%7B%7D%2C%22view%22%3A%7B%22columns%22%3Anull%2C%22rows%22%3Anull%7D%2C%22isDefaultVisualization%22%3Afalse%2C%22chartType%22%3A%22AreaChart%22%7D%7D">
       </query>
-
-      <!-- Hier komt de geo-kaart -->
+<p></p>
       <h3>Kaart: Rijksmonumenten met blauw-wit schildje</h3>
       <p>
       Deze kaart toont alle rijksmonumenten met een blauw-wit schildje (internationaal kenteken), inclusief locatie, adres, bouwstijl en datering. Klik op een marker voor meer informatie.
@@ -84,26 +130,145 @@
       <query 
       data-config="https://api.linkeddata.cultureelerfgoed.nl/datasets/rce/cho/services/cho/sparql#query=PREFIX%20graph%3A%20%3Chttps%3A%2F%2Flinkeddata.cultureelerfgoed.nl%2Fgraph%2F%3E%0APREFIX%20ceo%3A%20%20%20%3Chttps%3A%2F%2Flinkeddata.cultureelerfgoed.nl%2Fdef%2Fceo%23%3E%0APREFIX%20geo%3A%20%20%20%3Chttp%3A%2F%2Fwww.opengis.net%2Font%2Fgeosparql%23%3E%0APREFIX%20skos%3A%20%20%3Chttp%3A%2F%2Fwww.w3.org%2F2004%2F02%2Fskos%2Fcore%23%3E%0APREFIX%20xsd%3A%20%20%20%3Chttp%3A%2F%2Fwww.w3.org%2F2001%2FXMLSchema%23%3E%0APREFIX%20rdf%3A%20%20%20%3Chttp%3A%2F%2Fwww.w3.org%2F1999%2F02%2F22-rdf-syntax-ns%23%3E%0A%0ASELECT%20DISTINCT%0A%20%20%3Fcho%0A%20%20%3Frijksmonumentnummer%0A%20%20%3Fadres%0A%20%20%3Fgemeente%0A%20%20%3Fprovincie%0A%20%20%3Ffunctie%0A%20%20%3Fomschrijving%0A%20%20%3Fdatering%0A%20%20%3Fbouwstijl%0A%20%20%3Fgeo%0A%20%20%3FgeoLabel%0AWHERE%20%7B%0A%20%20GRAPH%20graph%3Ainstanties-rce%20%7B%0A%20%20%3Fcho%20a%20ceo%3ARijksmonument%20%3B%0A%20%20%20%20ceo%3Arijksmonumentnummer%20%3Frijksmonumentnummer%20%3B%0A%20%20%20%20ceo%3AinternationaalKenteken%20%22true%22%5E%5Exsd%3Aboolean%20%3B%0A%20%20%20%20ceo%3AheeftOmschrijving%20%3FomschrijvingURI%20.%0A%20%20%3FomschrijvingURI%20ceo%3Aomschrijving%20%3Fomschrijving%20%3B%20ceo%3AheeftOmschrijvingstype%20%3Chttps%3A%2F%2Fdata.cultureelerfgoed.nl%2Fterm%2Fid%2Frn%2F0273a12d-7259-4391-aee2-5dac264aebe9%3E%20.%0A%20%20%3Fcho%20ceo%3AheeftBasisregistratieRelatie%20%5B%20ceo%3AheeftBAGRelatie%2Fceo%3AvolledigAdres%20%3Fadres%3B%20ceo%3AheeftGemeente%20%3FgemeenteURI%3B%20ceo%3AheeftProvincie%20%3FprovincieURI%5D%20.%0A%20%20%7D%0A%20%20OPTIONAL%20%7B%3Fcho%20ceo%3AheeftOorspronkelijkeFunctie%2Fceo%3AheeftFunctieNaam%20%3Ffuncties%20.%20%3Ffuncties%20skos%3AprefLabel%20%3Ffunctie_%20.%20BIND(REPLACE(%3Ffunctie_%2C%20%22%5C%5Cs%5C%5C(.*%5C%5C)%7C%5C%5C(.*%5C%5C)%22%2C%20%22%22)%20AS%20%3Ffunctie)%7D%0A%20%20OPTIONAL%20%7B%3Fcho%20ceo%3AheeftStijlEnCultuur%20%3Fsc%20.%20%3Fsc%20ceo%3AheeftStijlEnCultuurNaam%2Fskos%3AprefLabel%20%3Fstijl%20.%20OPTIONAL%20%7B%20%3Fsc%20ceo%3AheeftZuiverheid%2Fskos%3AprefLabel%20%3Fzuiverheid%20.%20%7D%20BIND(CONCAT(COALESCE(%3Fzuiverheid%2C%20''),%20'%20-%20',COALESCE(%3Fstijl%2C''))%20AS%20%3Fbouwstijl)%7D%0A%20%20OPTIONAL%20%7B%3Fcho%20ceo%3AheeftGebeurtenis%20%3Fgebeurtenis%20.%20%3Fgebeurtenis%20ceo%3AheeftGebeurtenisNaam%2Fskos%3AprefLabel%20%3FgebeurtenisNaam%3B%20ceo%3AheeftDatering%20%3FdateringStruct%20.%20FILTER%20CONTAINS(LCASE(%3FgebeurtenisNaam),'vervaardiging')%20%3FdateringStruct%20ceo%3AheeftBeginDatering%2Fceo%3Adatum%20%3FbeginDatum%3B%20ceo%3AheeftEindDatering%2Fceo%3Adatum%20%3FeindDatum%20.%20BIND(CONCAT(STR(YEAR(xsd%3AdateTime(%3FbeginDatum))),'-',STR(YEAR(xsd%3AdateTime(%3FeindDatum))))%20AS%20%3Fdatering)%7D%0A%20%20GRAPH%20graph%3Aowms%20%7B%3FgemeenteURI%20skos%3AprefLabel%20%3Fgemeente%20.%20%3FprovincieURI%20skos%3AprefLabel%20%3Fprovincie%20.%7D%0A%20%20GRAPH%20graph%3Apunten%20%7B%3Fcho%20ceo%3AheeftGeometrie%2Fgeo%3AasWKT%20%3Fgeo%20.%7D%0ABIND(STRDT(CONCAT('%3Cdiv%20style%3D%22background-color%3Argba(0%2C0%2C0%2C.05)%3Bpadding%3A5mm%3B%22%3E','%3Cdiv%20style%3D%22text-align%3Acenter%3B%22%3E','%3Cimg%20src%3D%22https%3A%2F%2Flinkeddata.cultureelerfgoed.nl%2Frce%2FAsset-dataset%2Fassets%2F685193d17ddccf19de4f9d82%22%20alt%3D%22Blauw-wit%20schildje%22%20style%3D%22width%3A40px%3Bheight%3Aauto%3Bmargin-bottom%3A5px%3B%22%20%2F%3E','%3C%2Fdiv%3E','%3Cul%3E','%3Cli%3E%3Cb%3ERijksmonument%3A%20%3C%2Fb%3E%3Ca%20href%3D%22https%3A%2F%2Fmonumentenregister.cultureelerfgoed.nl%2Fmonumenten%2F',STR(%3Frijksmonumentnummer),'%22%20target%3D%22_blank%22%3E',STR(%3Frijksmonumentnummer),'%3C%2Fa%3E%3C%2Fli%3E','%3Cli%3E%3Cb%3EDatering%3A%3C%2Fb%3E%20',COALESCE(%3Fdatering,'-'),'%3C%2Fli%3E','%3Cli%3E%3Cb%3EBouwstijl%3A%3C%2Fb%3E%20',COALESCE(%3Fbouwstijl,'-'),'%3C%2Fli%3E','%3Cli%3E%3Cb%3EAdres%3A%3C%2Fb%3E%20',COALESCE(%3Fadres,'-'),'%3C%2Fli%3E','%3Cli%3E%3Cb%3EFunctie%3A%3C%2Fb%3E%20',COALESCE(%3Ffunctie,'-'),'%3C%2Fli%3E','%3Cli%3E%3Cb%3EGemeente%2FProvincie%3A%3C%2Fb%3E%20',COALESCE(%3Fgemeente,'-'),',%20',COALESCE(%3Fprovincie,'-'),'%3C%2Fli%3E','%3C%2Ful%3E%3Cb%3EOmschrijving%3A%3C%2Fb%3E%3Cbr%3E',IF(STRLEN(STR(%3Fomschrijving))>250,CONCAT(SUBSTR(STR(%3Fomschrijving),1,250),'...%20%3Ca%20href%3D%22https%3A%2F%2Fmonumentenregister.cultureelerfgoed.nl%2Fmonumenten%2F',STR(%3Frijksmonumentnummer),'%22%20target%3D%22_blank%22%3Elees%20verder%3C%2Fa%3E'),STR(%3Fomschrijving)),'%3C%2Fdiv%3E'),rdf%3AHTML)%20AS%20%3FgeoLabel)%7D&endpoint=https%3A%2F%2Fapi.linkeddata.cultureelerfgoed.nl%2Fdatasets%2Frce%2Fcho%2Fservices%2Fcho%2Fsparql&requestMethod=POST&outputFormat=geo">
       </query>
+<p></p>
+<h2>De blauw-witte schildjes</h2>
 
-      <h2>Wat betekent het blauw-witte schildje?</h2>
-      <p>
-        Het schildje geeft aan dat een gebouw, collectie of locatie bijzondere bescherming verdient. Het is verbonden aan het Haags Verdrag van 1954 en wordt in Nederland sinds de jaren zestig toegepast op rijksmonumenten, archieven en musea.
-      </p>
-      <p>
-        Niet elk rijksmonument heeft een schildje. Alleen gebouwen die destijds door de overheid zijn geselecteerd mogen het voeren. De registratie is in 2021 stopgezet, maar bestaande schildjes blijven geldig.
-      </p>
+<p>
+  Het aanbrengen van blauw-witte schildjes op gevels van een selectie van rijksmonumenten, archieven en musea is een analoog systeem dat in Nederland werd ingevoerd naar aanleiding van het Haags Verdrag. 
+</p>
 
-      <h2>Methode en bronnen</h2>
-      <p>
-        Deze datastory is gebaseerd op Linked Open Data uit de Cultureel Erfgoed Objecten (CHO) dataset van de RCE. 
-        We filterden op objecten met <code>internationaalKenteken = true</code> en gebruikten SPARQL-queries om aantallen per provincie, functie en bouwstijl te berekenen.
-      </p>
-      <ul>
-        <li>Dataset: RCE CHO via TriplyDB</li>
-        <li>Thesauri: OWMS voor gemeenten en provincies</li>
-        <li>Kaartdata: geometrie van objecten in CHO</li>
-      </ul>
+<p>
+  Het doel van deze schildjes is om tijdens gewapende conflicten zichtbaar te maken dat een gebouw, cultuurgoed of collectie beschermd is. Vooral in de jaren zestig en zeventig zijn op grote schaal blauw-witte schildjes geplaatst op erfgoedlocaties in Nederland.
+</p>
 
+<h4>Niet elk rijksmonument heeft een schildje</h4>
+<p>
+Veel mensen denken dat elk rijksmonument automatisch een blauw-wit schildje heeft. Dat klopt niet. Het schildje is bedoeld voor gebouwen of locaties die in oorlogstijd bijzondere bescherming verdienen. Dat kunnen monumenten zijn, maar ook moderne gebouwen zoals archieven of musea met waardevolle collecties.
+</p>
+
+<p>
+Je kunt als eigenaar van een rijksmonument geen blauw-wit schildje aanvragen. De toekenning gebeurde vroeger centraal, maar de registratie is inmiddels gestopt. Alleen de toen geselecteerde gebouwen mogen het schildje dragen.
+</p>
+
+
+<h4>Registratie gestopt</h4>
+
+<p>
+  In een brief aan de Tweede Kamer op 13 september 2021 liet de minister van Onderwijs, Cultuur en Wetenschap weten dat de registratie van blauw-witte schildjes in het Rijksmonumentenregister niet langer actief wordt bijgehouden.
+</p>
+
+<p>
+  Wat betekent dit?
+</p>
+
+<ul>
+  <li>Er komen geen nieuwe gebouwen of collecties meer bij op de lijst.</li>
+  <li>Er vindt geen controle plaats op bestaande schildjes of op het gebruik ervan.</li>
+  <li>Heb je een gebouw met een blauw-wit schildje? Dan mag dat gewoon blijven hangen.</li>
+  <li>De beschermde status van het gebouw verandert niet.</li>
+  <li>Nederland blijft voldoen aan het Haags Verdrag.</li>
+</ul>
+<p></p>
+
+<h3>Methodeverantwoording</h3>
+
+<p>
+Voor deze data story zijn rijksmonumenten geselecteerd met behulp van linked open data. De basis is de dataset Cultureel Erfgoed Objecten (CHO) van de Rijksdienst voor het Cultureel Erfgoed (RCE), gepubliceerd via de TriplyDB-omgeving.
+</p>
+
+<h4>Gebruikte datasets</h4>
+<ul>
+  <li>RCE CHO – Cultureel Erfgoed Objecten</li>
+  <li>Grafen: <code>instanties-rce</code>, <code>punten</code> en <code>owms</code></li>
+  <li>OWMS-thesauri voor de naamgeving van gemeenten en provincies</li>
+</ul>
+
+<h4>Hoe is de selectie gemaakt?</h4>
+<ul>
+  <li>Alleen objecten met <code>internationaalKenteken = true</code> zijn meegenomen (dus mét blauw-wit schildje)</li>
+  <li>Functies zijn opgeschoond: tussen haakjes geplaatste aanvullingen zoals <code>(M1)</code> zijn verwijderd</li>
+  <li>Gegevens zoals adres, bouwstijl en datering zijn toegevoegd als ze beschikbaar waren</li>
+  <li>Per provincie en per functie zijn aantallen berekend met <code>GROUP BY</code> en <code>COUNT(DISTINCT)</code></li>
+  <li>De kaart is gebaseerd op puntdata (geometrie) uit de dataset</li>
+</ul>
+
+<h4>Wat zijn de beperkingen?</h4>
+<ul>
+  <li>De registratie van <code>internationaalKenteken</code> is handmatig en mogelijk onvolledig of niet consequent toegepast</li>
+  <li>Niet alle rijksmonumenten met een blauw-wit schildje zijn in de data als zodanig gemarkeerd</li>
+  <li>Functies zijn historisch ingevoerd en kunnen per periode of beheerder verschillen</li>
+  <li>Bij sommige objecten ontbreken gegevens over bouwjaar of bouwstijl; die zijn dan ook niet zichtbaar in de visualisaties</li>
+  <li>Bij functies en stijlen is geen gebruik gemaakt van hiërarchische groepering binnen de thesauri</li>
+</ul>
+
+<h2>Literatuur</h2>
+
+<ul>
+  <li>
+    Comité International de la Croix Bleue. (1954). 
+    <em>Verdrag van Den Haag inzake de bescherming van culturele goederen in geval van een gewapend conflict</em>. UNESCO.
+  </li>
+
+  <li>
+    <a href="https://kennis.cultureelerfgoed.nl/index.php/Haags_Verdrag_1954_en_de_blauw-witte_schildjes">
+      Haags Verdrag 1954 en de blauw-witte schildjes
+    </a>
+  </li>
+
+  <li>
+    <a href="https://wetten.overheid.nl/BWBV0005596/1959-01-14">
+      Verdrag inzake de bescherming van culturele goederen in geval van een gewapend conflict, 's-Gravenhage, 14-05-1954
+    </a>
+  </li>
+
+  <li>
+    <a href="https://www.rijksoverheid.nl/documenten/kamerstukken/2021/09/13/kamerbrief-over-registratie-blauw-witte-schildjes">
+      De brief van de minister aan de Tweede Kamer
+    </a>
+  </li>
+
+  <li>
+    Ministerie van Onderwijs, Cultuur en Wetenschap. (2020). 
+    <em>Een wapen in vredestijd: De uitvoering van het Unesco Haags Verdrag en het gebruik van het blauw‑witte schildje</em>. 
+    UNESCO Nederland. 
+    <a href="https://www.unesco.nl/sites/default/files/2020-06/Unesco%20Adviesrapport%20-%20Een%20wapen%20in%20vredestijd%20-%20Def.pdf">
+      https://www.unesco.nl/sites/default/files/2020-06/Unesco%20Adviesrapport%20-%20Een%20wapen%20in%20vredestijd%20-%20Def.pdf
+    </a>
+  </li>
+
+  <li>
+    Rijksdienst voor het Cultureel Erfgoed. (z.j.). 
+    <em>Monumentenschildje - Cultureelerfgoed.nl</em>. 
+    <a href="https://www.cultureelerfgoed.nl/onderwerpen/internationaal/verdragen">
+      https://www.cultureelerfgoed.nl/onderwerpen/internationaal/verdragen
+    </a>
+  </li>
+
+  <li>
+    Jaarboek Monumentenzorg. (1990). 
+    <em>Het monumentenschildje: symbool met internationale betekenis</em>. DBNL. 
+    <a href="https://www.dbnl.org/tekst/_jaa030199001_01/_jaa030199001_01_0006.php">
+      https://www.dbnl.org/tekst/_jaa030199001_01/_jaa030199001_01_0006.php
+    </a>
+  </li>
+
+  <li>
+    Tantaluskwellingen. (2016). 
+    <em>Monumenten-schildjes: het onbekende symbool</em>. 
+    <a href="https://www.tantaluskwellingen.nl/2016/06/14/monumenten-schildjes/">
+      https://www.tantaluskwellingen.nl/2016/06/14/monumenten-schildjes/
+    </a>
+  </li>
+
+  <li>
+    Wikipedia. (z.j.). 
+    <em>Monumentenschildje</em>. 
+    <a href="http://nl.wikipedia.org/wiki/Monumentenschildje">
+      http://nl.wikipedia.org/wiki/Monumentenschildje
+    </a>
+  </li>
+</ul>
+<p></p>
       <h2>Colofon</h2>
       <p>Deze datastory is gemaakt door de Rijksdienst voor het Cultureel Erfgoed.</p>
     </div>
