@@ -27,9 +27,9 @@ Door datastories te koppelen aan **Linked Open Data** uit de erfgoeddomeinen kun
 
 ---
 
-## Dank aan het IISG
+## Dank aan Triply en Clariah
 
-Deze datastories zijn mede mogelijk gemaakt dankzij de code en ideeën ontwikkeld door het **Internationaal Instituut voor Sociale Geschiedenis (IISG)**. Hun werk heeft de basis gelegd voor de technische en conceptuele opzet die wij bij de RCE verder uitbouwen voor het cultureel erfgoed.
+Deze datastories zijn mede mogelijk gemaakt dankzij de code en ideeën ontwikkeld door het Clariah en Triply. Hun werk heeft de basis gelegd voor de technische en conceptuele opzet die wij bij de RCE gebruiken.
 
 ---
 
