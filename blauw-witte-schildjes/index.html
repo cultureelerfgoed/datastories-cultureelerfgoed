@@ -7,7 +7,7 @@
     <meta name="author" content="Rijksdienst voor het Cultureel Erfgoed">
     
     <!-- Favicon -->
-    <link href="../assets/imgs/rce-logo.png" rel="icon" type="image/png">
+    <link href="../assets/imgs/logo-rce.gif" rel="icon" type="image/gif">
     
     <title>Datastory: Blauw-witte schildjes</title>
 
@@ -18,17 +18,6 @@
     <link href="../assets/css/main.css" rel="stylesheet" type="text/css">
     <link href="../assets/css/stories.min.css" rel="stylesheet" type="text/css">
     <link href="../assets/css/yasgui.bootstrap.css" rel="stylesheet" type="text/css">
-
-    <style>
-      body {
-        font-family: "ROSans", Helvetica, Arial, sans-serif;
-        font-size: 17.6px;
-        line-height: 1.6;
-      }
-      .clear {
-        clear: both;
-      }
-    </style>
   </head>
   
   <body class="withNavbar">
@@ -36,7 +25,7 @@
       <div class="navbar-content">
         <div class="navbar-icon">
           <a class="navbar-brand" href="../">
-            <img alt="RCE Home" src="../assets/imgs/logo-rce.gif" style="height:40px;">
+            <img alt="RCE Home" src="../assets/imgs/rce-logo.png" style="height:40px;">
           </a>
         </div>
         <div class="navbar-title">
@@ -51,45 +40,25 @@
 
       <h1>Beschermd erfgoed: het blauw-witte schildje in Nederland</h1>
       <br>
-      <br>
+      <p>
+        Op 14 mei 1954 werd in Den Haag het Haags Verdrag gesloten over bescherming van cultureel erfgoed in tijden van oorlog. 
+        Het blauw-witte schildje markeert gebouwen en collecties die internationale bescherming genieten.
+      </p>
 
-      <!-- Inleidingstekst -->
       <h2>Inleiding</h2>
+       <h2>Inleiding</h2>
 
-      <img src="../assets/imgs/rijksmonument-schildje.svg"
+      <img src="../assets/imgs/Monumentenschildje_blauw_wit.svg"
            alt="Rijksmonument met blauw schildje"
            style="float: right; margin: 0 0 10px 20px; width: 220px;" />
-
       <p>
-        Op 14 mei 1954 werd in Den Haag een belangrijk verdrag gesloten: het Verdrag inzake de bescherming van culturele goederen in het geval van een gewapend conflict.
-        Dit UNESCO-verdrag heeft één duidelijk doel: cultureel erfgoed beschermen in tijden van oorlog. Denk aan monumenten, musea en andere plekken met historische waarde. Ze mogen niet worden geplunderd, beschadigd of ingenomen.
+        Dit verdrag verplicht landen om cultureel erfgoed zoals monumenten, musea en archieven te beschermen tegen plundering of vernieling tijdens gewapende conflicten. 
+        Het blauw-witte schildje is het officiële herkenningsteken. In Nederland zijn duizenden rijksmonumenten voorzien van zo’n schildje.
+      </p>
+      <p>
+        In deze datastory ziet u hoeveel rijksmonumenten een blauw-wit schildje dragen, waar ze staan, wat hun functie is en hoe deze beschermde status in Nederland wordt toegepast.
       </p>
 
-      <p>
-        Een belangrijk symbool uit dit verdrag is het blauw-witte schildje. Dit herkenningsteken geeft aan dat een gebouw cultureel erfgoed is en bescherming verdient.
-        Ook in Nederland zijn rijksmonumenten voorzien van zo'n schildje. Veel mensen herkennen het niet of weten niet waar het voor staat.
-      </p>
-
-      <div class="clear"></div>
-
-      <h4>Wat je in deze data story vindt</h4>
-
-      <p>
-        In deze data story verkennen we hoe het blauw-witte schildje wordt toegepast in Nederland. We gebruiken linked open data om inzicht te geven in:
-      </p>
-
-      <ul>
-        <li>Welke rijksmonumenten een blauw-witte schildje hebben, of ervoor in aanmerking komen</li>
-        <li>Waar deze monumenten staan</li>
-        <li>Wat hun functie is en welke beschermde status ze hebben</li>
-      </ul>
-
-      <p>
-        We koppelen gegevens over locaties, gebruik en wetgeving aan het internationale verdrag.
-        Zo zie je hoe het blauw-witte schildje past binnen het erfgoedbeleid van Nederland en hoe ons land omgaat met de verantwoordelijkheid om erfgoed te beschermen, ook in tijden van crisis.
-      </p>
-
-      <!-- Bestaande queries -->
       <h3>Overzicht van aantallen schildjes per provincie</h3>
       <query data-query-ref="queries/internationaal-kenteken-per-provincie.rq"></query>
 
@@ -105,13 +74,13 @@
       <h3>Verdeling van schildjes over jaartallen (bouwjaar)</h3>
       <query data-query-ref="queries/verdeling-schildjes-over-jaartallen-bouw.rq"></query>
 
-      <!-- Geo kaart -->
+      <!-- Hier komt de geo-kaart -->
       <h3>Kaart: Rijksmonumenten met blauw-wit schildje</h3>
       <p>
-        Deze kaart toont alle rijksmonumenten met een blauw-wit schildje (internationaal kenteken), inclusief locatie, adres, bouwstijl en datering. Klik op een marker voor meer informatie.
+      Deze kaart toont alle rijksmonumenten met een blauw-wit schildje (internationaal kenteken), inclusief locatie, adres, bouwstijl en datering. Klik op een marker voor meer informatie.
       </p>
       <query 
-        data-config="https://api.linkeddata.cultureelerfgoed.nl/datasets/rce/cho/services/cho/sparql#query=PREFIX%20graph%3A%20%3Chttps%3A%2F%2Flinkeddata.cultureelerfgoed.nl%2Fgraph%2F%3E%0APREFIX%20ceo%3A%20%20%20%3Chttps%3A%2F%2Flinkeddata.cultureelerfgoed.nl%2Fdef%2Fceo%23%3E%0APREFIX%20geo%3A%20%20%20%3Chttp%3A%2F%2Fwww.opengis.net%2Font%2Fgeosparql%23%3E%0APREFIX%20skos%3A%20%20%3Chttp%3A%2F%2Fwww.w3.org%2F2004%2F02%2Fskos%2Fcore%23%3E%0APREFIX%20xsd%3A%20%20%20%3Chttp%3A%2F%2Fwww.w3.org%2F2001%2FXMLSchema%23%3E%0APREFIX%20rdf%3A%20%20%20%3Chttp%3A%2F%2Fwww.w3.org%2F1999%2F02%2F22-rdf-syntax-ns%23%3E%0ASELECT%20DISTINCT%20%3Fcho%20%3Frijksmonumentnummer%20%3Fadres%20%3Fgemeente%20%3Fprovincie%20%3Ffunctie%20%3Fomschrijving%20%3Fdatering%20%3Fbouwstijl%20%3Fgeo%20%3FgeoLabel%20WHERE%20%7B%20GRAPH%20graph%3Ainstanties-rce%20%7B%20%3Fcho%20a%20ceo%3ARijksmonument%20%3B%20ceo%3Arijksmonumentnummer%20%3Frijksmonumentnummer%20%3B%20ceo%3AinternationaalKenteken%20%22true%22%5E%5Exsd%3Aboolean%20%3B%20ceo%3AheeftOmschrijving%20%3FomschrijvingURI%20.%20%3FomschrijvingURI%20ceo%3Aomschrijving%20%3Fomschrijving%20%3B%20ceo%3AheeftOmschrijvingstype%20%3Chttps%3A%2F%2Fdata.cultureelerfgoed.nl%2Fterm%2Fid%2Frn%2F0273a12d-7259-4391-aee2-5dac264aebe9%3E%20.%20%3Fcho%20ceo%3AheeftBasisregistratieRelatie%20%5B%20ceo%3AheeftBAGRelatie%2Fceo%3AvolledigAdres%20%3Fadres%3B%20ceo%3AheeftGemeente%20%3FgemeenteURI%3B%20ceo%3AheeftProvincie%20%3FprovincieURI%5D%20.%20%7D%20OPTIONAL%20%7B%3Fcho%20ceo%3AheeftOorspronkelijkeFunctie%2Fceo%3AheeftFunctieNaam%20%3Ffuncties%20.%20%3Ffuncties%20skos%3AprefLabel%20%3Ffunctie_%20.%20BIND(REPLACE(%3Ffunctie_%2C%20%22%5C%5Cs%5C%5C(.*%5C%5C)%7C%5C%5C(.*%5C%5C)%22%2C%20%22%22)%20AS%20%3Ffunctie)%7D%20OPTIONAL%20%7B%3Fcho%20ceo%3AheeftStijlEnCultuur%20%3Fsc%20.%20%3Fsc%20ceo%3AheeftStijlEnCultuurNaam%2Fskos%3AprefLabel%20%3Fstijl%20.%20OPTIONAL%20%7B%20%3Fsc%20ceo%3AheeftZuiverheid%2Fskos%3AprefLabel%20%3Fzuiverheid%20.%20%7D%20BIND(CONCAT(COALESCE(%3Fzuiverheid%2C%20''),%20'%20-%20',COALESCE(%3Fstijl%2C''))%20AS%20%3Fbouwstijl)%7D%20OPTIONAL%20%7B%3Fcho%20ceo%3AheeftGebeurtenis%20%3Fgebeurtenis%20.%20%3Fgebeurtenis%20ceo%3AheeftGebeurtenisNaam%2Fskos%3AprefLabel%20%3FgebeurtenisNaam%3B%20ceo%3AheeftDatering%20%3FdateringStruct%20.%20FILTER%20CONTAINS(LCASE(%3FgebeurtenisNaam),'vervaardiging')%20%3FdateringStruct%20ceo%3AheeftBeginDatering%2Fceo%3Adatum%20%3FbeginDatum%3B%20ceo%3AheeftEindDatering%2Fceo%3Adatum%20%3FeindDatum%20.%20BIND(CONCAT(STR(YEAR(xsd%3AdateTime(%3FbeginDatum))),'-',STR(YEAR(xsd%3AdateTime(%3FeindDatum))))%20AS%20%3Fdatering)%7D%20GRAPH%20graph%3Aowms%20%7B%3FgemeenteURI%20skos%3AprefLabel%20%3Fgemeente%20.%20%3FprovincieURI%20skos%3AprefLabel%20%3Fprovincie%20.%7D%20GRAPH%20graph%3Apunten%20%7B%3Fcho%20ceo%3AheeftGeometrie%2Fgeo%3AasWKT%20%3Fgeo%20.%7D%20BIND(STRDT(CONCAT('%3Cdiv%20style%3D%22background-color%3Argba(0%2C0%2C0%2C.05)%3Bpadding%3A5mm%3B%22%3E','%3Cdiv%20style%3D%22text-align%3Acenter%3B%22%3E','%3Cimg%20src%3D%22https%3A%2F%2Flinkeddata.cultureelerfgoed.nl%2Frce%2FAsset-dataset%2Fassets%2F685193d17ddccf19de4f9d82%22%20alt%3D%22Blauw-wit%20schildje%22%20style%3D%22width%3A40px%3Bheight%3Aauto%3Bmargin-bottom%3A5px%3B%22%20%2F%3E','%3C%2Fdiv%3E','%3Cul%3E','%3Cli%3E%3Cb%3ERijksmonument%3A%20%3C%2Fb%3E%3Ca%20href%3D%22https%3A%2F%2Fmonumentenregister.cultureelerfgoed.nl%2Fmonumenten%2F',STR(%3Frijksmonumentnummer),'%22%20target%3D%22_blank%22%3E',STR(%3Frijksmonumentnummer),'%3C%2Fa%3E%3C%2Fli%3E','%3Cli%3E%3Cb%3EDatering%3A%3C%2Fb%3E%20',COALESCE(%3Fdatering,'-'),'%3C%2Fli%3E','%3Cli%3E%3Cb%3EBouwstijl%3A%3C%2Fb%3E%20',COALESCE(%3Fbouwstijl,'-'),'%3C%2Fli%3E','%3Cli%3E%3Cb%3EAdres%3A%3C%2Fb%3E%20',COALESCE(%3Fadres,'-'),'%3C%2Fli%3E','%3Cli%3E%3Cb%3EFunctie%3A%3C%2Fb%3E%20',COALESCE(%3Ffunctie,'-'),'%3C%2Fli%3E','%3Cli%3E%3Cb%3EGemeente%2FProvincie%3A%3C%2Fb%3E%20',COALESCE(%3Fgemeente,'-'),',%20',COALESCE(%3Fprovincie,'-'),'%3C%2Fli%3E','%3C%2Ful%3E%3Cb%3EOmschrijving%3A%3C%2Fb%3E%3Cbr%3E',IF(STRLEN(STR(%3Fomschrijving))>250,CONCAT(SUBSTR(STR(%3Fomschrijving),1,250),'...%20%3Ca%20href%3D%22https%3A%2F%2Fmonumentenregister.cultureelerfgoed.nl%2Fmonumenten%2F',STR(%3Frijksmonumentnummer),'%22%20target%3D%22_blank%22%3Elees%20verder%3C%2Fa%3E'),STR(%3Fomschrijving)),'%3C%2Fdiv%3E'),rdf%3AHTML)%20AS%20%3FgeoLabel)%7D&endpoint=https%3A%2F%2Fapi.linkeddata.cultureelerfgoed.nl%2Fdatasets%2Frce%2Fcho%2Fservices%2Fcho%2Fsparql&requestMethod=POST&outputFormat=geo">
+      data-config="https://api.linkeddata.cultureelerfgoed.nl/datasets/rce/cho/services/cho/sparql#query=PREFIX%20graph%3A%20%3Chttps%3A%2F%2Flinkeddata.cultureelerfgoed.nl%2Fgraph%2F%3E%0APREFIX%20ceo%3A%20%20%20%3Chttps%3A%2F%2Flinkeddata.cultureelerfgoed.nl%2Fdef%2Fceo%23%3E%0APREFIX%20geo%3A%20%20%20%3Chttp%3A%2F%2Fwww.opengis.net%2Font%2Fgeosparql%23%3E%0APREFIX%20skos%3A%20%20%3Chttp%3A%2F%2Fwww.w3.org%2F2004%2F02%2Fskos%2Fcore%23%3E%0APREFIX%20xsd%3A%20%20%20%3Chttp%3A%2F%2Fwww.w3.org%2F2001%2FXMLSchema%23%3E%0APREFIX%20rdf%3A%20%20%20%3Chttp%3A%2F%2Fwww.w3.org%2F1999%2F02%2F22-rdf-syntax-ns%23%3E%0A%0ASELECT%20DISTINCT%0A%20%20%3Fcho%0A%20%20%3Frijksmonumentnummer%0A%20%20%3Fadres%0A%20%20%3Fgemeente%0A%20%20%3Fprovincie%0A%20%20%3Ffunctie%0A%20%20%3Fomschrijving%0A%20%20%3Fdatering%0A%20%20%3Fbouwstijl%0A%20%20%3Fgeo%0A%20%20%3FgeoLabel%0AWHERE%20%7B%0A%20%20GRAPH%20graph%3Ainstanties-rce%20%7B%0A%20%20%3Fcho%20a%20ceo%3ARijksmonument%20%3B%0A%20%20%20%20ceo%3Arijksmonumentnummer%20%3Frijksmonumentnummer%20%3B%0A%20%20%20%20ceo%3AinternationaalKenteken%20%22true%22%5E%5Exsd%3Aboolean%20%3B%0A%20%20%20%20ceo%3AheeftOmschrijving%20%3FomschrijvingURI%20.%0A%20%20%3FomschrijvingURI%20ceo%3Aomschrijving%20%3Fomschrijving%20%3B%20ceo%3AheeftOmschrijvingstype%20%3Chttps%3A%2F%2Fdata.cultureelerfgoed.nl%2Fterm%2Fid%2Frn%2F0273a12d-7259-4391-aee2-5dac264aebe9%3E%20.%0A%20%20%3Fcho%20ceo%3AheeftBasisregistratieRelatie%20%5B%20ceo%3AheeftBAGRelatie%2Fceo%3AvolledigAdres%20%3Fadres%3B%20ceo%3AheeftGemeente%20%3FgemeenteURI%3B%20ceo%3AheeftProvincie%20%3FprovincieURI%5D%20.%0A%20%20%7D%0A%20%20OPTIONAL%20%7B%3Fcho%20ceo%3AheeftOorspronkelijkeFunctie%2Fceo%3AheeftFunctieNaam%20%3Ffuncties%20.%20%3Ffuncties%20skos%3AprefLabel%20%3Ffunctie_%20.%20BIND(REPLACE(%3Ffunctie_%2C%20%22%5C%5Cs%5C%5C(.*%5C%5C)%7C%5C%5C(.*%5C%5C)%22%2C%20%22%22)%20AS%20%3Ffunctie)%7D%0A%20%20OPTIONAL%20%7B%3Fcho%20ceo%3AheeftStijlEnCultuur%20%3Fsc%20.%20%3Fsc%20ceo%3AheeftStijlEnCultuurNaam%2Fskos%3AprefLabel%20%3Fstijl%20.%20OPTIONAL%20%7B%20%3Fsc%20ceo%3AheeftZuiverheid%2Fskos%3AprefLabel%20%3Fzuiverheid%20.%20%7D%20BIND(CONCAT(COALESCE(%3Fzuiverheid%2C%20''),%20'%20-%20',COALESCE(%3Fstijl%2C''))%20AS%20%3Fbouwstijl)%7D%0A%20%20OPTIONAL%20%7B%3Fcho%20ceo%3AheeftGebeurtenis%20%3Fgebeurtenis%20.%20%3Fgebeurtenis%20ceo%3AheeftGebeurtenisNaam%2Fskos%3AprefLabel%20%3FgebeurtenisNaam%3B%20ceo%3AheeftDatering%20%3FdateringStruct%20.%20FILTER%20CONTAINS(LCASE(%3FgebeurtenisNaam),'vervaardiging')%20%3FdateringStruct%20ceo%3AheeftBeginDatering%2Fceo%3Adatum%20%3FbeginDatum%3B%20ceo%3AheeftEindDatering%2Fceo%3Adatum%20%3FeindDatum%20.%20BIND(CONCAT(STR(YEAR(xsd%3AdateTime(%3FbeginDatum))),'-',STR(YEAR(xsd%3AdateTime(%3FeindDatum))))%20AS%20%3Fdatering)%7D%0A%20%20GRAPH%20graph%3Aowms%20%7B%3FgemeenteURI%20skos%3AprefLabel%20%3Fgemeente%20.%20%3FprovincieURI%20skos%3AprefLabel%20%3Fprovincie%20.%7D%0A%20%20GRAPH%20graph%3Apunten%20%7B%3Fcho%20ceo%3AheeftGeometrie%2Fgeo%3AasWKT%20%3Fgeo%20.%7D%0ABIND(STRDT(CONCAT('%3Cdiv%20style%3D%22background-color%3Argba(0%2C0%2C0%2C.05)%3Bpadding%3A5mm%3B%22%3E','%3Cdiv%20style%3D%22text-align%3Acenter%3B%22%3E','%3Cimg%20src%3D%22https%3A%2F%2Flinkeddata.cultureelerfgoed.nl%2Frce%2FAsset-dataset%2Fassets%2F685193d17ddccf19de4f9d82%22%20alt%3D%22Blauw-wit%20schildje%22%20style%3D%22width%3A40px%3Bheight%3Aauto%3Bmargin-bottom%3A5px%3B%22%20%2F%3E','%3C%2Fdiv%3E','%3Cul%3E','%3Cli%3E%3Cb%3ERijksmonument%3A%20%3C%2Fb%3E%3Ca%20href%3D%22https%3A%2F%2Fmonumentenregister.cultureelerfgoed.nl%2Fmonumenten%2F',STR(%3Frijksmonumentnummer),'%22%20target%3D%22_blank%22%3E',STR(%3Frijksmonumentnummer),'%3C%2Fa%3E%3C%2Fli%3E','%3Cli%3E%3Cb%3EDatering%3A%3C%2Fb%3E%20',COALESCE(%3Fdatering,'-'),'%3C%2Fli%3E','%3Cli%3E%3Cb%3EBouwstijl%3A%3C%2Fb%3E%20',COALESCE(%3Fbouwstijl,'-'),'%3C%2Fli%3E','%3Cli%3E%3Cb%3EAdres%3A%3C%2Fb%3E%20',COALESCE(%3Fadres,'-'),'%3C%2Fli%3E','%3Cli%3E%3Cb%3EFunctie%3A%3C%2Fb%3E%20',COALESCE(%3Ffunctie,'-'),'%3C%2Fli%3E','%3Cli%3E%3Cb%3EGemeente%2FProvincie%3A%3C%2Fb%3E%20',COALESCE(%3Fgemeente,'-'),',%20',COALESCE(%3Fprovincie,'-'),'%3C%2Fli%3E','%3C%2Ful%3E%3Cb%3EOmschrijving%3A%3C%2Fb%3E%3Cbr%3E',IF(STRLEN(STR(%3Fomschrijving))>250,CONCAT(SUBSTR(STR(%3Fomschrijving),1,250),'...%20%3Ca%20href%3D%22https%3A%2F%2Fmonumentenregister.cultureelerfgoed.nl%2Fmonumenten%2F',STR(%3Frijksmonumentnummer),'%22%20target%3D%22_blank%22%3Elees%20verder%3C%2Fa%3E'),STR(%3Fomschrijving)),'%3C%2Fdiv%3E'),rdf%3AHTML)%20AS%20%3FgeoLabel)%7D&endpoint=https%3A%2F%2Fapi.linkeddata.cultureelerfgoed.nl%2Fdatasets%2Frce%2Fcho%2Fservices%2Fcho%2Fsparql&requestMethod=POST&outputFormat=geo">
       </query>
 
       <h2>Wat betekent het blauw-witte schildje?</h2>
@@ -139,4 +108,16 @@
 
     <!-- Scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/gh/thednp
+    <script src="https://cdn.jsdelivr.net/gh/thednp/bootstrap.native@2.0.24/dist/bootstrap-native-v4.min.js" crossorigin="anonymous"></script>
+    <script src="https://yasgui.triply.cc/yasgui.polyfill.min.js"></script>
+    
+    <!-- Lokale stories.js -->
+    <script src="../assets/js/stories.min.js"></script>
+
+    <script>
+      window.onload = function () {
+        stories();
+      };
+    </script>
+  </body>
+</html>
