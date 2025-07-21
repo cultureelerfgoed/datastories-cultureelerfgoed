@@ -1,24 +1,40 @@
 <!DOCTYPE html>
 <html lang="nl">
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="Beschermd erfgoed: het blauw-witte schildje in Nederland">
-    <meta name="author" content="Rijksdienst voor het Cultureel Erfgoed">
-    
-    <!-- Favicon -->
-    <link href="../assets/imgs/logo-rce.gif" rel="icon" type="image/gif">
-    
-    <title>Datastory: Blauw-witte schildjes</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Beschermd erfgoed: het blauw-witte schildje in Nederland">
+  <meta name="author" content="Rijksdienst voor het Cultureel Erfgoed">
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
-    
-    <!-- Lokale styles -->
-    <link href="../assets/css/main.css" rel="stylesheet" type="text/css">
-    <link href="../assets/css/stories.min.css" rel="stylesheet" type="text/css">
-    <link href="../assets/css/yasgui.bootstrap.css" rel="stylesheet" type="text/css">
-  </head>
+<!-- Open Graph -->
+<meta property="og:title" content="Blauw-witte schildjes in Nederland">
+<meta property="og:description" content="Datastory van de Rijksdienst voor het Cultureel Erfgoed over het Haags Verdrag en het blauw-witte schildje.">
+<meta property="og:image" content="https://cultureelerfgoed.github.io/datastories-cultureelerfgoed/assets/imgs/blauwwit.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:type" content="image/png">
+<meta property="og:type" content="article">
+
+
+  <!-- Canonical URL -->
+<link rel="canonical" href="https://example.com/blauw-witte-schildjes/">
+
+<!-- Robots: index + follow -->
+<meta name="robots" content="index,follow">
+  <!-- Favicon -->
+  <link href="../assets/imgs/logo-rce.gif" rel="icon" type="image/gif">
+
+  <title>Datastory: Blauw-witte schildjes</title>
+
+  <!-- Bootstrap 5 CSS (vervangt oude alpha-versie) -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Lokale styles -->
+  <link href="../assets/css/main.css" rel="stylesheet" type="text/css">
+  <link href="../assets/css/stories.min.css" rel="stylesheet" type="text/css">
+  <link href="../assets/css/yasgui.bootstrap.css" rel="stylesheet" type="text/css">
+</head>
+
   
   <body class="withNavbar">
     <nav class="navbar fixed-top">
@@ -42,9 +58,11 @@
       <br>
       <h2>Inleiding</h2>
 
-      <img src="../assets/imgs/Monumentenschildje_blauw_wit.svg"
-           alt="Rijksmonument met blauw schildje"
-           style="float: right; margin: 0 0 10px 20px; width: 220px;" />
+<img src="../assets/imgs/Monumentenschildje_blauw_wit.svg"
+     alt="Rijksmonument met blauw schildje"
+     class="img-fluid float-end ms-3 mb-3"
+     width="220">
+
 <p>
   Op 14 mei 1954 werd in Den Haag een belangrijk verdrag gesloten: het Verdrag inzake de bescherming van culturele goederen in het geval van een gewapend conflict.
   Dit UNESCO-verdrag heeft één duidelijk doel: cultureel erfgoed beschermen in tijden van oorlog. Denk aan monumenten, musea en andere plekken met historische waarde. Ze mogen niet worden geplunderd, beschadigd of ingenomen.
@@ -55,7 +73,7 @@
   Ook in Nederland zijn rijksmonumenten voorzien van zo'n schildje. Veel mensen herkennen het niet of weten niet waar het voor staat.
 </p>
 
-<h4>Wat je in deze data story vindt</h4>
+<h3>Wat je in deze data story vindt</h3>
 
 <p>
   In deze data story verkennen we hoe het blauw-witte schildje wordt toegepast in Nederland. We gebruiken linked open data om inzicht te geven in:
@@ -86,7 +104,7 @@
   Op onze kennisbank vindt u een uitgebreidere toelichting op het  <a href="https://kennis.cultureelerfgoed.nl/index.php/Haags_Verdrag_1954_en_de_blauw-witte_schildjes" target="_blank"> Haags Verdrag 1954 en de blauw-witte schildjes</a>.
 </p>
 
-<h4>Wat regelt het verdrag?</h4>
+<h3>Wat regelt het verdrag?</h3>
 
 <p>
   Het verdrag verplicht landen om erfgoed te beschermen, tenzij er sprake is van militaire noodzaak. Dat kan bijvoorbeeld door gebouwen te markeren met het blauw-witte schildje, door evacuatie van voorwerpen of door speciale militaire instructies.
@@ -96,40 +114,58 @@
   Ook wil het verdrag voorkomen dat cultuurgoederen uit bezette gebieden worden uitgevoerd. Als dat toch gebeurt, moeten landen deze goederen teruggeven aan het land van herkomst zodra dat veilig kan.
 </p>
 
-<h4>Hoe zit het in Nederland?</h4>
+<h3>Hoe zit het in Nederland?</h3>
 
 <p>
   Nederland heeft het verdrag ondertekend. Er zijn wereldwijd 133 landen aangesloten bij het verdrag.
 </p>
 
 <p></p>
-      <h3>Overzicht van aantallen schildjes per provincie</h3>
+      <h2>Overzicht van aantallen schildjes per provincie</h2>
       <query data-config="https://api.linkeddata.cultureelerfgoed.nl/datasets/rce/cho/services/cho/sparql#query=PREFIX%20graph%3A%20%3Chttps%3A%2F%2Flinkeddata.cultureelerfgoed.nl%2Fgraph%2F%3E%0APREFIX%20ceo%3A%20%20%20%3Chttps%3A%2F%2Flinkeddata.cultureelerfgoed.nl%2Fdef%2Fceo%23%3E%0APREFIX%20skos%3A%20%20%3Chttp%3A%2F%2Fwww.w3.org%2F2004%2F02%2Fskos%2Fcore%23%3E%0APREFIX%20xsd%3A%20%20%20%3Chttp%3A%2F%2Fwww.w3.org%2F2001%2FXMLSchema%23%3E%0A%0ASELECT%20%3Fprovincie%20(COUNT(DISTINCT%20%3Fcho)%20AS%20%3FaantalMonumentenMetKenteken)%0AWHERE%20%7B%0A%0A%20%20GRAPH%20graph%3Ainstanties-rce%20%7B%0A%20%20%20%20%3Fcho%20a%20ceo%3ARijksmonument%20%3B%0A%20%20%20%20%20%20%20%20%20ceo%3AinternationaalKenteken%20%22true%22%5E%5Exsd%3Aboolean%20%3B%0A%20%20%20%20%20%20%20%20%20ceo%3AheeftBasisregistratieRelatie%20%5B%0A%20%20%20%20%20%20%20%20%20%20%20ceo%3AheeftProvincie%20%3FprovincieURI%0A%20%20%20%20%20%20%20%20%20%5D%20.%0A%20%20%7D%0A%0A%20%20GRAPH%20graph%3Aowms%20%7B%0A%20%20%20%20%3FprovincieURI%20skos%3AprefLabel%20%3Fprovincie%20.%0A%20%20%7D%0A%0A%7D%0AGROUP%20BY%20%3Fprovincie%0AORDER%20BY%20DESC(%3FaantalMonumentenMetKenteken)&endpoint=https%3A%2F%2Fapi.linkeddata.cultureelerfgoed.nl%2Fdatasets%2Frce%2Fcho%2Fservices%2Fcho%2Fsparql&requestMethod=POST&tabTitle=Query&headers=%7B%7D&contentTypeConstruct=application%2Fn-triples%2C*%2F*%3Bq%3D0.9&contentTypeSelect=application%2Fsparql-results%2Bjson%2C*%2F*%3Bq%3D0.9&outputFormat=gchart&outputSettings=%7B%22chartConfig%22%3A%7B%22options%22%3A%7B%22legacyScatterChartLabels%22%3Atrue%2C%22tooltip%22%3A%7B%22isHtml%22%3Atrue%2C%22ignoreBounds%22%3Atrue%7D%2C%22isStacked%22%3Afalse%2C%22booleanRole%22%3A%22certainty%22%2C%22vAxes%22%3A%5B%7B%22minValue%22%3Anull%2C%22maxValue%22%3Anull%2C%22viewWindow%22%3Anull%2C%22viewWindowMode%22%3Anull%2C%22useFormatFromData%22%3Atrue%7D%2C%7B%22useFormatFromData%22%3Atrue%7D%5D%2C%22hAxis%22%3A%7B%22viewWindow%22%3A%7B%22max%22%3Anull%2C%22min%22%3Anull%7D%2C%22minValue%22%3Anull%2C%22maxValue%22%3Anull%2C%22useFormatFromData%22%3Atrue%2C%22title%22%3A%22Aantal%22%7D%2C%22legend%22%3A%22right%22%2C%22width%22%3A%22100%25%22%2C%22height%22%3A%22100%25%22%2C%22title%22%3A%22Overzicht%20per%20provincie%22%7D%2C%22state%22%3A%7B%7D%2C%22view%22%3A%7B%22columns%22%3Anull%2C%22rows%22%3Anull%7D%2C%22isDefaultVisualization%22%3Afalse%2C%22chartType%22%3A%22BarChart%22%7D%7D">
       </query>
+      <div class="alert alert-warning d-none queryError">
+  De data kon niet geladen worden. Probeer het later opnieuw.
+</div>
 <p></p>    
-      <h3>Top 20 gemeenten met de meeste rijksmonumenten</h3>
+      <h2>Top 20 gemeenten met de meeste rijksmonumenten</h2>
       <query data-config="https://api.linkeddata.cultureelerfgoed.nl/datasets/rce/cho/services/cho/sparql#query=prefix%20ceo%3A%20%3Chttps%3A%2F%2Flinkeddata.cultureelerfgoed.nl%2Fdef%2Fceo%23%3E%0Aprefix%20skos%3A%20%3Chttp%3A%2F%2Fwww.w3.org%2F2004%2F02%2Fskos%2Fcore%23%3E%0APREFIX%20owms%3A%20%20%3Chttps%3A%2F%2Flinkeddata.cultureelerfgoed.nl%2Fgraph%2Fowms%3E%0Aprefix%20rn%3A%20%3Chttps%3A%2F%2Fdata.cultureelerfgoed.nl%2Fterm%2Fid%2Frn%2F%3E%0A%0ASELECT%20%3Fgemeente%20(COUNT(DISTINCT%20%3Frijksmonument)%20AS%20%3Faantal)%0AWHERE%20%7B%0A%20%20%3Frijksmonument%0A%20%20%20%20ceo%3AinternationaalKenteken%20true%20%3B%0A%20%20%20%20%20%20%20%20%20%20ceo%3AheeftJuridischeStatus%20rn%3Ab2d9a59a-fe1e-4552-9a05-3c2acddff864%20%3B%0A%20%20%20%20ceo%3Arijksmonumentnummer%20%3Frijksmonumentnummer%20%3B%0A%20%20%20%20ceo%3AheeftBasisregistratieRelatie%20%3Fbasisrel%20.%0A%0A%20%20%3Fbasisrel%0A%20%20%20%20ceo%3AheeftGemeente%20%3Fgem%20%3B%0A%20%20%20%20ceo%3AheeftProvincie%20%3Fprov%20.%0A%0A%20%20GRAPH%20owms%3A%20%7B%0A%20%20%20%20%3Fgem%20%20skos%3AprefLabel%20%3Fgemeente%20.%0A%20%20%20%20%3Fprov%20skos%3AprefLabel%20%3Fprovincie%20.%0A%20%20%7D%0A%7D%0AGROUP%20BY%20%3Fgemeente%0AORDER%20BY%20DESC(%3Faantal)%0ALIMIT%2020%0A&endpoint=https%3A%2F%2Fapi.linkeddata.cultureelerfgoed.nl%2Fdatasets%2Frce%2Fcho%2Fservices%2Fcho%2Fsparql&requestMethod=POST&tabTitle=Query&headers=%7B%7D&contentTypeConstruct=application%2Fn-triples%2C*%2F*%3Bq%3D0.9&contentTypeSelect=application%2Fsparql-results%2Bjson%2C*%2F*%3Bq%3D0.9&outputFormat=gchart&outputSettings=%7B%22chartConfig%22%3A%7B%22options%22%3A%7B%22legacyScatterChartLabels%22%3Atrue%2C%22tooltip%22%3A%7B%22isHtml%22%3Atrue%2C%22ignoreBounds%22%3Afalse%7D%2C%22isStacked%22%3Afalse%2C%22booleanRole%22%3A%22certainty%22%2C%22vAxes%22%3A%5B%7B%22minValue%22%3Anull%2C%22maxValue%22%3Anull%2C%22viewWindow%22%3Anull%2C%22viewWindowMode%22%3Anull%2C%22useFormatFromData%22%3Atrue%7D%2C%7B%22useFormatFromData%22%3Atrue%7D%5D%2C%22hAxis%22%3A%7B%22viewWindow%22%3A%7B%22max%22%3Anull%2C%22min%22%3Anull%7D%2C%22minValue%22%3Anull%2C%22maxValue%22%3Anull%2C%22useFormatFromData%22%3Atrue%2C%22title%22%3A%22Aantal%22%7D%2C%22legend%22%3A%22right%22%2C%22width%22%3A%22100%25%22%2C%22height%22%3A%22100%25%22%2C%22title%22%3A%22Overzicht%20per%20gemeente%20-%20top%2020%22%7D%2C%22state%22%3A%7B%7D%2C%22view%22%3A%7B%22columns%22%3Anull%2C%22rows%22%3Anull%7D%2C%22isDefaultVisualization%22%3Afalse%2C%22chartType%22%3A%22BarChart%22%7D%7D">
       </query>
+      <div class="alert alert-warning d-none queryError">
+  De data kon niet geladen worden. Probeer het later opnieuw.
+</div>
 <p></p>
-      <h3>Blauw-witte schildjes per type rijksmonument</h3>
+      <h2>Blauw-witte schildjes per type rijksmonument</h2>
       <query data-config="https://api.linkeddata.cultureelerfgoed.nl/datasets/rce/cho/services/cho/sparql#query=PREFIX%20graph%3A%20%3Chttps%3A%2F%2Flinkeddata.cultureelerfgoed.nl%2Fgraph%2F%3E%0APREFIX%20ceo%3A%20%20%20%3Chttps%3A%2F%2Flinkeddata.cultureelerfgoed.nl%2Fdef%2Fceo%23%3E%0APREFIX%20skos%3A%20%20%3Chttp%3A%2F%2Fwww.w3.org%2F2004%2F02%2Fskos%2Fcore%23%3E%0APREFIX%20xsd%3A%20%20%20%3Chttp%3A%2F%2Fwww.w3.org%2F2001%2FXMLSchema%23%3E%0A%0ASELECT%20%3Ffunctie%20(COUNT(DISTINCT%20%3Fcho)%20AS%20%3Faantal)%0AWHERE%20%7B%0A%20%20GRAPH%20graph%3Ainstanties-rce%20%7B%0A%20%20%20%20%3Fcho%20a%20ceo%3ARijksmonument%20%3B%0A%20%20%20%20%20%20%20%20%20ceo%3AinternationaalKenteken%20%22true%22%5E%5Exsd%3Aboolean%20.%0A%0A%20%20%20%20%23%20Functie%20is%20optioneel%2C%20maar%20we%20willen%20alleen%20gevallen%20waar%20hij%20bestaat%0A%20%20%20%20%3Fcho%20ceo%3AheeftOorspronkelijkeFunctie%2Fceo%3AheeftFunctieNaam%20%3Ffuncties.%0A%20%20%20%20%3Fcho%20ceo%3AheeftOorspronkelijkeFunctie%20%3Fstandpunt_functie.%0A%20%20%20%20%3Fstandpunt_functie%20ceo%3Ahoofdfunctie%20true.%0A%20%20%20%20%3Ffuncties%20skos%3AprefLabel%20%3Ffunctie_%20.%0A%20%20%20%20%20%20%20%20BIND(REPLACE(%3Ffunctie_%2C%20%22%5C%5Cs%5C%5C(.*%5C%5C)%7C%5C%5C(.*%5C%5C)%22%2C%20%22%22)%20AS%20%3Ffunctie)%0A%20%20%7D%0A%7D%0AGROUP%20BY%20%3Ffunctie%0AORDER%20BY%20DESC(%3Faantal)%0A&endpoint=https%3A%2F%2Fapi.linkeddata.cultureelerfgoed.nl%2Fdatasets%2Frce%2Fcho%2Fservices%2Fcho%2Fsparql&requestMethod=POST&tabTitle=Query&headers=%7B%7D&contentTypeConstruct=application%2Fn-triples%2C*%2F*%3Bq%3D0.9&contentTypeSelect=application%2Fsparql-results%2Bjson%2C*%2F*%3Bq%3D0.9&outputFormat=gchart&outputSettings=%7B%22chartConfig%22%3A%7B%22options%22%3A%7B%22legacyScatterChartLabels%22%3Atrue%2C%22title%22%3A%22Overzicht%20per%20functie%22%2C%22tooltip%22%3A%7B%22isHtml%22%3Atrue%7D%2C%22is3D%22%3Atrue%2C%22pieHole%22%3A0%2C%22booleanRole%22%3A%22certainty%22%2C%22vAxes%22%3A%5B%7B%22viewWindow%22%3A%7B%22max%22%3Anull%2C%22min%22%3Anull%7D%2C%22minValue%22%3Anull%2C%22maxValue%22%3Anull%2C%22useFormatFromData%22%3Atrue%7D%2C%7B%22viewWindow%22%3A%7B%22max%22%3Anull%2C%22min%22%3Anull%7D%2C%22minValue%22%3Anull%2C%22maxValue%22%3Anull%2C%22useFormatFromData%22%3Atrue%7D%5D%2C%22hAxis%22%3A%7B%22viewWindow%22%3A%7B%22max%22%3Anull%2C%22min%22%3Anull%7D%2C%22minValue%22%3Anull%2C%22maxValue%22%3Anull%2C%22useFormatFromData%22%3Atrue%7D%2C%22width%22%3A%22100%25%22%2C%22height%22%3A%22100%25%22%7D%2C%22state%22%3A%7B%7D%2C%22view%22%3A%7B%22columns%22%3Anull%2C%22rows%22%3Anull%7D%2C%22isDefaultVisualization%22%3Afalse%2C%22chartType%22%3A%22PieChart%22%7D%7D">
       </query>
+      <div class="alert alert-warning d-none queryError">
+  De data kon niet geladen worden. Probeer het later opnieuw.
+</div>
 <p></p>
-      <h3>Bouwstijlen van rijksmonumenten met blauw-wit schildje</h3>
+      <h2>Bouwstijlen van rijksmonumenten met blauw-wit schildje</h2>
       <query data-config="https://api.linkeddata.cultureelerfgoed.nl/datasets/rce/cho/services/cho/sparql#query=prefix%20ceo%3A%20%3Chttps%3A%2F%2Flinkeddata.cultureelerfgoed.nl%2Fdef%2Fceo%23%3E%0Aprefix%20skos%3A%20%3Chttp%3A%2F%2Fwww.w3.org%2F2004%2F02%2Fskos%2Fcore%23%3E%0A%0ASELECT%20%3FbouwstijlLabel%20%3Fzuiverheid%20(COUNT(DISTINCT%20%3Frijksmonument)%20AS%20%3Faantal)%20%3Ftoelichting%0AWHERE%20%7B%0A%20%20%3Frijksmonument%20ceo%3AinternationaalKenteken%20true%20%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20ceo%3Arijksmonumentnummer%20%3Frijksmonumentnummer%20%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20ceo%3AheeftStijlEnCultuur%20%3Fbouwstijl%20.%0A%0A%20%20%3Fbouwstijl%20ceo%3AheeftStijlEnCultuurNaam%20%3FbouwstijlUri%20.%0A%20%20%3FbouwstijlUri%20skos%3AprefLabel%20%3FbouwstijlLabel%20.%0A%20%20%3Fbouwstijl%20ceo%3AheeftZuiverheid%2Fskos%3AprefLabel%20%3Fzuiverheid%20.%0A%0A%20%20OPTIONAL%20%7B%20%3Fbouwstijl%20ceo%3AkennisregistratieToelichting%20%3Ftoelichting.%20%7D%0A%7D%0AGROUP%20BY%20%3FbouwstijlLabel%20%3Fzuiverheid%20%3Ftoelichting%0AORDER%20BY%20DESC(%3Faantal)%0A%0A&endpoint=https%3A%2F%2Fapi.linkeddata.cultureelerfgoed.nl%2Fdatasets%2Frce%2Fcho%2Fservices%2Fcho%2Fsparql&requestMethod=POST&tabTitle=Query&headers=%7B%7D&contentTypeConstruct=application%2Fn-triples%2C*%2F*%3Bq%3D0.9&contentTypeSelect=application%2Fsparql-results%2Bjson%2C*%2F*%3Bq%3D0.9&outputFormat=gchart&outputSettings=%7B%22chartConfig%22%3A%7B%22options%22%3A%7B%22annotations%22%3A%7B%22domain%22%3A%7B%22style%22%3A%22line%22%7D%7D%2C%22hAxis%22%3A%7B%22viewWindow%22%3A%7B%22max%22%3Anull%2C%22min%22%3Anull%7D%2C%22useFormatFromData%22%3Atrue%2C%22minValue%22%3Anull%2C%22maxValue%22%3Anull%7D%2C%22legacyScatterChartLabels%22%3Atrue%2C%22title%22%3A%22%22%2C%22tooltip%22%3A%7B%22isHtml%22%3Atrue%7D%2C%22vAxes%22%3A%5B%7B%22viewWindow%22%3A%7B%22max%22%3Anull%2C%22min%22%3Anull%7D%2C%22minValue%22%3Anull%2C%22maxValue%22%3Anull%2C%22useFormatFromData%22%3Atrue%7D%2C%7B%22viewWindow%22%3A%7B%22max%22%3Anull%2C%22min%22%3Anull%7D%2C%22minValue%22%3Anull%2C%22maxValue%22%3Anull%2C%22useFormatFromData%22%3Atrue%7D%5D%2C%22booleanRole%22%3A%22certainty%22%2C%22width%22%3A%22100%25%22%2C%22showRowNumber%22%3Afalse%2C%22sortColumn%22%3A%222%22%2C%22sortAscending%22%3Afalse%2C%22page%22%3A%22enable%22%2C%22pageSize%22%3A%2220%22%2C%22height%22%3A%22100%25%22%7D%2C%22state%22%3A%7B%7D%2C%22view%22%3A%7B%22columns%22%3A%5B0%2C%7B%22sourceColumn%22%3A1%2C%22properties%22%3A%7B%22role%22%3A%22annotation%22%7D%2C%22label%22%3A%22zuiverheid%22%7D%2C2%2C%7B%22sourceColumn%22%3A3%2C%22properties%22%3A%7B%22role%22%3A%22annotation%22%7D%2C%22label%22%3A%22toelichting%22%7D%5D%2C%22rows%22%3Anull%7D%2C%22isDefaultVisualization%22%3Afalse%2C%22chartType%22%3A%22Table%22%7D%7D">
       </query>
+      <div class="alert alert-warning d-none queryError">
+  De data kon niet geladen worden. Probeer het later opnieuw.
+</div>
 <p></p>
-      <h3>Verdeling van schildjes over jaartallen (bouwjaar)</h3>
+      <h2>Verdeling van schildjes over jaartallen (bouwjaar)</h2>
       <query data-config="https://api.linkeddata.cultureelerfgoed.nl/datasets/rce/cho/services/cho/sparql#query=prefix%20ceo%3A%20%3Chttps%3A%2F%2Flinkeddata.cultureelerfgoed.nl%2Fdef%2Fceo%23%3E%0Aprefix%20skos%3A%20%3Chttp%3A%2F%2Fwww.w3.org%2F2004%2F02%2Fskos%2Fcore%23%3E%0Aprefix%20xsd%3A%20%3Chttp%3A%2F%2Fwww.w3.org%2F2001%2FXMLSchema%23%3E%0A%0ASELECT%20%3Fjaar%20(COUNT(DISTINCT%20%3Frijksmonument)%20AS%20%3Faantal)%0AWHERE%20%7B%0A%20%20%3Frijksmonument%20ceo%3AinternationaalKenteken%20true%20%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20ceo%3Arijksmonumentnummer%20%3Frijksmonumentnummer%20%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20ceo%3AheeftGebeurtenis%20%3Fgebeurtenis%20.%0A%0A%20%20%3Fgebeurtenis%20ceo%3AheeftGebeurtenisNaam%2Fskos%3AprefLabel%20%3FgebeurtenisNaam%20.%0A%0A%20%20OPTIONAL%20%7B%0A%20%20%20%20%3Fgebeurtenis%20ceo%3AheeftDatering%20%3Fdatering%20.%0A%20%20%20%20OPTIONAL%20%7B%0A%20%20%20%20%20%20%3Fdatering%20ceo%3AheeftBeginDatering%20%3FbeginDatering%20.%0A%20%20%20%20%20%20%3FbeginDatering%20ceo%3Adatum%20%3FbeginDatum%20.%0ABIND(STR(xsd%3Ainteger(SUBSTR(STR(%3FbeginDatum)%2C%201%2C%204)))%20AS%20%3Fjaar)%20%20%20%20%7D%0A%20%20%7D%0A%0A%20%20FILTER(BOUND(%3Fjaar))%0A%7D%0AGROUP%20BY%20%3Fjaar%0AORDER%20BY%20ASC(%3Fjaar)%0A&endpoint=https%3A%2F%2Fapi.linkeddata.cultureelerfgoed.nl%2Fdatasets%2Frce%2Fcho%2Fservices%2Fcho%2Fsparql&requestMethod=POST&tabTitle=Query&headers=%7B%7D&contentTypeConstruct=application%2Fn-triples%2C*%2F*%3Bq%3D0.9&contentTypeSelect=application%2Fsparql-results%2Bjson%2C*%2F*%3Bq%3D0.9&outputFormat=gchart&outputSettings=%7B%22chartConfig%22%3A%7B%22options%22%3A%7B%22annotations%22%3A%7B%22domain%22%3A%7B%7D%7D%2C%22hAxis%22%3A%7B%22useFormatFromData%22%3Atrue%2C%22minValue%22%3Anull%2C%22maxValue%22%3Anull%2C%22viewWindow%22%3Anull%2C%22viewWindowMode%22%3Anull%2C%22title%22%3A%22%22%2C%22slantedTextAngle%22%3A60%2C%22slantedText%22%3Atrue%7D%2C%22legacyScatterChartLabels%22%3Atrue%2C%22legend%22%3A%22right%22%2C%22title%22%3A%22Per%20jaar%22%2C%22tooltip%22%3A%7B%22isHtml%22%3Atrue%7D%2C%22vAxes%22%3A%5B%7B%22viewWindow%22%3A%7B%22max%22%3Anull%2C%22min%22%3Anull%7D%2C%22minValue%22%3Anull%2C%22maxValue%22%3Anull%2C%22useFormatFromData%22%3Atrue%2C%22logScale%22%3Afalse%7D%2C%7B%22viewWindow%22%3A%7B%22max%22%3Anull%2C%22min%22%3Anull%7D%2C%22minValue%22%3Anull%2C%22maxValue%22%3Anull%2C%22useFormatFromData%22%3Atrue%2C%22logScale%22%3Afalse%7D%5D%2C%22isStacked%22%3Afalse%2C%22booleanRole%22%3A%22certainty%22%2C%22width%22%3A%22100%25%22%2C%22height%22%3A%22100%25%22%2C%22series%22%3A%7B%220%22%3A%7B%22color%22%3A%22%23f1c232%22%7D%7D%7D%2C%22state%22%3A%7B%7D%2C%22view%22%3A%7B%22columns%22%3Anull%2C%22rows%22%3Anull%7D%2C%22isDefaultVisualization%22%3Afalse%2C%22chartType%22%3A%22AreaChart%22%7D%7D">
       </query>
+      <div class="alert alert-warning d-none queryError">
+  De data kon niet geladen worden. Probeer het later opnieuw.
+</div>
 <p></p>
-      <h3>Kaart: Rijksmonumenten met blauw-wit schildje</h3>
+      <h2>Kaart: Rijksmonumenten met blauw-wit schildje</h2>
       <p>
       Deze kaart toont alle rijksmonumenten met een blauw-wit schildje (internationaal kenteken), inclusief locatie, adres, bouwstijl en datering. Klik op een marker voor meer informatie.
       </p>
       <query 
       data-config="https://api.linkeddata.cultureelerfgoed.nl/datasets/rce/cho/services/cho/sparql#query=PREFIX%20graph%3A%20%3Chttps%3A%2F%2Flinkeddata.cultureelerfgoed.nl%2Fgraph%2F%3E%0APREFIX%20ceo%3A%20%20%20%3Chttps%3A%2F%2Flinkeddata.cultureelerfgoed.nl%2Fdef%2Fceo%23%3E%0APREFIX%20geo%3A%20%20%20%3Chttp%3A%2F%2Fwww.opengis.net%2Font%2Fgeosparql%23%3E%0APREFIX%20skos%3A%20%20%3Chttp%3A%2F%2Fwww.w3.org%2F2004%2F02%2Fskos%2Fcore%23%3E%0APREFIX%20xsd%3A%20%20%20%3Chttp%3A%2F%2Fwww.w3.org%2F2001%2FXMLSchema%23%3E%0APREFIX%20rdf%3A%20%20%20%3Chttp%3A%2F%2Fwww.w3.org%2F1999%2F02%2F22-rdf-syntax-ns%23%3E%0A%0ASELECT%20DISTINCT%0A%20%20%3Fcho%0A%20%20%3Frijksmonumentnummer%0A%20%20%3Fadres%0A%20%20%3Fgemeente%0A%20%20%3Fprovincie%0A%20%20%3Ffunctie%0A%20%20%3Fomschrijving%0A%20%20%3Fdatering%0A%20%20%3Fbouwstijl%0A%20%20%3Fgeo%0A%20%20%3FgeoLabel%0AWHERE%20%7B%0A%20%20GRAPH%20graph%3Ainstanties-rce%20%7B%0A%20%20%3Fcho%20a%20ceo%3ARijksmonument%20%3B%0A%20%20%20%20ceo%3Arijksmonumentnummer%20%3Frijksmonumentnummer%20%3B%0A%20%20%20%20ceo%3AinternationaalKenteken%20%22true%22%5E%5Exsd%3Aboolean%20%3B%0A%20%20%20%20ceo%3AheeftOmschrijving%20%3FomschrijvingURI%20.%0A%20%20%3FomschrijvingURI%20ceo%3Aomschrijving%20%3Fomschrijving%20%3B%20ceo%3AheeftOmschrijvingstype%20%3Chttps%3A%2F%2Fdata.cultureelerfgoed.nl%2Fterm%2Fid%2Frn%2F0273a12d-7259-4391-aee2-5dac264aebe9%3E%20.%0A%20%20%3Fcho%20ceo%3AheeftBasisregistratieRelatie%20%5B%20ceo%3AheeftBAGRelatie%2Fceo%3AvolledigAdres%20%3Fadres%3B%20ceo%3AheeftGemeente%20%3FgemeenteURI%3B%20ceo%3AheeftProvincie%20%3FprovincieURI%5D%20.%0A%20%20%7D%0A%20%20OPTIONAL%20%7B%3Fcho%20ceo%3AheeftOorspronkelijkeFunctie%2Fceo%3AheeftFunctieNaam%20%3Ffuncties%20.%20%3Ffuncties%20skos%3AprefLabel%20%3Ffunctie_%20.%20BIND(REPLACE(%3Ffunctie_%2C%20%22%5C%5Cs%5C%5C(.*%5C%5C)%7C%5C%5C(.*%5C%5C)%22%2C%20%22%22)%20AS%20%3Ffunctie)%7D%0A%20%20OPTIONAL%20%7B%3Fcho%20ceo%3AheeftStijlEnCultuur%20%3Fsc%20.%20%3Fsc%20ceo%3AheeftStijlEnCultuurNaam%2Fskos%3AprefLabel%20%3Fstijl%20.%20OPTIONAL%20%7B%20%3Fsc%20ceo%3AheeftZuiverheid%2Fskos%3AprefLabel%20%3Fzuiverheid%20.%20%7D%20BIND(CONCAT(COALESCE(%3Fzuiverheid%2C%20''),%20'%20-%20',COALESCE(%3Fstijl%2C''))%20AS%20%3Fbouwstijl)%7D%0A%20%20OPTIONAL%20%7B%3Fcho%20ceo%3AheeftGebeurtenis%20%3Fgebeurtenis%20.%20%3Fgebeurtenis%20ceo%3AheeftGebeurtenisNaam%2Fskos%3AprefLabel%20%3FgebeurtenisNaam%3B%20ceo%3AheeftDatering%20%3FdateringStruct%20.%20FILTER%20CONTAINS(LCASE(%3FgebeurtenisNaam),'vervaardiging')%20%3FdateringStruct%20ceo%3AheeftBeginDatering%2Fceo%3Adatum%20%3FbeginDatum%3B%20ceo%3AheeftEindDatering%2Fceo%3Adatum%20%3FeindDatum%20.%20BIND(CONCAT(STR(YEAR(xsd%3AdateTime(%3FbeginDatum))),'-',STR(YEAR(xsd%3AdateTime(%3FeindDatum))))%20AS%20%3Fdatering)%7D%0A%20%20GRAPH%20graph%3Aowms%20%7B%3FgemeenteURI%20skos%3AprefLabel%20%3Fgemeente%20.%20%3FprovincieURI%20skos%3AprefLabel%20%3Fprovincie%20.%7D%0A%20%20GRAPH%20graph%3Apunten%20%7B%3Fcho%20ceo%3AheeftGeometrie%2Fgeo%3AasWKT%20%3Fgeo%20.%7D%0ABIND(STRDT(CONCAT('%3Cdiv%20style%3D%22background-color%3Argba(0%2C0%2C0%2C.05)%3Bpadding%3A5mm%3B%22%3E','%3Cdiv%20style%3D%22text-align%3Acenter%3B%22%3E','%3Cimg%20src%3D%22https%3A%2F%2Flinkeddata.cultureelerfgoed.nl%2Frce%2FAsset-dataset%2Fassets%2F685193d17ddccf19de4f9d82%22%20alt%3D%22Blauw-wit%20schildje%22%20style%3D%22width%3A40px%3Bheight%3Aauto%3Bmargin-bottom%3A5px%3B%22%20%2F%3E','%3C%2Fdiv%3E','%3Cul%3E','%3Cli%3E%3Cb%3ERijksmonument%3A%20%3C%2Fb%3E%3Ca%20href%3D%22https%3A%2F%2Fmonumentenregister.cultureelerfgoed.nl%2Fmonumenten%2F',STR(%3Frijksmonumentnummer),'%22%20target%3D%22_blank%22%3E',STR(%3Frijksmonumentnummer),'%3C%2Fa%3E%3C%2Fli%3E','%3Cli%3E%3Cb%3EDatering%3A%3C%2Fb%3E%20',COALESCE(%3Fdatering,'-'),'%3C%2Fli%3E','%3Cli%3E%3Cb%3EBouwstijl%3A%3C%2Fb%3E%20',COALESCE(%3Fbouwstijl,'-'),'%3C%2Fli%3E','%3Cli%3E%3Cb%3EAdres%3A%3C%2Fb%3E%20',COALESCE(%3Fadres,'-'),'%3C%2Fli%3E','%3Cli%3E%3Cb%3EFunctie%3A%3C%2Fb%3E%20',COALESCE(%3Ffunctie,'-'),'%3C%2Fli%3E','%3Cli%3E%3Cb%3EGemeente%2FProvincie%3A%3C%2Fb%3E%20',COALESCE(%3Fgemeente,'-'),',%20',COALESCE(%3Fprovincie,'-'),'%3C%2Fli%3E','%3C%2Ful%3E%3Cb%3EOmschrijving%3A%3C%2Fb%3E%3Cbr%3E',IF(STRLEN(STR(%3Fomschrijving))>250,CONCAT(SUBSTR(STR(%3Fomschrijving),1,250),'...%20%3Ca%20href%3D%22https%3A%2F%2Fmonumentenregister.cultureelerfgoed.nl%2Fmonumenten%2F',STR(%3Frijksmonumentnummer),'%22%20target%3D%22_blank%22%3Elees%20verder%3C%2Fa%3E'),STR(%3Fomschrijving)),'%3C%2Fdiv%3E'),rdf%3AHTML)%20AS%20%3FgeoLabel)%7D&endpoint=https%3A%2F%2Fapi.linkeddata.cultureelerfgoed.nl%2Fdatasets%2Frce%2Fcho%2Fservices%2Fcho%2Fsparql&requestMethod=POST&outputFormat=geo">
       </query>
+      <div class="alert alert-warning d-none queryError">
+  De data kon niet geladen worden. Probeer het later opnieuw.
+</div>
 <p></p>
 <h2>De blauw-witte schildjes</h2>
 
@@ -141,7 +177,7 @@
   Het doel van deze schildjes is om tijdens gewapende conflicten zichtbaar te maken dat een gebouw, cultuurgoed of collectie beschermd is. Vooral in de jaren zestig en zeventig zijn op grote schaal blauw-witte schildjes geplaatst op erfgoedlocaties in Nederland.
 </p>
 
-<h4>Niet elk rijksmonument heeft een schildje</h4>
+<h3>Niet elk rijksmonument heeft een schildje</h3>
 <p>
 Veel mensen denken dat elk rijksmonument automatisch een blauw-wit schildje heeft. Dat klopt niet. Het schildje is bedoeld voor gebouwen of locaties die in oorlogstijd bijzondere bescherming verdienen. Dat kunnen monumenten zijn, maar ook moderne gebouwen zoals archieven of musea met waardevolle collecties.
 </p>
@@ -151,7 +187,7 @@ Je kunt als eigenaar van een rijksmonument geen blauw-wit schildje aanvragen. De
 </p>
 
 
-<h4>Registratie gestopt</h4>
+<h3>Registratie gestopt</h3>
 
 <p>
   In een brief aan de Tweede Kamer op 13 september 2021 liet de minister van Onderwijs, Cultuur en Wetenschap weten dat de registratie van blauw-witte schildjes in het Rijksmonumentenregister niet langer actief wordt bijgehouden.
@@ -170,20 +206,20 @@ Je kunt als eigenaar van een rijksmonument geen blauw-wit schildje aanvragen. De
 </ul>
 <p></p>
 
-<h3>Methodeverantwoording</h3>
+<h2>Methodeverantwoording</h2>
 
 <p>
 Voor deze data story zijn rijksmonumenten geselecteerd met behulp van linked open data. De basis is de dataset Cultureel Erfgoed Objecten (CHO) van de Rijksdienst voor het Cultureel Erfgoed (RCE), gepubliceerd via de TriplyDB-omgeving.
 </p>
 
-<h4>Gebruikte datasets</h4>
+<h3>Gebruikte datasets</h3>
 <ul>
   <li>RCE CHO – Cultureel Erfgoed Objecten</li>
   <li>Grafen: <code>instanties-rce</code>, <code>punten</code> en <code>owms</code></li>
   <li>OWMS-thesauri voor de naamgeving van gemeenten en provincies</li>
 </ul>
 
-<h4>Hoe is de selectie gemaakt?</h4>
+<h3>Hoe is de selectie gemaakt?</h3>
 <ul>
   <li>Alleen objecten met <code>internationaalKenteken = true</code> zijn meegenomen (dus mét blauw-wit schildje)</li>
   <li>Functies zijn opgeschoond: tussen haakjes geplaatste aanvullingen zoals <code>(M1)</code> zijn verwijderd</li>
@@ -192,7 +228,7 @@ Voor deze data story zijn rijksmonumenten geselecteerd met behulp van linked ope
   <li>De kaart is gebaseerd op puntdata (geometrie) uit de dataset</li>
 </ul>
 
-<h4>Wat zijn de beperkingen?</h4>
+<h3>Wat zijn de beperkingen?</h3>
 <ul>
   <li>De registratie van <code>internationaalKenteken</code> is handmatig en mogelijk onvolledig of niet consequent toegepast</li>
   <li>Niet alle rijksmonumenten met een blauw-wit schildje zijn in de data als zodanig gemarkeerd</li>
@@ -210,19 +246,28 @@ Voor deze data story zijn rijksmonumenten geselecteerd met behulp van linked ope
   </li>
 
   <li>
-    <a href="https://kennis.cultureelerfgoed.nl/index.php/Haags_Verdrag_1954_en_de_blauw-witte_schildjes">
+    <a href="https://kennis.cultureelerfgoed.nl/index.php/Haags_Verdrag_1954_en_de_blauw-witte_schildjes"
+       target="_blank" 
+       rel="noopener noreferrer" 
+       aria-label="Haags Verdrag 1954 en de blauw-witte schildjes (opent in een nieuw tabblad)">
       Haags Verdrag 1954 en de blauw-witte schildjes
     </a>
   </li>
 
   <li>
-    <a href="https://wetten.overheid.nl/BWBV0005596/1959-01-14">
+    <a href="https://wetten.overheid.nl/BWBV0005596/1959-01-14"
+       target="_blank" 
+       rel="noopener noreferrer" 
+       aria-label="Verdrag inzake de bescherming van culturele goederen in geval van een gewapend conflict, 's-Gravenhage, 14-05-1954 (opent in een nieuw tabblad)">
       Verdrag inzake de bescherming van culturele goederen in geval van een gewapend conflict, 's-Gravenhage, 14-05-1954
     </a>
   </li>
 
   <li>
-    <a href="https://www.rijksoverheid.nl/documenten/kamerstukken/2021/09/13/kamerbrief-over-registratie-blauw-witte-schildjes">
+    <a href="https://www.rijksoverheid.nl/documenten/kamerstukken/2021/09/13/kamerbrief-over-registratie-blauw-witte-schildjes"
+       target="_blank" 
+       rel="noopener noreferrer" 
+       aria-label="De brief van de minister aan de Tweede Kamer (opent in een nieuw tabblad)">
       De brief van de minister aan de Tweede Kamer
     </a>
   </li>
@@ -231,7 +276,10 @@ Voor deze data story zijn rijksmonumenten geselecteerd met behulp van linked ope
     Ministerie van Onderwijs, Cultuur en Wetenschap. (2020). 
     <em>Een wapen in vredestijd: De uitvoering van het Unesco Haags Verdrag en het gebruik van het blauw‑witte schildje</em>. 
     UNESCO Nederland. 
-    <a href="https://www.unesco.nl/sites/default/files/2020-06/Unesco%20Adviesrapport%20-%20Een%20wapen%20in%20vredestijd%20-%20Def.pdf">
+    <a href="https://www.unesco.nl/sites/default/files/2020-06/Unesco%20Adviesrapport%20-%20Een%20wapen%20in%20vredestijd%20-%20Def.pdf"
+       target="_blank" 
+       rel="noopener noreferrer" 
+       aria-label="PDF: Een wapen in vredestijd - UNESCO Nederland (opent in een nieuw tabblad)">
       https://www.unesco.nl/sites/default/files/2020-06/Unesco%20Adviesrapport%20-%20Een%20wapen%20in%20vredestijd%20-%20Def.pdf
     </a>
   </li>
@@ -239,7 +287,10 @@ Voor deze data story zijn rijksmonumenten geselecteerd met behulp van linked ope
   <li>
     Rijksdienst voor het Cultureel Erfgoed. (z.j.). 
     <em>Monumentenschildje - Cultureelerfgoed.nl</em>. 
-    <a href="https://www.cultureelerfgoed.nl/onderwerpen/internationaal/verdragen">
+    <a href="https://www.cultureelerfgoed.nl/onderwerpen/internationaal/verdragen"
+       target="_blank" 
+       rel="noopener noreferrer" 
+       aria-label="Monumentenschildje - Cultureelerfgoed.nl (opent in een nieuw tabblad)">
       https://www.cultureelerfgoed.nl/onderwerpen/internationaal/verdragen
     </a>
   </li>
@@ -247,7 +298,10 @@ Voor deze data story zijn rijksmonumenten geselecteerd met behulp van linked ope
   <li>
     Jaarboek Monumentenzorg. (1990). 
     <em>Het monumentenschildje: symbool met internationale betekenis</em>. DBNL. 
-    <a href="https://www.dbnl.org/tekst/_jaa030199001_01/_jaa030199001_01_0006.php">
+    <a href="https://www.dbnl.org/tekst/_jaa030199001_01/_jaa030199001_01_0006.php"
+       target="_blank" 
+       rel="noopener noreferrer" 
+       aria-label="Het monumentenschildje: symbool met internationale betekenis - DBNL (opent in een nieuw tabblad)">
       https://www.dbnl.org/tekst/_jaa030199001_01/_jaa030199001_01_0006.php
     </a>
   </li>
@@ -255,7 +309,10 @@ Voor deze data story zijn rijksmonumenten geselecteerd met behulp van linked ope
   <li>
     Tantaluskwellingen. (2016). 
     <em>Monumenten-schildjes: het onbekende symbool</em>. 
-    <a href="https://www.tantaluskwellingen.nl/2016/06/14/monumenten-schildjes/">
+    <a href="https://www.tantaluskwellingen.nl/2016/06/14/monumenten-schildjes/"
+       target="_blank" 
+       rel="noopener noreferrer" 
+       aria-label="Monumenten-schildjes: het onbekende symbool - Tantaluskwellingen (opent in een nieuw tabblad)">
       https://www.tantaluskwellingen.nl/2016/06/14/monumenten-schildjes/
     </a>
   </li>
@@ -263,7 +320,10 @@ Voor deze data story zijn rijksmonumenten geselecteerd met behulp van linked ope
   <li>
     Wikipedia. (z.j.). 
     <em>Monumentenschildje</em>. 
-    <a href="http://nl.wikipedia.org/wiki/Monumentenschildje">
+    <a href="http://nl.wikipedia.org/wiki/Monumentenschildje"
+       target="_blank" 
+       rel="noopener noreferrer" 
+       aria-label="Wikipedia Monumentenschildje (opent in een nieuw tabblad)">
       http://nl.wikipedia.org/wiki/Monumentenschildje
     </a>
   </li>
@@ -273,18 +333,30 @@ Voor deze data story zijn rijksmonumenten geselecteerd met behulp van linked ope
       <p>Deze datastory is gemaakt door de Rijksdienst voor het Cultureel Erfgoed.</p>
     </div>
 
-    <!-- Scripts -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/gh/thednp/bootstrap.native@2.0.24/dist/bootstrap-native-v4.min.js" crossorigin="anonymous"></script>
-    <script src="https://yasgui.triply.cc/yasgui.polyfill.min.js"></script>
-    
-    <!-- Lokale stories.js -->
-    <script src="../assets/js/stories.min.js"></script>
+<!-- Bootstrap 5 Bundle JS (inclusief Popper, vervangt Tether/bootstrap.native) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
-    <script>
-      window.onload = function () {
-        stories();
-      };
-    </script>
+<!-- YASGUI polyfill -->
+<script src="https://yasgui.triply.cc/yasgui.polyfill.min.js"></script>
+
+<!-- Lokale stories.js -->
+<script src="../assets/js/stories.min.js" defer></script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const queries = document.querySelectorAll('query');
+    queries.forEach(q => {
+      // Zoek de eerstvolgende .queryError na deze query
+      const fallback = q.nextElementSibling?.classList.contains('queryError') ? q.nextElementSibling : null;
+      
+      setTimeout(() => {
+        if (!q.hasChildNodes() && fallback) {
+          fallback.classList.remove('d-none');
+        }
+      }, 50000);
+    });
+  });
+</script>
+
   </body>
 </html>
