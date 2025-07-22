@@ -13,6 +13,40 @@
   <!-- Lokale styles -->
   <link href="assets/css/main.css" rel="stylesheet" type="text/css">
   <link href="assets/css/stories.min.css" rel="stylesheet" type="text/css">
+  <style>
+    /* Extra stijl om de balkjes er strak uit te laten zien */
+    .storyBanner {
+      display: flex;
+      align-items: stretch;
+      background: #f8f9fa; /* lichtgrijs */
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      overflow: hidden;
+      margin-bottom: 1.5rem;
+      transition: box-shadow 0.2s ease;
+    }
+    .storyBanner:hover {
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+    .storyIcon img {
+      width: 200px;
+      height: auto;
+      object-fit: cover;
+    }
+    .storyInfo {
+      padding: 1rem;
+      flex: 1;
+    }
+    .storyLabel {
+      font-size: 1.25rem;
+      font-weight: bold;
+      margin-bottom: .5rem;
+    }
+    .storyDescription {
+      font-size: 0.95rem;
+      color: #555;
+    }
+  </style>
 </head>
 
 <body class="withNavbar withSink">
@@ -38,32 +72,25 @@
   <!-- Content -->
   <div class="container mt-4">
 
- <!-- Blauw-witte schildjes -->
-<div class="row mb-4">
-  <div class="col-md-4 text-center">
-    <a href="blauw-witte-schildjes/" target="_blank" rel="noopener noreferrer">
-      <img src="assets/imgs/og-blauw-witte-schildjes.png" 
-           alt="Blauw-witte schildjes" 
-           class="img-fluid rounded shadow-sm" 
-           style="max-width:200px;">
-    </a>
-  </div>
-  <div class="col-md-8">
-    <h3>
-      <a href="blauw-witte-schildjes/" 
-         target="_blank" 
-         rel="noopener noreferrer" 
-         class="text-decoration-none">
-        Beschermd erfgoed: het blauw-witte schildje in Nederland
-      </a>
-    </h3>
-    <p>
-      Ontdek hoe het Haags Verdrag van 1954 monumenten en collecties beschermt met het blauw-witte schildje. 
-      Deze datastory laat zien welke rijksmonumenten het schildje dragen en wat het betekent voor de bescherming 
-      van cultureel erfgoed in tijden van crisis.
-    </p>
-  </div>
-</div>
+    <!-- Blauw-witte schildjes in balkje -->
+    <div class="storyBanner">
+      <div class="storyIcon">
+        <a href="blauw-witte-schildjes/" target="_blank" rel="noopener noreferrer">
+          <img src="assets/imgs/og-blauw-witte-schildjes.png" alt="Blauw-witte schildjes">
+        </a>
+      </div>
+      <div class="storyInfo">
+        <a href="blauw-witte-schildjes/" target="_blank" rel="noopener noreferrer" style="text-decoration:none;">
+          <div class="storyLabel">Beschermd erfgoed: het blauw-witte schildje in Nederland</div>
+        </a>
+        <div class="storyDescription">
+          Ontdek hoe het Haags Verdrag van 1954 monumenten en collecties beschermt met het blauw-witte schildje.
+          Deze datastory laat zien welke rijksmonumenten het schildje dragen en wat het betekent voor de bescherming van cultureel erfgoed in tijden van crisis.
+        </div>
+      </div>
+    </div>
+
+    <!-- Je kunt hier nog meer storyBanner blokken toevoegen -->
 
   </div>
 
