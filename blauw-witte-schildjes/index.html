@@ -23,115 +23,60 @@
   <!-- Bootstrap 5 -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
+  <!-- Rijksoverheid Sans -->
+  <link rel="stylesheet" href="https://fonts.cdnfonts.com/css/ro-sans" />
+
   <!-- Lokale styles -->
   <link href="../assets/css/main.css" rel="stylesheet" type="text/css">
   <link href="../assets/css/stories.min.css" rel="stylesheet" type="text/css">
   <link href="../assets/css/yasgui.bootstrap.css" rel="stylesheet" type="text/css">
-
-  <style>
-    /* Banner */
-    .banner-container {
-      width: 100%;
-     background: #fff;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 125px;
-    }
-    .banner-container img {
-      max-height: 100%;
-      max-width: 1280px; /* logo nooit groter dan 1280px */
-    }
-
-    /* Breadcrumb balk */
-    .breadcrumb-bar {
-      background-color: #ffb612; /* rijksoverheid geel */
-      font-family: "RO Sans", Calibri, sans-serif;
-      font-size: 12.8px;
-      line-height: 14.72px;
-      width: 100%;
-      padding: 0.5rem 1rem;
-      box-sizing: border-box;
-    }
-    .breadcrumb-bar a {
-      color: #000;
-      text-decoration: none;
-    }
-    .breadcrumb-bar a:hover {
-      text-decoration: underline;
-    }
-    .breadcrumb-sep {
-      margin: 0 0.5rem;
-    }
-
-    /* Footer */
-    footer.colofon {
-      background-color: #f2f2f2;
-      padding: 1rem;
-      text-align: center;
-      font-size: 0.9rem;
-      font-family: "RO Sans", Calibri, sans-serif;
-      margin-top: 2rem;
-    }
-h2 {
-  margin-top: 3rem;   /* extra ruimte boven een H2 */
-  margin-bottom: 1.5rem;
-}
-
-h3 {
-  margin-top: 2rem;   /* iets minder voor H3 */
-  margin-bottom: 1rem;
-}
-
-  </style>
 </head>
+
 <body>
 
-  <!-- Banner -->
-  <header class="banner-container">
+  <!-- Gele header met logo gecentreerd -->
+  <header class="header-rce">
     <img src="../assets/imgs/logo_cultureelerfgoed.svg" alt="Rijksdienst voor het Cultureel Erfgoed logo">
   </header>
 
   <!-- Breadcrumb balk -->
   <div class="breadcrumb-bar">
     <nav aria-label="breadcrumb">
-      <span>
-        <a href="https://cultureelerfgoed.github.io/datastories-cultureelerfgoed/">Home</a>
-        <span class="breadcrumb-sep">&gt;</span>
-        <span>Story</span>
-      </span>
+      <a href="https://cultureelerfgoed.github.io/datastories-cultureelerfgoed/">Home</a>
+      <span class="breadcrumb-sep">&gt;</span>
+      <span>Story</span>
     </nav>
   </div>
 
-<!-- STORY CONTENT -->
-<main class="container my-4">
+  <!-- STORY CONTENT -->
+  <main class="container my-4">
 
-<h1>Beschermd erfgoed: het blauw-witte schildje in Nederland</h1>
-<!-- Inhoudsopgave -->
+    <h1>Beschermd erfgoed: het blauw-witte schildje in Nederland</h1>
 
-<h2>Inhoud</h2>
-  <nav class="mb-4" aria-label="Inhoudsopgave">
-    <ul>
-      <li><a href="#inleiding">Inleiding</a></li>
-      <li><a href="#geschiedenis">Geschiedenis van het blauw-witte schildje</a></li>
-      <li><a href="#schildjes-provincie">Overzicht van aantallen schildjes per provincie</a></li>
-      <li><a href="#schildjes-gemeenten">Overzicht van Top 20 gemeenten</a></li>
-      <li><a href="#schildjes-functie">Overzicht per type rijksmonument</a></li>
-      <li><a href="#schildjes-bouwstijl">Overzicht per bouwstijl rijksmonument</a></li>      
-      <li><a href="#schildjes-jaartal">Overzicht per bouwjaar rijksmonument</a></li>
-      <li><a href="#schildjes-kaart">Overzichtskaart met rijksmonumenten met blauw-wit schildje</a></li>
-      <li><a href="#schildjes-schildjes">De blauw-witte schildjes</a></li>
-      <li><a href="#methode">Methodeverantwoording</a></li>
-      <li><a href="#literatuur">Literatuur</a></li>
-    </ul>
-  </nav>
+    <!-- Inhoudsopgave -->
+    <h2>Inhoud</h2>
+    <nav class="mb-4" aria-label="Inhoudsopgave">
+      <ul>
+        <li><a href="#inleiding">Inleiding</a></li>
+        <li><a href="#geschiedenis">Geschiedenis van het blauw-witte schildje</a></li>
+        <li><a href="#schildjes-provincie">Overzicht van aantallen schildjes per provincie</a></li>
+        <li><a href="#schildjes-gemeenten">Overzicht van Top 20 gemeenten</a></li>
+        <li><a href="#schildjes-functie">Overzicht per type rijksmonument</a></li>
+        <li><a href="#schildjes-bouwstijl">Overzicht per bouwstijl rijksmonument</a></li>
+        <li><a href="#schildjes-jaartal">Overzicht per bouwjaar rijksmonument</a></li>
+        <li><a href="#schildjes-kaart">Overzichtskaart met rijksmonumenten met blauw-wit schildje</a></li>
+        <li><a href="#schildjes-schildjes">De blauw-witte schildjes</a></li>
+        <li><a href="#methode">Methodeverantwoording</a></li>
+        <li><a href="#literatuur">Literatuur</a></li>
+      </ul>
+    </nav>
 
-  
-  <h2 id="inleiding">Inleiding</h2>
+    <h2 id="inleiding">Inleiding</h2>
 
     <img src="../assets/imgs/Monumentenschildje_blauw_wit.svg"
          alt="Rijksmonument met blauw schildje"
-         style="float:right; margin:0 0 10px 20px; width:220px;">
+         class="float-end ms-3 mb-3"
+         style="width:220px;">
 
     <p>
       Op 14 mei 1954 werd in Den Haag een belangrijk verdrag gesloten: het Verdrag inzake de bescherming van culturele goederen in het geval van een gewapend conflict.
@@ -285,22 +230,18 @@ Voor deze data story zijn rijksmonumenten geselecteerd met behulp van linked ope
   <li>Bij functies en stijlen is geen gebruik gemaakt van hiërarchische groepering binnen de thesauri</li>
 </ul>
 
-<h2 id="literatuur">Literatuur</h2>
-
-<ul>
-  <li>
-    Comité International de la Croix Bleue. (1954). 
-    <em>Verdrag van Den Haag inzake de bescherming van culturele goederen in geval van een gewapend conflict</em>. UNESCO.
-  </li>
-
-  <li>
-    <a href="https://kennis.cultureelerfgoed.nl/index.php/Haags_Verdrag_1954_en_de_blauw-witte_schildjes"
-       target="_blank" 
-       rel="noopener noreferrer" 
-       aria-label="Haags Verdrag 1954 en de blauw-witte schildjes (opent in een nieuw tabblad)">
-      Haags Verdrag 1954 en de blauw-witte schildjes
-    </a>
-  </li>
+    <h2 id="literatuur">Literatuur</h2>
+    <ul>
+      <li>
+        Comité International de la Croix Bleue. (1954). 
+        <em>Verdrag van Den Haag inzake de bescherming van culturele goederen in geval van een gewapend conflict</em>. UNESCO.
+      </li>
+      <li>
+        <a href="https://kennis.cultureelerfgoed.nl/index.php/Haags_Verdrag_1954_en_de_blauw-witte_schildjes" target="_blank" rel="noopener noreferrer">
+          Haags Verdrag 1954 en de blauw-witte schildjes
+        </a>
+      </li>
+     </li>
 
   <li>
     <a href="https://wetten.overheid.nl/BWBV0005596/1959-01-14"
@@ -375,35 +316,25 @@ Voor deze data story zijn rijksmonumenten geselecteerd met behulp van linked ope
       http://nl.wikipedia.org/wiki/Monumentenschildje
     </a>
   </li>
-</ul>
+
+    </ul>
+
     <h2>Colofon</h2>
-    <p>Deze data story is gemaakt door de Rijksdienst voor het Cultureel Erfgoed.</p>
+    <p>
+      Deze data story is gemaakt door de Rijksdienst voor het Cultureel Erfgoed.
+    </p>
 
   </main>
 
-<footer class="colofon" style="
-  background-color: #ffb612;
-  color: #000;
-  padding: 1rem;
-  text-align: center;
-  font-family: 'RO Sans', Calibri, sans-serif;
-  font-size: 0.9rem;
-  line-height: 1.4;
-">
-  <p style="margin: 0.3rem 0;">
-    &copy; Rijksdienst voor het Cultureel Erfgoed
-  </p>
-  <p style="margin: 0.3rem 0;">
-    Colofon: Deze data story is gemaakt door de RCE.  
-    Voor vragen kunt u contact opnemen via  
-    <a href="mailto:info@cultureelerfgoed.nl" style="color: #000; text-decoration: underline;">
-      info@cultureelerfgoed.nl
-    </a>.
-  </p>
-</footer>
+  <!-- Footer: één consistente gele balk -->
+  <footer class="footer-rce">
+    <div>
+      &copy; Rijksdienst voor het Cultureel Erfgoed – 
+      <a href="mailto:info@cultureelerfgoed.nl" class="footer-link">info@cultureelerfgoed.nl</a>
+    </div>
+  </footer>
 
-
-  <!-- Bootstrap 5 JS -->
+  <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
   <!-- Yasgui scripts -->
@@ -417,3 +348,4 @@ Voor deze data story zijn rijksmonumenten geselecteerd met behulp van linked ope
 
 </body>
 </html>
+
