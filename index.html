@@ -15,12 +15,32 @@
   <link href="assets/css/main.css" rel="stylesheet" type="text/css">
   <link href="assets/css/stories.min.css" rel="stylesheet" type="text/css">
 
+  <!-- RO Sans van rijkshuisstijl -->
+  <link rel="stylesheet" href="https://fonts.cdnfonts.com/css/ro-sans" />
+
   <style>
-    body {
-      font-family: "RO Sans", Calibri, sans-serif;
+    :root {
+      --rijksoverheid-geel: #ffb612;
+      --rijksoverheid-grijs: #f3f3f3;
+      --rijksoverheid-blauw: #01689b;
+      --tekst-zwart: #000000;
     }
 
-    /* Banner met logo */
+    body {
+      font-family: "RO Sans", Calibri, Arial, sans-serif;
+      font-size: 18px;
+      line-height: 29.25px;
+      color: var(--tekst-zwart);
+      background-color: #fff;
+    }
+
+    /* Bovenste gele balk (75px hoog) */
+    .top-bar {
+      height: 75px;
+      background: var(--rijksoverheid-geel);
+    }
+
+    /* Logo banner */
     .logo-banner {
       width: 100%;
       height: 125px;
@@ -34,17 +54,22 @@
       width: auto;
     }
 
-    /* Breadcrumb balk */
+    /* Breadcrumb balk (75px hoog) */
     .breadcrumb-bar {
-      background: #ffb612;
-      padding: 8px 20px;
-      font-size: 12.8px;
-      line-height: 14.72px;
+      background: var(--rijksoverheid-geel);
+      height: 75px;
+      display: flex;
+      align-items: center;
+      padding: 0 20px;
+      font-size: 14px;
       box-sizing: border-box;
     }
     .breadcrumb-bar a {
       color: #000;
       text-decoration: none;
+    }
+    .breadcrumb-bar span {
+      margin: 0 8px;
     }
     .breadcrumb-bar a:hover {
       text-decoration: underline;
@@ -54,7 +79,7 @@
     .storyBanner {
       display: flex;
       align-items: stretch;
-      background: #f8f9fa;
+      background: var(--rijksoverheid-grijs);
       border: 1px solid #ddd;
       border-radius: 8px;
       overflow: hidden;
@@ -74,45 +99,63 @@
       flex: 1;
     }
     .storyLabel {
-      font-size: 1.25rem;
+      font-size: 1.3rem;
       font-weight: bold;
       margin-bottom: .5rem;
+      color: var(--rijksoverheid-blauw);
     }
     .storyDescription {
-      font-size: 0.95rem;
-      color: #555;
+      font-size: 1rem;
+      color: #333;
     }
 
-    /* Clariah/Triply blok */
+    /* Partners blok */
     .partners-block {
       text-align: center;
-      padding: 20px 10px;
+      padding: 30px 15px;
       border-top: 1px solid #ddd;
       margin-top: 40px;
+      background: #fff;
     }
     .partners-block img {
       height: 50px;
-      margin: 0 10px;
+      margin: 0 15px;
     }
     .partners-block p {
-      font-size: 0.9rem;
+      font-size: 0.95rem;
       color: #555;
       max-width: 600px;
-      margin: 15px auto 0;
+      margin: 20px auto 0;
     }
 
-    /* Footer balk */
+    /* Onderste gele balk (75px hoog) */
     footer {
-      background: #ffb612;
-      text-align: center;
-      padding: 15px;
-      font-size: 14px;
-      margin-top: 0;
+      height: 75px;
+      background: var(--rijksoverheid-geel);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 16px;
+      font-weight: 500;
+    }
+
+    /* Responsief */
+    @media (max-width: 768px) {
+      .storyBanner {
+        flex-direction: column;
+      }
+      .storyIcon img {
+        width: 100%;
+        height: auto;
+      }
     }
   </style>
 </head>
 
 <body>
+
+  <!-- Bovenste gele balk -->
+  <div class="top-bar"></div>
 
   <!-- Logo banner -->
   <div class="logo-banner">
@@ -128,7 +171,7 @@
   <div class="container mt-4 text-center">
     <h1 class="mb-3">Data stories van de Rijksdienst voor het Cultureel Erfgoed</h1>
     <p class="lead">
-      Deze data stories zijn gemaakt door de Rijksdienst voor het Cultureel Erfgoed. Ze combineren historische en erfgoedgegevens met Linked Open Data om nieuwe inzichten te geven.
+      Deze data stories combineren historische en erfgoedgegevens met Linked Open Data en geven nieuwe inzichten in beschermd erfgoed.
     </p>
   </div>
 
@@ -153,7 +196,7 @@
       </div>
     </div>
 
-    <!-- Eventueel nog meer storyBanner blokken -->
+    <!-- Meer storyBanner blokken... -->
     
   </div>
 
@@ -172,7 +215,7 @@
     </p>
   </div>
 
-  <!-- Footer balk -->
+  <!-- Onderste gele balk -->
   <footer>
     &copy; Rijksdienst voor het Cultureel Erfgoed – Colofon
   </footer>
