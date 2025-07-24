@@ -39,11 +39,13 @@
 }
 
 /* ===========================
-   Basis typografie
+   Basis typografie & layout
 =========================== */
 
-html {
-  font-size: 18px;
+html, body {
+  height: 100%; /* volle hoogte voor sticky footer */
+  margin: 0;
+  padding: 0;
   scroll-behavior: smooth;
 }
 
@@ -54,13 +56,13 @@ body {
   color: #000;
   line-height: 1.6;
   background-color: #fff;
-  margin: 0;
-  padding: 0;
+  display: flex;
+  flex-direction: column; /* maakt sticky footer mogelijk */
 }
 
-/* ===========================
-   Grid & Layout
-=========================== */
+main {
+  flex: 1 0 auto; /* vult ruimte, duwt footer naar onder */
+}
 
 .container {
   max-width: 960px;
@@ -79,18 +81,16 @@ body {
   display: flex;
   justify-content: center; /* logo centreren */
   align-items: center;
-  padding-top: 40px; /* ruimte boven logo */
+  padding-top: 10px; /* ruimte boven logo */
   padding-bottom: 20px; /* ruimte onder logo */
 }
 
-/* Logo zelf */
 .rce-header-full img.rce-logo {
   height: 80px; /* grootte logo zoals corporate site */
   width: auto;
   display: block;
 }
 
-/* Als je nog tekst wilt onder/bij logo */
 .rce-header-inner {
   display: flex;
   flex-direction: column;
@@ -98,7 +98,7 @@ body {
   text-align: center;
 }
 
-/* Oude extra logo wrapper fallback */
+/* Oude logo wrapper fallback */
 .rce-header-logo {
   display: flex;
   align-items: center;
@@ -247,8 +247,8 @@ blockquote {
 .sink {
   padding: 10px;
   margin: 10px 0;
-  box-shadow: 0 1px 3px rgba(0,0,0,.2), 
-              0 1px 1px rgba(0,0,0,.14), 
+  box-shadow: 0 1px 3px rgba(0,0,0,.2),
+              0 1px 1px rgba(0,0,0,.14),
               0 2px 1px -1px rgba(0,0,0,.12);
   background-color: #fff;
   border-radius: 4px;
@@ -296,18 +296,19 @@ link[rel="icon"] {
 }
 
 /* ===========================
-   Footer FULL WIDTH
+   Footer FULL WIDTH (fix)
 =========================== */
 
 .footer-rce-full {
-  width: 100%;
+  width: 100vw; /* echt schermbreed */
   background-color: #ffb612;
-  padding: 20px 0; /* spacing zoals corporate site */
+  padding: 20px 0;
   text-align: center;
   color: #000;
   font-family: "RO Sans", sans-serif;
   font-size: 0.95rem;
   line-height: 1.4;
+  box-sizing: border-box;
 }
 
 .footer-rce-full .footer-inner {
