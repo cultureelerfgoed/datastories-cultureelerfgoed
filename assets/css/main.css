@@ -74,12 +74,12 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-top: 10px;
-  padding-bottom: 20px;
+  padding-top: 0px;
+  padding-bottom: 10px;
 }
 
 .rce-header-full img.rce-logo {
-  height: 150px;
+  height: 100px;
   width: auto;
   display: block;
 }
