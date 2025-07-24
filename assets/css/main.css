@@ -1,8 +1,6 @@
-/* ===========================
-   Fonts
-=========================== */
-
-/* Rijksoverheid Sans (RO Sans) */
+/* =====================================================
+   1. Fonts (RCE RO Sans + fallback Roboto2)
+===================================================== */
 @font-face {
   font-family: "RO Sans";
   src: url("/assets/fonts/ro-sans-regular.woff2") format("woff2"),
@@ -19,7 +17,6 @@
   font-style: normal;
 }
 
-/* Roboto2 als fallback */
 @font-face {
   font-family: 'Roboto2';
   src: url('/assets/fonts/roboto2-regular.woff2') format('woff2'),
@@ -38,12 +35,11 @@
   font-style: normal;
 }
 
-/* ===========================
-   Basis typografie & layout
-=========================== */
-
+/* =====================================================
+   2. Basislayout & body
+===================================================== */
 html, body {
-  height: 100%; /* volle hoogte voor sticky footer */
+  height: 100%;
   margin: 0;
   padding: 0;
   scroll-behavior: smooth;
@@ -52,16 +48,15 @@ html, body {
 body {
   font-family: "RO Sans", "Roboto2", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 400;
-  font-style: normal;
   color: #000;
-  line-height: 1.6;
   background-color: #fff;
+  line-height: 1.6;
   display: flex;
-  flex-direction: column; /* maakt sticky footer mogelijk */
+  flex-direction: column; /* voor sticky footer */
 }
 
 main {
-  flex: 1 0 auto; /* vult ruimte, duwt footer naar onder */
+  flex: 1 0 auto;
 }
 
 .container {
@@ -70,23 +65,21 @@ main {
   padding: 0 1rem;
 }
 
-/* ===========================
-   HEADER + LOGO
-=========================== */
-
-/* Full-width header container */
+/* =====================================================
+   3. Header / Logo
+===================================================== */
 .rce-header-full {
   width: 100%;
   background: #fff;
   display: flex;
-  justify-content: center; /* logo centreren */
+  justify-content: center;
   align-items: center;
-  padding-top: 10px; /* ruimte boven logo */
-  padding-bottom: 20px; /* ruimte onder logo */
+  padding-top: 10px;
+  padding-bottom: 20px;
 }
 
 .rce-header-full img.rce-logo {
-  height: 80px; /* grootte logo zoals corporate site */
+  height: 80px;
   width: auto;
   display: block;
 }
@@ -98,36 +91,13 @@ main {
   text-align: center;
 }
 
-/* Oude logo wrapper fallback */
-.rce-header-logo {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #fff;
-  padding: 1rem 0;
-}
-
-.rce-header-logo img {
-  height: 50px;
-  margin-right: 1rem;
-}
-
-.rce-header-logo span {
-  font-family: "RO Sans", sans-serif;
-  font-size: 0.9rem;
-  color: #000;
-  line-height: 1.3;
-  text-align: left;
-}
-
-/* ===========================
-   Gele scheidingsbalk + Breadcrumb
-=========================== */
-
+/* =====================================================
+   4. Gele scheidingsbalk + Breadcrumb
+===================================================== */
 .rce-yellow-bar {
   width: 100%;
   background-color: #ffb612;
-  padding: 1rem 0;
+  padding: 0.8rem 0;
   box-sizing: border-box;
 }
 
@@ -137,24 +107,24 @@ main {
   padding: 0 20px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
 }
 
 .breadcrumb-container nav {
   display: flex;
   align-items: center;
   font-family: "RO Sans", sans-serif;
-  font-size: 0.9rem;
+  font-size: 0.95rem;
 }
 
 .breadcrumb-container a {
   color: #000;
-  text-decoration: none;
-  font-weight: bold;
+  text-decoration: underline;
+  font-weight: normal;
 }
 
 .breadcrumb-container a:hover {
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 .breadcrumb-sep {
@@ -162,9 +132,9 @@ main {
   font-weight: bold;
 }
 
-/* ===========================
-   Koppen
-=========================== */
+/* =====================================================
+   5. Typografie & Content
+===================================================== */
 h1, h2, h3, h4 {
   font-family: "RO Sans", "Roboto2", sans-serif;
   font-weight: 700;
@@ -190,45 +160,11 @@ h4 {
   font-size: 1.1rem;
 }
 
-/* ===========================
-   Content styling
-=========================== */
-
 p {
   margin-bottom: 1rem;
   line-height: 1.6;
 }
 
-/* Afbeeldingen standaard volle breedte */
-img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-  margin: 1rem 0;
-}
-
-/* Kleine afbeeldingen rechts laten floaten */
-img.float-end {
-  float: right;
-  margin-left: 1rem;
-}
-
-/* Kleine afbeeldingen links */
-img.small {
-  max-width: 300px;
-  float: left;
-  margin: 0 1rem 1rem 0;
-}
-
-/* Tekstaccenten */
-strong {
-  font-weight: bold;
-}
-em {
-  font-style: italic;
-}
-
-/* Lijsten */
 ul, ol {
   padding-left: 1.5rem;
   margin-bottom: 1rem;
@@ -241,22 +177,31 @@ blockquote {
   margin: 1rem 0;
 }
 
-/* ===========================
-   Cards & sinks
-=========================== */
-.sink {
-  padding: 10px;
-  margin: 10px 0;
-  box-shadow: 0 1px 3px rgba(0,0,0,.2),
-              0 1px 1px rgba(0,0,0,.14),
-              0 2px 1px -1px rgba(0,0,0,.12);
-  background-color: #fff;
-  border-radius: 4px;
+strong { font-weight: bold; }
+em { font-style: italic; }
+
+/* Afbeeldingen */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 1rem 0;
 }
 
-/* ===========================
-   Story banners & iconen
-=========================== */
+img.float-end {
+  float: right;
+  margin-left: 1rem;
+}
+
+img.small {
+  max-width: 300px;
+  float: left;
+  margin: 0 1rem 1rem 0;
+}
+
+/* =====================================================
+   6. Story banners & iconen
+===================================================== */
 .storyBanner {
   display: flex;
   align-items: center;
@@ -280,27 +225,22 @@ blockquote {
   font-size: 120%;
 }
 
-/* ===========================
-   Yasgui & CodeMirror fix
-=========================== */
-.yasgui .yasqe .CodeMirror.CodeMirror-fullscreen {
-  top: 57.6px;
+/* Cards */
+.sink {
+  padding: 10px;
+  margin: 10px 0;
+  box-shadow: 0 1px 3px rgba(0,0,0,.2),
+              0 1px 1px rgba(0,0,0,.14),
+              0 2px 1px -1px rgba(0,0,0,.12);
+  background-color: #fff;
+  border-radius: 4px;
 }
 
-/* ===========================
-   Favicon fix
-=========================== */
-link[rel="icon"] {
-  width: 32px;
-  height: 32px;
-}
-
-/* ===========================
-   Footer FULL WIDTH (fix)
-=========================== */
-
+/* =====================================================
+   7. Footer FULL WIDTH (fix)
+===================================================== */
 .footer-rce-full {
-  width: 100vw; /* echt schermbreed */
+  width: 100vw;
   background-color: #ffb612;
   padding: 20px 0;
   text-align: center;
@@ -321,24 +261,35 @@ link[rel="icon"] {
   color: #000;
   text-decoration: underline;
 }
-
 .footer-link:hover {
   text-decoration: none;
 }
 
-/* ===========================
-   Responsive verbeteringen
-=========================== */
+/* =====================================================
+   8. Kleine fixes
+===================================================== */
+/* Yasgui & CodeMirror fullscreen fix */
+.yasgui .yasqe .CodeMirror.CodeMirror-fullscreen {
+  top: 57.6px;
+}
+
+/* Favicon fix */
+link[rel="icon"] {
+  width: 32px;
+  height: 32px;
+}
+
+/* =====================================================
+   9. Responsive verbeteringen
+===================================================== */
 @media (max-width: 768px) {
   .rce-header-full {
     padding-top: 20px;
     padding-bottom: 10px;
   }
-
   .rce-header-full img.rce-logo {
     height: 60px;
   }
-
   .breadcrumb-container {
     flex-direction: column;
     text-align: center;
