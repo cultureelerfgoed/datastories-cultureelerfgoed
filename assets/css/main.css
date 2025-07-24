@@ -295,3 +295,7 @@ link[rel="icon"] {
     text-align: center;
   }
 }
+a:focus {
+  outline: 3px solid #005ca9; /* Rijksoverheid-blauw */
+  outline-offset: 2px;
+}
