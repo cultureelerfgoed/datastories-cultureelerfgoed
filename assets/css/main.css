@@ -281,3 +281,78 @@ link[rel="icon"] {
     margin: 0 0 0.5rem 0;
   }
 }
+/* === Full-width Header === */
+.rce-header-full {
+  width: 100%;
+  background: #fff;
+  padding: 20px 0;
+}
+
+.rce-header-inner {
+  max-width: 1200px; /* breder dan container */
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.rce-logo {
+  height: 80px; /* groter logo */
+  width: auto;
+}
+
+.rce-header-text {
+  font-family: "RO Sans", "Roboto2", sans-serif;
+  font-size: 1.2rem;
+  color: #000;
+  line-height: 1.4;
+}
+
+/* === Gele navigatiebalk === */
+.rce-yellow-bar {
+  width: 100%;
+  background-color: #ffb612;
+  padding: 0.8rem 0;
+}
+
+.rce-yellow-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.breadcrumb-nav a {
+  color: #000;
+  text-decoration: none;
+  font-weight: 600;
+}
+.breadcrumb-nav a:hover {
+  text-decoration: underline;
+}
+.breadcrumb-sep {
+  margin: 0 0.5rem;
+}
+
+/* === Footer full width === */
+.footer-rce-full {
+  width: 100%;
+  background-color: #ffb612;
+  padding: 1rem 0;
+  text-align: center;
+  color: #000;
+}
+
+.footer-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  font-size: 0.95rem;
+}
+
+.footer-link {
+  color: #000;
+  text-decoration: underline;
+}
+.footer-link:hover {
+  text-decoration: none;
+}
