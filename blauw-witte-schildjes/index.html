@@ -56,8 +56,10 @@
   </script>
 
   <!-- Favicon & manifest -->
-  <link rel="icon" href="../assets/imgs/favicon_rce.png" type="image/png" sizes="32x32">
-  <link rel="apple-touch-icon" href="..assets/imgs/mac-icon-3321.jpeg" type="image/png" sizes="32x32">
+<link rel="icon" href="../assets/imgs/favicon_rce.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../assets/imgs/favicon_rce.png" sizes="180x180">
+<meta name="theme-color" content="#ffb612">
+
   <link rel="manifest" href="../assets/manifest.webmanifest">
 
   <!-- Bootstrap 5.3.7 (met SRI) -->
@@ -79,11 +81,14 @@
   <a href="#main" class="visually-hidden-focusable">Direct naar hoofdinhoud</a>
 
   <!-- HEADER -->
-  <header class="rce-header-full">
-    <div class="wrapper">
-      <img src="../assets/imgs/logo_cultureelerfgoed.svg" alt="Rijksdienst voor het Cultureel Erfgoed" width="300" height="60">
-    </div>
-  </header>
+<header class="rce-header-full">
+  <div class="wrapper">
+    <img class="rce-logo"
+         src="../assets/imgs/logo_cultureelerfgoed.svg"
+         alt="Rijksdienst voor het Cultureel Erfgoed">
+  </div>
+</header>
+
 
   <!-- BREADCRUMB -->
   <div class="rce-yellow-bar">
@@ -401,8 +406,10 @@
     </ol>
 
 <section id="disclaimer" aria-labelledby="disclaimer-title" class="mt-4">
-  <h2 id="disclaimer-title">Disclaimer</h2>
-  <div class="disclaimer-box">
+  <h2 id="disclaimer-title" class="mb-2">Disclaimer</h2>
+  <details class="disclaimer-box">
+    <summary><strong>Lees de disclaimer</strong></summary>
+
     <p><strong>Let op</strong></p>
     <p><em>U kunt aan de getoonde resultaten geen rechten ontlenen. De informatie is bedoeld om te informeren en biedt geen garantie op volledigheid, juistheid of actualiteit.</em></p>
 
@@ -427,28 +434,8 @@
       </dd>
 
       <dt class="col-sm-3">Graphs</dt>
-      <dd class="col-sm-9"><code>instanties-rce</code>, <code>punten</code>, <code>owms</code></dd>
+      <dd class="col-sm-9"><code>instanties-rce</code>, <code>punten
 
-      <dt class="col-sm-3">Datum created</dt>
-      <dd class="col-sm-9">2025-07-20</dd>
-
-      <dt class="col-sm-3">Datum modified</dt>
-      <dd class="col-sm-9">2025-07-28</dd>
-
-      <dt class="col-sm-3">Data status</dt>
-      <dd class="col-sm-9"><em>Statisch</em> – De data wordt niet automatisch bijgewerkt.</dd>
-
-      <dt class="col-sm-3">Story status</dt>
-      <dd class="col-sm-9"><em>In bewerking</em> – Nieuwe query's worden onregelmatig toegevoegd.</dd>
-
-      <dt class="col-sm-3">Versie</dt>
-      <dd class="col-sm-9">0.8</dd>
-
-      <dt class="col-sm-3">Contact voor correcties</dt>
-      <dd class="col-sm-9"><a href="mailto:info@cultureelerfgoed.nl">info@cultureelerfgoed.nl</a></dd>
-    </dl>
-  </div>
-</section>
 
 
 <!-- Bootstrap JS (defer) -->
