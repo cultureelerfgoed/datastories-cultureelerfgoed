@@ -134,23 +134,23 @@ query { display: block; width: 100%; }
   /* desktopwaarden – stem af op jouw gevoel */
   --mls: -32px;   /* negative margin-inline-start */
   --tx: 50%;      /* translateX percentage */
-  --ty: -6px;     /* klein omhoog */
+  --ty: -5px;     /* klein omhoog */
   margin-inline-start: var(--mls);
   transform: translateX(var(--tx)) translateY(var(--ty));
 }
 
 /* Breakpoints fijnregelen */
 @media (max-width:1200px){
-  .rce-logo{ height:120px; --mls:-34px; --ty:-6px; }
+  .rce-logo{ height:108px; --mls:-32px; --ty:-5px; }
 }
 @media (max-width:992px){
-  .rce-logo{ height:92px;  --mls:-28px; --ty:-5px; }
+  .rce-logo{ height:90px;  --mls:-26px; --ty:-4px; }
 }
 @media (max-width:768px){
-  .rce-logo{ height:76px;  --mls:-22px; --ty:-4px; }
+  .rce-logo{ height:74px;  --mls:-21px; --ty:-4px; }
 }
 @media (max-width:576px){
-  .rce-logo{ height:62px;  --mls:-16px; --ty:-3px; }
+  .rce-logo{ height:60px;  --mls:-15px; --ty:-3px; }
 }
 
 
