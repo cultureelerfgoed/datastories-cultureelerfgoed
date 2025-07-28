@@ -106,74 +106,62 @@ a:focus, a:focus-visible, .footer-link:focus, .footer-link:focus-visible {
 query { display: block; width: 100%; }
 
 /* =====================================================
-   3. Header / Logo
-===================================================== */
-
-/* =====================================================
    3. Header / Logo  — compacte header + rechtse offset
 ===================================================== */
 
-/* Volle breedte, nul extra witruimte */
+/* Compacte header + optische centrering embleem */
 .rce-header-full{
-  width: 100%;
-  background: #fff;
-  padding: 0;
-  margin: 0;
+  width:100%;
+  background:#fff;
+  padding:0; margin:0;
 }
-
-/* Wrapper centreert, geen extra hoogte/padding */
 .rce-header-full .wrapper{
-  display: flex;
-  justify-content: center;   /* horizontaal centreren */
-  align-items: center;       /* verticaal centreren */
-  padding: 0;                /* geen verticale/horizontale padding */
-  margin: 0;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  padding:0; margin:0;
 }
 
-/* Logo: geen globale img-margin, met nudge rechts/omhoog */
-.rce-header-full img,
-.rce-header-full .rce-logo{
-  display: block;
-  margin: 0 !important;      /* overschrijft img { margin:1rem 0 } */
-  height: 110px;             /* desktophoogte; pas aan naar smaak */
-  width: auto;
+/* Let op: global img-margins neutraliseren */
+.rce-header-full img{ margin:0 !important; }
 
-  /* Optische centrering: blauw vlak in midden */
-  --logo-nudge-x: 100px;      /* rechts-offset desktop */
-  --logo-nudge-y: -8px;      /* iets omhoog tegen SVG-witruimte */
-  transform: translate(var(--logo-nudge-x), var(--logo-nudge-y));
+/* Kern: schuif embleem naar midden met negatieve margin + translateX(50%) */
+.rce-logo{
+  display:block;
+  height:110px;
+  width:auto;
+
+  /* desktopwaarden – stem af op jouw gevoel */
+  --mls: -50px;   /* negative margin-inline-start */
+  --tx: 50%;      /* translateX percentage */
+  --ty: -8px;     /* klein omhoog */
+  margin-inline-start: var(--mls);
+  transform: translateX(var(--tx)) translateY(var(--ty));
 }
 
-/* Minder ruimte vóór de eerste H1 na de gele balk */
-.rce-yellow-bar + .container h1{
-  margin-top: 1rem;
+/* Breakpoints fijnregelen */
+@media (max-width: 1200px){
+  .rce-logo{
+    height:100px;
+    --mls:-44px; --ty:-7px;
+  }
 }
-
-/* Breakpoints: schaal hoogte + nudge af */
 @media (max-width: 992px){
-  .rce-header-full img,
-  .rce-header-full .rce-logo{
-    height: 84px;
-    --logo-nudge-x: 22px;
-    --logo-nudge-y: -6px;
+  .rce-logo{
+    height:84px;
+    --mls:-36px; --ty:-6px;
   }
 }
-
 @media (max-width: 768px){
-  .rce-header-full img,
-  .rce-header-full .rce-logo{
-    height: 68px;
-    --logo-nudge-x: 16px;
-    --logo-nudge-y: -5px;
+  .rce-logo{
+    height:68px;
+    --mls:-28px; --ty:-5px;
   }
 }
-
 @media (max-width: 576px){
-  .rce-header-full img,
-  .rce-header-full .rce-logo{
-    height: 58px;
-    --logo-nudge-x: 10px;
-    --logo-nudge-y: -4px;
+  .rce-logo{
+    height:58px;
+    --mls:-20px; --ty:-4px;
   }
 }
 
