@@ -108,46 +108,49 @@ query { display: block; width: 100%; }
 /* =====================================================
    3. Header / Logo
 ===================================================== */
-
-/* Volle breedte, weinig extra witruimte */
-.rce-header-full{
-  width: 100%;
-  background: #fff;
-}
-
-.rce-header-full .wrapper{
-  display: flex;
-  justify-content: center;      /* horizontaal centreren */
-  align-items: center;          /* verticaal centreren */
-  min-height: 104px;            /* consistente hoogte van de kop */
-  padding-block: 1px;           /* compacte padding */
-}
-
-/* Logo zelf */
+/* --- RECHTSE OFFSET VOOR HET LOGO --- */
+/* stel één plek in; makkelijk tunen */
 .rce-header-full img,
 .rce-header-full .rce-logo{
-  display: block;
-  height: 120px;                 /* desktopformaat */
+  /* basisgrootte + verticale nudge zoals je had */
+  height: 120px;
   width: auto;
-  margin: 0;
-  transform: translateY(40px);  /* kleine nudge tegen SVG-witruimte */
+  display: block;
+
+  /* >> bepaal hier de verschuiving: eerst X (rechts), dan Y (omhoog) */
+  --logo-nudge-x: 32px;   /* DESKTOP: schuif ~32px naar rechts */
+  --logo-nudge-y: -5px;   /* kleine verticale correctie */
+  transform: translate(var(--logo-nudge-x), var(--logo-nudge-y));
 }
 
-/* Minder ruimte vóór de eerste H1 na de gele balk */
-.rce-yellow-bar + .container h1{ margin-top: 1.25rem; }
+/* Zorg dat de wrapper zelf echt centreert */
+.rce-header-full .wrapper{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 104px;
+  padding-block: 1px;
+  /* geen extra horizontale padding die de middenas beïnvloedt */
+  padding-inline: 0;
+}
 
-/* Responsief schalen */
+/* Breakpoints: iets minder offset op kleinere schermen */
 @media (max-width: 992px){
-  .rce-header-full .wrapper{ min-height: 92px; }
   .rce-header-full img,
-  .rce-header-full .rce-logo{ height: 72px; transform: translateY(-3px); }
+  .rce-header-full .rce-logo{
+    height: 72px;
+    --logo-nudge-x: 22px;   /* tablet */
+    --logo-nudge-y: -3px;
+  }
 }
 @media (max-width: 576px){
-  .rce-header-full .wrapper{ min-height: 76px; }
   .rce-header-full img,
-  .rce-header-full .rce-logo{ height: 56px; transform: translateY(-2px); }
+  .rce-header-full .rce-logo{
+    height: 56px;
+    --logo-nudge-x: 12px;   /* mobiel */
+    --logo-nudge-y: -2px;
+  }
 }
-
 
 /* =====================================================
    4. Gele balk & breadcrumb
