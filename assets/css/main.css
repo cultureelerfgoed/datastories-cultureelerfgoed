@@ -129,7 +129,7 @@ query { display: block; width: 100%; }
 .rce-logo{
   display:block;
   height:135px;
-  width:280px;
+  width:270px;
 
   /* desktopwaarden – stem af op jouw gevoel */
   --mls: -37px;   /* negative margin-inline-start */
@@ -163,7 +163,7 @@ query { display: block; width: 100%; }
   margin-inline: calc(50% - 50vw);
 
   background-color:#ffb612;
-  --yb-pad-block: 22px;          /* hoogte van de balk */
+  --yb-pad-block: 30px;          /* hoogte van de balk */
   padding-block: var(--yb-pad-block);
   padding-inline: 0;
 
