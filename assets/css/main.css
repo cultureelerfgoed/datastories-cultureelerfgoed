@@ -120,17 +120,17 @@ query { display: block; width: 100%; }
   justify-content: center;      /* horizontaal centreren */
   align-items: center;          /* verticaal centreren */
   min-height: 104px;            /* consistente hoogte van de kop */
-  padding-block: 8px;           /* compacte padding */
+  padding-block: 1px;           /* compacte padding */
 }
 
 /* Logo zelf */
 .rce-header-full img,
 .rce-header-full .rce-logo{
   display: block;
-  height: 88px;                 /* desktopformaat */
+  height: 120px;                 /* desktopformaat */
   width: auto;
   margin: 0;
-  transform: translateY(-4px);  /* kleine nudge tegen SVG-witruimte */
+  transform: translateY(40px);  /* kleine nudge tegen SVG-witruimte */
 }
 
 /* Minder ruimte vóór de eerste H1 na de gele balk */
@@ -138,7 +138,7 @@ query { display: block; width: 100%; }
 
 /* Responsief schalen */
 @media (max-width: 992px){
-  .rce-header-full .wrapper{ min-height: 120px; }
+  .rce-header-full .wrapper{ min-height: 92px; }
   .rce-header-full img,
   .rce-header-full .rce-logo{ height: 72px; transform: translateY(-3px); }
 }
