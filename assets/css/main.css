@@ -269,6 +269,17 @@ img.small { max-width: 300px; float: left; margin: 0 1rem 1rem 0; }
   border-radius: 4px;
 }
 
+/* Optioneel: subtiele rand voor de template-banner */
+.storyBanner--template {
+  border-style: dashed;
+  border-color: #cfd8dc;
+  background: #fafafa;
+}
+.storyBanner--template .storyLabel {
+  color: #01689b; /* RO-blauw */
+}
+
+
 /* =====================================================
    7. Footer (full‑bleed)
 ===================================================== */
@@ -468,3 +479,4 @@ img.small { max-width: 300px; float: left; margin: 0 1rem 1rem 0; }
   font-size: .95rem;
   line-height: 1.5;
 }
+
