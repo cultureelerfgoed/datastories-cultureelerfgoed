@@ -284,3 +284,47 @@ query { display: block; width: 100%; }
   a[href^="http"]::after { content: " (" attr(href) ")"; font-size: 90%; }
   img { break-inside: avoid; }
 }
+
+/* =====================================================
+   11. Disclaimer compact
+===================================================== */
+#disclaimer {
+  margin-top: 1.5rem;
+}
+#disclaimer h2 {
+  font-size: 1.1rem;
+  margin: 0 0 .5rem 0;
+}
+#disclaimer .disclaimer-box {
+  background-color: #f1f1f1;
+  border: 1px solid #e5e5e5;
+  border-left: 4px solid #cfcfcf;
+  border-radius: 6px;
+  padding: .75rem 1rem;
+  font-size: 1rem;         /* gelijk aan lopende tekst */
+  line-height: 1.5;
+  color: #333;
+}
+#disclaimer p {
+  margin-bottom: .5rem;
+}
+#disclaimer hr {
+  display: none;           /* scheelt hoogte */
+}
+#disclaimer dl {
+  margin: 0;
+}
+#disclaimer dt,
+#disclaimer dd {
+  margin-bottom: .25rem;   /* compacter */
+}
+#disclaimer .row {
+  --bs-gutter-x: .5rem;    /* kleinere kolom-gutter */
+}
+#disclaimer a {
+  color: inherit;
+  text-decoration: underline;
+}
+#disclaimer a:hover {
+  text-decoration: none;
+}
