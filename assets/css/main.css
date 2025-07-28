@@ -129,10 +129,10 @@ query { display: block; width: 100%; }
 .rce-logo{
   display:block;
   height:135px;
-  width:420px;
+  width:400px;
 
   /* desktopwaarden – stem af op jouw gevoel */
-  --mls: -50px;   /* negative margin-inline-start */
+  --mls: -45px;   /* negative margin-inline-start */
   --tx: 50%;      /* translateX percentage */
   --ty: -5px;     /* klein omhoog */
   margin-inline-start: var(--mls);
