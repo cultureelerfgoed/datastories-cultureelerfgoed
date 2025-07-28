@@ -139,7 +139,7 @@ query { display: block; width: 100%; }
   width: auto;
 
   /* Optische centrering: blauw vlak in midden */
-  --logo-nudge-x: 32px;      /* rechts-offset desktop */
+  --logo-nudge-x: 100px;      /* rechts-offset desktop */
   --logo-nudge-y: -8px;      /* iets omhoog tegen SVG-witruimte */
   transform: translate(var(--logo-nudge-x), var(--logo-nudge-y));
 }
