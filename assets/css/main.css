@@ -397,3 +397,66 @@ img.small { max-width: 300px; float: left; margin: 0 1rem 1rem 0; }
 #disclaimer .row { --bs-gutter-x: .5rem; }  /* kleinere kolom-gutter */
 #disclaimer a { color: inherit; text-decoration: underline; }
 #disclaimer a:hover { text-decoration: none; }
+
+/* =====================================================
+   12. LANDING PAGE – storyBanner & partners-blok
+===================================================== */
+
+/* Zelfde visuele stijl als je inline CSS had */
+.storyBanner--landing,
+.storyBanner {
+  display: flex;
+  align-items: stretch;
+  background: #f3f3f3;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 1.5rem;
+  transition: box-shadow .2s ease;
+}
+.storyBanner:hover { box-shadow: 0 4px 10px rgba(0,0,0,.1); }
+
+.storyIcon img {
+  width: 200px;
+  height: auto;
+  object-fit: cover;
+  display: block;
+}
+
+.storyInfo { padding: 1rem; flex: 1; }
+
+.storyLabel {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: .5rem;
+  color: #01689b; /* rijksoverheid blauw */
+}
+.storyLabel-link { text-decoration: none; color: inherit; }
+.storyLabel-link:hover { text-decoration: underline; }
+
+.storyDescription { font-size: 1rem; color: #333; }
+
+/* Partners blok */
+.partners-block {
+  text-align: center;
+  padding: 30px 15px;
+  border-top: 1px solid #ddd;
+  margin-top: 40px;
+  background: #fff;
+}
+.partners-logos img {
+  height: 50px;
+  margin: 0 15px;
+}
+.partners-block p {
+  font-size: .95rem;
+  color: #555;
+  max-width: 720px;
+  margin: 20px auto 0;
+}
+
+/* Responsief */
+@media (max-width: 768px){
+  .storyBanner, .storyBanner--landing { flex-direction: column; }
+  .storyIcon img { width: 100%; height: auto; }
+}
