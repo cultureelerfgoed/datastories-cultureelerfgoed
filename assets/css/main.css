@@ -132,7 +132,7 @@ query { display: block; width: 100%; }
   width:auto;
 
   /* desktopwaarden – stem af op jouw gevoel */
-  --mls: -32px;   /* negative margin-inline-start */
+  --mls: -39px;   /* negative margin-inline-start */
   --tx: 50%;      /* translateX percentage */
   --ty: -5px;     /* klein omhoog */
   margin-inline-start: var(--mls);
@@ -159,6 +159,7 @@ query { display: block; width: 100%; }
 ===================================================== */
 .rce-yellow-bar {
   width: 100%;
+  height: 28px;
   background-color: #ffb612;
   padding: 0.8rem 0;
 }
