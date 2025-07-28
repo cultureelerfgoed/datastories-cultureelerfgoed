@@ -129,10 +129,10 @@ query { display: block; width: 100%; }
 .rce-logo{
   display:block;
   height:133px;
-  width:390px;
+  width:370px;
 
   /* desktopwaarden – stem af op jouw gevoel */
-  --mls: -40px;   /* negative margin-inline-start */
+  --mls: -38px;   /* negative margin-inline-start */
   --tx: 50%;      /* translateX percentage */
   --ty: -5px;     /* klein omhoog */
   margin-inline-start: var(--mls);
@@ -159,7 +159,7 @@ query { display: block; width: 100%; }
 ===================================================== */
 .rce-yellow-bar {
   width: 100%;
-  height: 200px;
+  height: 300px;
   background-color: #ffb612;
   padding: 0.8rem 0;
 }
