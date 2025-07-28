@@ -458,13 +458,13 @@
         crossorigin="anonymous" defer></script>
 
 <!-- Yasgui scripts -->
-<script src="https://yasgui.triply.cc/yasgui.polyfill.min.js" defer></script>
-<script src="../assets/js/stories.min.js" defer></script>
-<script>
-  document.addEventListener('DOMContentLoaded', function () {
-    if (typeof stories === 'function') stories();
-  });
-</script>
+  <script src="https://yasgui.triply.cc/yasgui.polyfill.min.js"></script>
+  <script src="../assets/js/stories.min.js"></script>
+  <script>
+    window.onload = function () {
+      stories();
+    };
+  </script>
 
 <!-- FOOTER -->
 <footer class="footer-rce-full mt-5" role="contentinfo">
