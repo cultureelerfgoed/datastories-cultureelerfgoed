@@ -109,75 +109,74 @@ query { display: block; width: 100%; }
    3. Header / Logo
 ===================================================== */
 
-/* Volle breedte, weinig extra witruimte */
+/* =====================================================
+   3. Header / Logo  — compacte header + rechtse offset
+===================================================== */
+
+/* Volle breedte, nul extra witruimte */
 .rce-header-full{
   width: 100%;
   background: #fff;
+  padding: 0;
+  margin: 0;
 }
 
+/* Wrapper centreert, geen extra hoogte/padding */
 .rce-header-full .wrapper{
   display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 104px;
-  padding-block: 1px;
-  padding-inline: 0;  /* geen extra horizontale padding */
+  justify-content: center;   /* horizontaal centreren */
+  align-items: center;       /* verticaal centreren */
+  padding: 0;                /* geen verticale/horizontale padding */
+  margin: 0;
 }
 
-/* Logo zelf */
+/* Logo: geen globale img-margin, met nudge rechts/omhoog */
 .rce-header-full img,
-.rce-header-full .rce-logo
-{
-  height: 120px;
-  width: auto;
+.rce-header-full .rce-logo{
   display: block;
-  margin: 0;
-  --logo-nudge-x: 32px;   /* DESKTOP: schuif ~32px naar rechts */
-  --logo-nudge-y: -5px;   /* kleine verticale correctie */
+  margin: 0 !important;      /* overschrijft img { margin:1rem 0 } */
+  height: 110px;             /* desktophoogte; pas aan naar smaak */
+  width: auto;
+
+  /* Optische centrering: blauw vlak in midden */
+  --logo-nudge-x: 32px;      /* rechts-offset desktop */
+  --logo-nudge-y: -8px;      /* iets omhoog tegen SVG-witruimte */
   transform: translate(var(--logo-nudge-x), var(--logo-nudge-y));
 }
 
 /* Minder ruimte vóór de eerste H1 na de gele balk */
-.rce-yellow-bar + .container h1{ margin-top: 1.25rem; }
-
-/* Zorg dat de wrapper zelf echt centreert */
-.rce-header-full .wrapper{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 104px;
-  padding-block: 1px;
-  /* geen extra horizontale padding die de middenas beïnvloedt */
-  padding-inline: 0;
+.rce-yellow-bar + .container h1{
+  margin-top: 1rem;
 }
 
-/* Breakpoints: pas alleen de variabelen aan */
+/* Breakpoints: schaal hoogte + nudge af */
 @media (max-width: 992px){
   .rce-header-full img,
   .rce-header-full .rce-logo{
-    height: 72px;
-    --logo-nudge-x: 22px;  /* tablet */
-    --logo-nudge-y: -3px;
+    height: 84px;
+    --logo-nudge-x: 22px;
+    --logo-nudge-y: -6px;
   }
 }
 
 @media (max-width: 768px){
   .rce-header-full img,
   .rce-header-full .rce-logo{
-    height: 60px;
-    --logo-nudge-x: 16px;  /* mobiel groot */
-    --logo-nudge-y: -3px;
+    height: 68px;
+    --logo-nudge-x: 16px;
+    --logo-nudge-y: -5px;
   }
 }
 
 @media (max-width: 576px){
   .rce-header-full img,
   .rce-header-full .rce-logo{
-    height: 56px;
-    --logo-nudge-x: 8px;   /* mobiel klein */
-    --logo-nudge-y: -2px;
+    height: 58px;
+    --logo-nudge-x: 10px;
+    --logo-nudge-y: -4px;
   }
 }
+
 
 /* =====================================================
    4. Gele balk & breadcrumb
