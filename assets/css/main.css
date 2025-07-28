@@ -132,9 +132,9 @@ query { display: block; width: 100%; }
   width:275px;
 
   /* desktopwaarden – stem af op jouw gevoel */
-  --mls: -40px;   /* negative margin-inline-start */
+  --mls: -50px;   /* negative margin-inline-start */
   --tx: 50%;      /* translateX percentage */
-  --ty: -6px;     /* klein omhoog */
+  --ty: -8px;     /* klein omhoog */
   margin-inline-start: var(--mls);
   transform: translateX(var(--tx)) translateY(var(--ty));
 }
