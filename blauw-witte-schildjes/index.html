@@ -63,7 +63,7 @@
 
   <!-- Favicon & manifest -->
   <link rel="icon" href="../assets/imgs/favicon_rce.png" type="image/png" sizes="32x32">
-  <link rel="apple-touch-icon" href="../assets/imgs/apple-touch-icon.png">
+  <link rel="apple-touch-icon" href="../assets/imgs/favicon_rce.png" type="image/png" sizes="32x32">
   <link rel="manifest" href="../assets/manifest.webmanifest">
 
   <!-- Bootstrap 5.3.7 (met SRI) -->
@@ -103,7 +103,7 @@
   </div>
 
   <!-- STORY CONTENT -->
-  <main id="main" class="container my-4" aria-label="Data story blauw-witte schildjes">
+  <main id="main" role="main" class="container my-4" aria-label="Data story blauw-witte schildjes">
 
     <h1>Beschermd erfgoed: het blauw-witte schildje in Nederland</h1>
 
@@ -426,11 +426,7 @@
       <dd class="col-sm-9"><a href="https://opendatacommons.org/licenses/by/1-0/" target="_blank" rel="noopener">Open Data Commons Attribution 1.0</a></dd>
 
       <dt class="col-sm-3">Datasets</dt>
-      <dd class="col-sm-9">
-        <ul class="mb-0 ps-3">
-          <li><a href="https://linkeddata.cultureelerfgoed.nl/rce/cho" target="_blank" rel="noopener">https://linkeddata.cultureelerfgoed.nl/rce/cho</a></li>
-        </ul>
-      </dd>
+      <dd class="col-sm-9"><a href="https://linkeddata.cultureelerfgoed.nl/rce/cho" target="_blank" rel="noopener">https://linkeddata.cultureelerfgoed.nl/rce/cho</a></dd>
 
       <dt class="col-sm-3">Graphs</dt>
       <dd class="col-sm-9"><code>instanties-rce</code>, <code>punten</code>, <code>owms</code></dd>
@@ -465,9 +461,9 @@
 <script src="https://yasgui.triply.cc/yasgui.polyfill.min.js" defer></script>
 <script src="../assets/js/stories.min.js" defer></script>
 <script>
-  window.onload = function () {
+  document.addEventListener('DOMContentLoaded', function () {
     if (typeof stories === 'function') stories();
-  };
+  });
 </script>
 
 <!-- FOOTER -->
