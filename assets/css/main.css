@@ -120,6 +120,7 @@ query { display: block; width: 100%; }
   justify-content:center;
   align-items:center;
   padding:0; margin:0;
+  min-height: 92px;    /* was 104px */
 }
 
 /* Let op: global img-margins neutraliseren */
@@ -166,7 +167,7 @@ query { display: block; width: 100%; }
   --yb-pad-block: 30px;          /* hoogte van de balk */
   padding-block: var(--yb-pad-block);
   padding-inline: 0;
-
+  margin-top: -4px; 
   box-shadow: 0 1px 0 rgba(0,0,0,.06);
 }
 
