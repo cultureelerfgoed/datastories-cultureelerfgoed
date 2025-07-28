@@ -402,61 +402,69 @@ img.small { max-width: 300px; float: left; margin: 0 1rem 1rem 0; }
    12. LANDING PAGE – storyBanner & partners-blok
 ===================================================== */
 
-/* Zelfde visuele stijl als je inline CSS had */
-.storyBanner--landing,
-.storyBanner {
-  display: flex;
-  align-items: stretch;
+//* ===== Landing: storyBanner geforceerd in kader ===== */
+.storyBanner.storyBanner--landing{
+  display: flex !important;
+  align-items: flex-start;
+  gap: 16px;
   background: #f3f3f3;
   border: 1px solid #ddd;
   border-radius: 8px;
-  overflow: hidden;
+  padding: 16px;
   margin-bottom: 1.5rem;
-  transition: box-shadow .2s ease;
+  box-shadow: 0 0 0 transparent;
 }
-.storyBanner:hover { box-shadow: 0 4px 10px rgba(0,0,0,.1); }
 
-.storyIcon img {
-  width: 200px;
+.storyBanner.storyBanner--landing:hover{
+  box-shadow: 0 4px 10px rgba(0,0,0,.08);
+}
+
+/* Icon links kleiner en vast formaat */
+.storyBanner.storyBanner--landing .storyIcon img{
+  width: 96px;              /* was 200px */
   height: auto;
-  object-fit: cover;
   display: block;
 }
 
-.storyInfo { padding: 1rem; flex: 1; }
+/* Tekstblok strak */
+.storyBanner.storyBanner--landing .storyInfo{
+  padding: 0;
+  flex: 1 1 auto;
+}
 
-.storyLabel {
-  font-size: 1.3rem;
+/* Titelstijl */
+.storyBanner.storyBanner--landing .storyLabel{
+  font-size: 1.25rem;       /* iets kleiner */
   font-weight: 700;
   margin-bottom: .5rem;
-  color: #01689b; /* rijksoverheid blauw */
+  color: #01689b;
 }
-.storyLabel-link { text-decoration: none; color: inherit; }
-.storyLabel-link:hover { text-decoration: underline; }
+.storyBanner.storyBanner--landing .storyLabel-link{
+  text-decoration: none;
+  color: inherit;
+}
+.storyBanner.storyBanner--landing .storyLabel-link:hover{
+  text-decoration: underline;
+}
 
-.storyDescription { font-size: 1rem; color: #333; }
+/* ===== Partners: logo’s veel kleiner en netjes uitlijnen ===== */
+.partners-logos img{
+  max-height: 48px;         /* was 50 maar Triply werd gigantisch; dit limiteert hard */
+  width: auto;
+  height: auto;
+}
 
-/* Partners blok */
-.partners-block {
-  text-align: center;
-  padding: 30px 15px;
-  border-top: 1px solid #ddd;
-  margin-top: 40px;
-  background: #fff;
+@media (max-width: 576px){
+  .partners-logos{
+    gap: 16px !important;
+  }
+  .partners-logos img{
+    max-height: 40px;
+  }
 }
-.partners-logos img {
-  height: 50px;
-  margin: 0 15px;
-}
-.partners-block p {
+
+/* Kleinere regelafstand in partners-tekst zodat het compacter oogt */
+.partners-block p{
   font-size: .95rem;
-  color: #555;
-  max-width: 720px;
-  margin: 20px auto 0;
-}
-
-/* Responsief */
-@media (max-width: 768px){
-  .storyBanner, .storyBanner--landing { flex-direction: column; }
-  .storyIcon img { width: 100%; height: auto; }
+  line-height: 1.5;
 }
