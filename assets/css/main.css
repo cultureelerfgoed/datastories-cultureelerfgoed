@@ -128,11 +128,11 @@ query { display: block; width: 100%; }
 /* Kern: schuif embleem naar midden met negatieve margin + translateX(50%) */
 .rce-logo{
   display:block;
-  height:136px;
+  height:140px;
   width:275px;
 
   /* desktopwaarden – stem af op jouw gevoel */
-  --mls: -37px;   /* negative margin-inline-start */
+  --mls: -40px;   /* negative margin-inline-start */
   --tx: 50%;      /* translateX percentage */
   --ty: -6px;     /* klein omhoog */
   margin-inline-start: var(--mls);
