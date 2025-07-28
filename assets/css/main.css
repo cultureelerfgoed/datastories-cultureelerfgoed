@@ -1,46 +1,55 @@
 /* =====================================================
-   1. Fonts (RCE RO Sans + fallback Roboto2)
+   Blauw‑witte schildjes – main.css
+   Versie: 0.8
+   Datum: 2025-07-28
+   Opzet: RCE stijl (RO Sans), Bootstrap 5 compatible
+===================================================== */
+
+/* =====================================================
+   1. Fonts (RO Sans + Roboto2 fallback)
 ===================================================== */
 @font-face {
   font-family: "RO Sans";
-  src: url("/assets/fonts/ro-sans-regular.woff2") format("woff2"),
-       url("/assets/fonts/ro-sans-regular.woff") format("woff");
+  src: url("../fonts/ro-sans-regular.woff2") format("woff2"),
+       url("../fonts/ro-sans-regular.woff") format("woff");
   font-weight: 400;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
   font-family: "RO Sans";
-  src: url("/assets/fonts/ro-sans-bold.woff2") format("woff2"),
-       url("/assets/fonts/ro-sans-bold.woff") format("woff");
+  src: url("../fonts/ro-sans-bold.woff2") format("woff2"),
+       url("../fonts/ro-sans-bold.woff") format("woff");
   font-weight: 700;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
-  font-family: 'Roboto2';
-  src: url('/assets/fonts/roboto2-regular.woff2') format('woff2'),
-       url('/assets/fonts/roboto2-regular.woff') format('woff'),
-       url('/assets/fonts/roboto2-regular.ttf') format('truetype');
+  font-family: "Roboto2";
+  src: url("../fonts/roboto2-regular.woff2") format("woff2"),
+       url("../fonts/roboto2-regular.woff") format("woff"),
+       url("../fonts/roboto2-regular.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
-  font-family: 'Roboto2';
-  src: url('/assets/fonts/roboto2-bold.woff2') format('woff2'),
-       url('/assets/fonts/roboto2-bold.woff') format('woff'),
-       url('/assets/fonts/roboto2-bold.ttf') format('truetype');
+  font-family: "Roboto2";
+  src: url("../fonts/roboto2-bold.woff2") format("woff2"),
+       url("../fonts/roboto2-bold.woff") format("woff"),
+       url("../fonts/roboto2-bold.ttf") format("truetype");
   font-weight: 700;
   font-style: normal;
+  font-display: swap;
 }
 
 /* =====================================================
-   2. Global reset & body
+   2. Reset & basis
 ===================================================== */
-*, *::before, *::after {
-  box-sizing: border-box;
-}
+*, *::before, *::after { box-sizing: border-box; }
 
 html, body {
   height: 100%;
@@ -50,7 +59,8 @@ html, body {
 }
 
 body {
-  font-family: "RO Sans", "Roboto2", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  margin: 0;
+  font-family: "RO Sans", "Roboto2", system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
   font-weight: 400;
   color: #000;
   background-color: #fff;
@@ -60,16 +70,40 @@ body {
   font-size: 16px;
 }
 
-main {
-  flex: 1 0 auto;
-}
+main { flex: 1 0 auto; }
 
-/* Wrapper centraal max-width */
 .wrapper {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 20px;
 }
+
+/* Link focus overal duidelijk */
+a:focus, a:focus-visible, .footer-link:focus, .footer-link:focus-visible {
+  outline: 3px solid #005ca9; /* Rijksoverheid-blauw */
+  outline-offset: 2px;
+}
+
+/* Skiplink util – gebruikt in HTML */
+.visually-hidden-focusable:not(:focus):not(:focus-within) {
+  position: absolute !important;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0 0 0 0);
+  white-space: nowrap; border: 0;
+}
+.visually-hidden-focusable:focus,
+.visually-hidden-focusable:focus-visible {
+  position: static !important;
+  width: auto; height: auto;
+  margin: 0; padding: 0.25rem 0.5rem;
+  background: #ffb612;
+  color: #000;
+  outline: 3px solid #005ca9;
+}
+
+/* Utility: clearfix voor floats */
+.clearfix::after { content: ""; display: table; clear: both; }
 
 /* =====================================================
    3. Header / Logo
@@ -83,8 +117,10 @@ main {
   padding: 10px 0;
 }
 
-.rce-header-full img.rce-logo {
-  height: 80px; /* vaste hoogte */
+/* Ondersteun zowel met als zonder .rce-logo class */
+.rce-header-full img,
+.rce-header-full .rce-logo {
+  height: 60px;
   width: auto;
   display: block;
 }
@@ -97,7 +133,7 @@ main {
 }
 
 /* =====================================================
-   4. Gele scheidingsbalk + Breadcrumb
+   4. Gele balk & breadcrumb
 ===================================================== */
 .rce-yellow-bar {
   width: 100%;
@@ -127,17 +163,12 @@ main {
   font-weight: normal;
 }
 
-.breadcrumb-container a:hover {
-  text-decoration: none;
-}
+.breadcrumb-container a:hover { text-decoration: none; }
 
-.breadcrumb-sep {
-  margin: 0 0.5rem;
-  font-weight: bold;
-}
+.breadcrumb-sep { margin: 0 0.5rem; font-weight: bold; }
 
 /* =====================================================
-   5. Typografie & Content
+   5. Typografie & content
 ===================================================== */
 h1, h2, h3, h4 {
   font-family: "RO Sans", "Roboto2", sans-serif;
@@ -145,31 +176,18 @@ h1, h2, h3, h4 {
   color: #292b2c;
   margin-top: 2rem;
   margin-bottom: 1rem;
-  line-height: 1.3; /* iets strakker */
+  line-height: 1.3;
+  scroll-margin-top: 96px; /* ankerlinks zichtbaar onder header */
 }
 
-h1 {
-  font-size: 2rem;
-}
-h2 {
-  font-size: 1.6rem;
-}
-h3 {
-  font-size: 1.3rem;
-}
-h4 {
-  font-size: 1.1rem;
-}
+h1 { font-size: 2rem; }
+h2 { font-size: 1.6rem; }
+h3 { font-size: 1.3rem; }
+h4 { font-size: 1.1rem; }
 
-p {
-  margin-bottom: 1rem;
-  line-height: 1.6;
-}
+p { margin-bottom: 1rem; line-height: 1.6; }
 
-ul, ol {
-  padding-left: 1.5rem;
-  margin-bottom: 1rem;
-}
+ul, ol { padding-left: 1.5rem; margin-bottom: 1rem; }
 
 blockquote {
   border-left: 4px solid #ffb612;
@@ -178,67 +196,44 @@ blockquote {
   margin: 1rem 0;
 }
 
-strong { font-weight: bold; }
+strong { font-weight: 700; }
 em { font-style: italic; }
 
 /* Afbeeldingen */
-img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-  margin: 1rem 0;
-}
+img { max-width: 100%; height: auto; display: block; margin: 1rem 0; }
 
-img.float-end {
-  float: right;
-  margin-left: 1rem;
-}
+img.float-end { float: right; margin-left: 1rem; }
 
-img.small {
-  max-width: 300px;
-  float: left;
-  margin: 0 1rem 1rem 0;
-}
+img.small { max-width: 300px; float: left; margin: 0 1rem 1rem 0; }
+
+/* Custom element query: zorg dat het blok-level is */
+query { display: block; width: 100%; }
 
 /* =====================================================
-   6. Story banners & iconen
+   6. Story banners & kaarten
 ===================================================== */
-.storyBanner {
-  display: flex;
-  align-items: center;
-  margin-bottom: 2rem;
-}
+.storyBanner { display: flex; align-items: center; margin-bottom: 2rem; }
 
 .storyIcon img {
   border-radius: 50%;
-  height: 100px;
-  width: 100px;
-  object-fit: cover;
-  margin-right: 20px;
+  height: 100px; width: 100px; object-fit: cover; margin-right: 20px;
 }
 
-.storyInfo {
-  color: #292b2c;
-}
+.storyInfo { color: #292b2c; }
 
-.storyInfo .storyLabel {
-  font-weight: bold;
-  font-size: 120%;
-}
+.storyInfo .storyLabel { font-weight: 700; font-size: 120%; }
 
 /* Cards */
 .sink {
   padding: 10px;
   margin: 10px 0;
-  box-shadow: 0 1px 3px rgba(0,0,0,.2),
-              0 1px 1px rgba(0,0,0,.14),
-              0 2px 1px -1px rgba(0,0,0,.12);
+  box-shadow: 0 1px 3px rgba(0,0,0,.2), 0 1px 1px rgba(0,0,0,.14), 0 2px 1px -1px rgba(0,0,0,.12);
   background-color: #fff;
   border-radius: 4px;
 }
 
 /* =====================================================
-   7. Footer FULL WIDTH
+   7. Footer (full width)
 ===================================================== */
 .footer-rce-full {
   width: 100%;
@@ -249,12 +244,7 @@ img.small {
   font-family: "RO Sans", sans-serif;
   font-size: 0.95rem;
   line-height: 1.4;
-  width: 100vw;
-  margin; 0;
-
-}
-body {
-  margin: 0;
+  margin: 0; /* corrigeert typefout */
 }
 
 .footer-rce-full .footer-inner {
@@ -263,45 +253,34 @@ body {
   padding: 0 20px;
 }
 
-.footer-link {
-  color: #000;
-  text-decoration: underline;
-}
-.footer-link:hover {
-  text-decoration: none;
-}
+.footer-link { color: #000; text-decoration: underline; }
+.footer-link:hover { text-decoration: none; }
 
 /* =====================================================
-   8. Kleine fixes
+   8. Component fixes
 ===================================================== */
-/* Yasgui & CodeMirror fullscreen fix */
-.yasgui .yasqe .CodeMirror.CodeMirror-fullscreen {
-  top: 57.6px;
-}
-
-/* Favicon fix */
-link[rel="icon"] {
-  width: 32px;
-  height: 32px;
-}
+/* Yasgui & CodeMirror fullscreen – pas eventueel aan headerhoogte aan */
+.yasgui .yasqe .CodeMirror.CodeMirror-fullscreen { top: 80px; }
 
 /* =====================================================
-   9. Responsive verbeteringen
+   9. Responsive
 ===================================================== */
 @media (max-width: 768px) {
-  .rce-header-full {
-    padding-top: 20px;
-    padding-bottom: 10px;
-  }
-  .rce-header-full img.rce-logo {
-    height: 60px; /* kleinere hoogte op mobiel */
-  }
-  .breadcrumb-container {
-    flex-direction: column;
-    text-align: center;
-  }
+  .rce-header-full { padding-top: 20px; padding-bottom: 10px; }
+  .rce-header-full img,
+  .rce-header-full .rce-logo { height: 48px; }
+
+  .breadcrumb-container { flex-direction: column; text-align: center; }
+
+  img.float-end { float: none; margin-left: 0; }
 }
-a:focus {
-  outline: 3px solid #005ca9; /* Rijksoverheid-blauw */
-  outline-offset: 2px;
+
+/* =====================================================
+   10. Print
+===================================================== */
+@media print {
+  body { color: #000; background: #fff; }
+  .rce-yellow-bar, .footer-rce-full { background: #fff !important; }
+  a[href^="http"]::after { content: " (" attr(href) ")"; font-size: 90%; }
+  img { break-inside: avoid; }
 }
