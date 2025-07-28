@@ -128,11 +128,11 @@ query { display: block; width: 100%; }
 /* Kern: schuif embleem naar midden met negatieve margin + translateX(50%) */
 .rce-logo{
   display:block;
-  height:124px;
+  height:130px;
   width:auto;
 
   /* desktopwaarden – stem af op jouw gevoel */
-  --mls: -38px;   /* negative margin-inline-start */
+  --mls: -32px;   /* negative margin-inline-start */
   --tx: 50%;      /* translateX percentage */
   --ty: -6px;     /* klein omhoog */
   margin-inline-start: var(--mls);
@@ -141,7 +141,7 @@ query { display: block; width: 100%; }
 
 /* Breakpoints fijnregelen */
 @media (max-width:1200px){
-  .rce-logo{ height:112px; --mls:-34px; --ty:-6px; }
+  .rce-logo{ height:120px; --mls:-34px; --ty:-6px; }
 }
 @media (max-width:992px){
   .rce-logo{ height:92px;  --mls:-28px; --ty:-5px; }
