@@ -402,7 +402,7 @@ img.small { max-width: 300px; float: left; margin: 0 1rem 1rem 0; }
    12. LANDING PAGE – storyBanner & partners-blok
 ===================================================== */
 
-//* ===== Landing: storyBanner geforceerd in kader ===== */
+/* ===== Landing: storyBanner geforceerd in kader ===== */
 .storyBanner.storyBanner--landing{
   display: flex !important;
   align-items: flex-start;
