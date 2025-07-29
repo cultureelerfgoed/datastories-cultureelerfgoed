@@ -545,3 +545,33 @@ query > div::after{                 /* clearfix zodat de tekst eronder stopt*/
   padding: 0;
   list-style: disc inside;
 }
+/* -------------------------------
+   Ruimer vak + nette lijst binnen #foto
+----------------------------------*/
+#foto .yasr_gallery_item {          /* het hele kaartje */
+  width: 100% !important;           /* kaart neemt volledige breedte */
+  max-width: 700px !important;      /* of wat jij wilt; pas aan */
+  box-sizing: border-box;           
+  padding: 1rem;                    /* wat ruimte binnen de kaart */
+  overflow: hidden;                 /* niets steekt meer uit */
+}
+
+/* Afbeelding groter en links uitgelijnd */
+#foto .yasr_gallery_item img {
+  max-width: 320px !important;      /* grotere foto (pas evt. aan) */
+  height: auto;
+  float: left;                      /* foto links */
+  margin: 0 1.25rem .75rem 0;       /* ruimte eromheen */
+}
+
+/* Reset de “absolute / float”‑trucs van YASR voor de lijst */
+#foto .yasr_gallery_item ul,
+#foto .yasr_gallery_item li {
+  position: static !important;
+  float: none !important;
+  display: list-item !important;
+  width: auto !important;
+  margin: 0 0 .35rem 1.25rem;
+  list-style: disc inside;
+  line-height: 1.45;
+}
