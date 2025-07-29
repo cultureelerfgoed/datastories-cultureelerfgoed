@@ -184,6 +184,20 @@
 
     <!-- QUERY 2 PLACEHOLDER -->
     <query data-query-ref="TODO/query2.rq"></query>
+    <!-- QUERY 1 -->
+    <section id="par2">
+      <h2>Voorbeeld van een query</h2>
+      <p>...</p>
+      <query data-config="https://api.linkeddata.cultureelerfgoed.nl/datasets/rce/cho/sparql#query=prefix%20ceo%3A%20%3Chttps%3A%2F%2Flinkeddata.cultureelerfgoed.nl%2Fdef%2Fceo%23%3E%0Aprefix%20rdf%3A%20%3Chttp%3A%2F%2Fwww.w3.org%2F1999%2F02%2F22-rdf-syntax-ns%23%3E%0Aprefix%20rdfs%3A%20%3Chttp%3A%2F%2Fwww.w3.org%2F2000%2F01%2Frdf-schema%23%3E%0Aprefix%20graph%3A%20%3Chttps%3A%2F%2Flinkeddata.cultureelerfgoed.nl%2Fgraph%2F%3E%0Aprefix%20geo%3A%20%3Chttp%3A%2F%2Fwww.opengis.net%2Font%2Fgeosparql%23%3E%0Aprefix%20skos%3A%20%3Chttp%3A%2F%2Fwww.w3.org%2F2004%2F02%2Fskos%2Fcore%23%3E%0A%0Aselect%20distinct%20(uri(concat(%22https%3A%2F%2Fmonumentenregister.cultureelerfgoed.nl%2Fmonumenten%2F%22%2C%20%3Frijksmonumentnummer))%20as%20%3Fmonumentenregister)%20%3Fprovincie%20%3Ffunctie%20%3Fcategorieenfunctie%20(group_concat(distinct%20%3Fmaterial)%20as%20%3FgevondenMaterialen)%20%3Fomschrijving%0Awhere%20%7B...&outputFormat=table"></query>
+    </section>
+
+    <!-- KAART (QUERY 2) -->
+    <section id="kaart">
+      <h2>Kaartweergave</h2>
+      <p>...</p>
+      <query data-config="https://api.linkeddata.cultureelerfgoed.nl/datasets/rce/cho/services/cho/sparql#query=select%20distinct%20%3Fmonumentnummer%20%3Fpoint%20%3Fmaterial%20where%20%7B%0A%20%20%3Fcho%20a%20%3Chttps%3A%2F%2Flinkeddata.cultureelerfgoed.nl%2Fdef%2Fceo%23Rijksmonument%3E%20.%0A%20%20%3Fcho%20%3Chttps%3A%2F%2Flinkeddata.cultureelerfgoed.nl%2Fdef%2Fceo%23heeftGeometrie%3E%2F%3Chttp%3A%2F%2Fwww.opengis.net%2Font%2Fgeosparql%23asWKT%3E%20%3Fpoint%20.%0A%20%20%3Fcho%20%3Chttps%3A%2F%2Flinkeddata.cultureelerfgoed.nl%2Fdef%2Fceo%23rijksmonumentnummer%3E%20%3Fmonumentnummer%20.%0A%20%20%3Fcho%20%3Chttps%3A%2F%2Flinkeddata.cultureelerfgoed.nl%2Fdef%2Fceo%23heeftOmschrijving%3E%2F%3Chttps%3A%2F%2Flinkeddata.cultureelerfgoed.nl%2Fdef%2Fceo%23omschrijving%3E%20%3Fomschrijving%20.%0A%20%20filter(regex(%3Fomschrijving%2C%20%22ijzer%7Cstaal%7Cgietijzer%7Csmeedijzer%22%2C%20%22i%22))%0A%20%20bind("gevonden"%20as%20%3Fmaterial)%0A%7D&outputFormat=geo&outputSettings=%7B%22visualization%22%3A%22grouped%22%7D"></query>
+    </section>
+
 
     <!-- PARAGRAAF 3 -->
     <section id="par3" class="mt-4">
