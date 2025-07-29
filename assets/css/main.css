@@ -575,3 +575,17 @@ query > div::after{                 /* clearfix zodat de tekst eronder stopt*/
   list-style: disc inside;
   line-height: 1.45;
 }
+/* -------------------------------------------------
+   #foto – YASGUI‑paneel lekker ruim maken
+--------------------------------------------------*/
+#foto .yasgui .tabPanel,
+#foto .yasgui .tabPanel.active {   /* zowel verborgen als actieve panel */
+  max-height: none !important;     /* geen vaste hoogte‑limiet meer   */
+  height: auto !important;         /* laat de content de hoogte bepalen */
+  overflow: visible !important;    /* scrollbars weg, alles tonen     */
+}
+
+/* (optioneel) tab‑balk verbergen – we gebruiken toch maar 1 tab */
+#foto .yasgui .tabList {
+  display: none !important;
+}
