@@ -589,3 +589,6 @@ query > div::after{                 /* clearfix zodat de tekst eronder stopt*/
 #foto .yasgui .tabList {
   display: none !important;
 }
+body{
+  outline: 6px solid fuchsia !important;   /* DEBUG – moet je direct zien */
+}
