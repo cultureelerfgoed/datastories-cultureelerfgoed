@@ -4,35 +4,35 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>RCE Data Stories – Template</title>
+  <title>IJzersterk erfgoed – zoektocht naar staal, gietijzer en smeedijzer</title>
 
-  <!-- Basis meta in lijn met story-pagina -->
-  <meta name="description" content="Template voor een interactieve data story van de Rijksdienst voor het Cultureel Erfgoed.">
+  <!-- Basis meta -->
+  <meta name="description" content="Data‑story over staal, gietijzer en smeedijzer in rijksmonumenten via SPARQL en linked data.">
   <meta name="author" content="Rijksdienst voor het Cultureel Erfgoed">
-  <link rel="canonical" href="https://cultureelerfgoed.github.io/datastories-cultureelerfgoed/template/">
+  <link rel="canonical" href="https://cultureelerfgoed.github.io/datastories-cultureelerfgoed/ijzersterk-erfgoed/">
 
   <!-- Open Graph -->
-  <meta property="og:title" content="RCE Data Stories – Template">
-  <meta property="og:description" content="Template voor een interactieve data story van de Rijksdienst voor het Cultureel Erfgoed.">
+  <meta property="og:title" content="IJzersterk erfgoed – zoektocht naar staal, gietijzer en smeedijzer">
+  <meta property="og:description" content="Ontdek waar ijzer, staal en gietijzer voorkomen in rijksmonumenten met interactieve SPARQL‑query’s.">
   <meta property="og:type" content="article">
-  <meta property="og:url" content="https://cultureelerfgoed.github.io/datastories-cultureelerfgoed/template/">
+  <meta property="og:url" content="https://cultureelerfgoed.github.io/datastories-cultureelerfgoed/ijzersterk-erfgoed/">
   <meta property="og:image" content="https://cultureelerfgoed.github.io/datastories-cultureelerfgoed/assets/imgs/blauwwit.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta property="og:image:type" content="image/png">
-  <meta property="og:image:alt" content="Blauw-wit schildje als herkenningsteken voor beschermd erfgoed.">
+  <meta property="og:image:alt" content="Blauw‑wit schildje als herkenningsteken voor beschermd erfgoed.">
   <meta property="og:locale" content="nl_NL">
   <meta property="og:site_name" content="Rijksdienst voor het Cultureel Erfgoed">
 
-  <!-- (optioneel) compacte JSON-LD, generiek gehouden -->
+  <!-- JSON‑LD -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Article",
-    "headline": "RCE Data Stories – Template",
+    "headline": "IJzersterk erfgoed – zoektocht naar staal, gietijzer en smeedijzer",
     "inLanguage": "nl-NL",
-    "url": "https://cultureelerfgoed.github.io/datastories-cultureelerfgoed/template/",
-    "mainEntityOfPage": "https://cultureelerfgoed.github.io/datastories-cultureelerfgoed/template/",
+    "url": "https://cultureelerfgoed.github.io/datastories-cultureelerfgoed/ijzersterk-erfgoed/",
+    "mainEntityOfPage": "https://cultureelerfgoed.github.io/datastories-cultureelerfgoed/ijzersterk-erfgoed/",
     "author": {"@type":"Organization","name":"Rijksdienst voor het Cultureel Erfgoed"},
     "publisher": {
       "@type":"Organization",
@@ -45,136 +45,207 @@
       "url":"https://cultureelerfgoed.github.io/datastories-cultureelerfgoed/assets/imgs/blauwwit.png",
       "width":1200,"height":630
     },
-    "description":"Template voor een interactieve data story; gebruik dit als startpunt voor nieuwe verhalen."
+    "description":"Data‑story over staal, gietijzer en smeedijzer in rijksmonumenten via SPARQL en linked data."
   }
   </script>
 
-  <!-- Favicon & manifest (zoals op je story) -->
+  <!-- Favicon & manifest -->
   <link rel="icon" href="../assets/imgs/favicon_rce.png" sizes="32x32" type="image/png">
   <link rel="apple-touch-icon" href="../assets/imgs/favicon_rce.png" sizes="180x180">
   <meta name="theme-color" content="#ffb612">
   <link rel="manifest" href="../assets/manifest.webmanifest">
 
-  <!-- Bootstrap 5.3.7 met SRI -->
+  <!-- Bootstrap 5.3.7 -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
 
   <!-- Rijksoverheid Sans -->
   <link rel="stylesheet" href="https://fonts.cdnfonts.com/css/ro-sans" />
 
-  <!-- Lokale styles (zelfde volgorde als story) -->
+  <!-- Lokale styles -->
   <link href="../assets/css/main.css?v=0.8.1" rel="stylesheet" type="text/css">
   <link href="../assets/css/stories.min.css" rel="stylesheet" type="text/css">
   <link href="../assets/css/yasgui.bootstrap.css" rel="stylesheet" type="text/css">
 
-  <meta name="version" content="0.8-template">
+  <meta name="version" content="1.0-ijzersterk">
 </head>
 
 <body>
-
   <!-- Skiplink -->
   <a href="#main" class="visually-hidden-focusable">Direct naar hoofdinhoud</a>
 
   <!-- HEADER -->
   <header class="rce-header-full">
     <div class="wrapper">
-      <img class="rce-logo"
-           src="../assets/imgs/logo_cultureelerfgoed.svg"
-           alt="Rijksdienst voor het Cultureel Erfgoed">
+      <img class="rce-logo" src="../assets/imgs/logo_cultureelerfgoed.svg" alt="Rijksdienst voor het Cultureel Erfgoed">
     </div>
   </header>
 
-  <!-- BREADCRUMB (zelfde markup/klassen) -->
+  <!-- BREADCRUMB -->
   <div class="rce-yellow-bar">
     <div class="breadcrumb-container">
       <nav aria-label="breadcrumb">
         <a href="https://cultureelerfgoed.github.io/datastories-cultureelerfgoed/">Home</a>
         <span class="breadcrumb-sep" aria-hidden="true">&gt;</span>
-        <span aria-current="page">Template</span>
+        <span aria-current="page">IJzersterk erfgoed</span>
       </nav>
     </div>
   </div>
 
-  <!-- TEMPLATE CONTENT -->
+  <!-- CONTENT -->
   <main id="main" role="main" class="container mt-3 mb-4 story"
-        aria-label="RCE Data Stories template"
+        aria-label="IJzersterk erfgoed"
         data-endpoint="https://api.linkeddata.cultureelerfgoed.nl/datasets/rce/cho/sparql">
 
-    <h1>RCE Data Stories – Template</h1>
-    <p>
-      Dit is een basis‑template voor een interactieve data story van de
-      Rijksdienst voor het Cultureel Erfgoed (RCE).
-    </p>
-    <p>
-      Je kunt deze template gebruiken om een verhaal op te bouwen met tekst,
-      visualisaties en interactieve SPARQL‑queries. De data wordt rechtstreeks
-      opgehaald via Linked Open Data van de RCE.
-    </p>
+    <h1>IJzersterk erfgoed : zoektocht naar staal, gietijzer en smeedijzer</h1>
 
-    <h2>Hoe werkt deze template?</h2>
-    <ul>
-      <li>De <strong>navigatie en opmaak</strong> zijn ingesteld in RCE‑huisstijl (gedeelde <code>main.css</code>).</li>
-      <li>Voeg <code>&lt;query&gt;</code>-componenten toe voor interactieve visualisaties.</li>
-      <li>Het data‑eindpunt staat standaard op de RCE SPARQL‑service.</li>
-      <li>Vervang voorbeeldbestanden en teksten voor jouw story.</li>
-    </ul>
+    <!-- INHOUDSOPGAVE -->
+    <nav aria-label="Inhoudsopgave" class="mb-4">
+      <h2 id="inhoudsopgave">Inhoudsopgave</h2>
+      <ul>
+        <li><a href="#inleiding">Inleiding</a></li>
+        <li><a href="#par1">SPARQL‑query’s en dataset</a></li>
+        <li><a href="#par2">Voorbeeld van een query</a></li>
+        <li><a href="#par3">Opmerkingen</a></li>
+        <li><a href="#methode">Methodeverantwoording</a></li>
+        <li><a href="#afsluiting">Afsluiting</a></li>
+      </ul>
+    </nav>
 
-    <h2>Voorbeeldquery 1: Rijksmonumenten per provincie</h2>
-    <p>
-      Voorbeeld van een eenvoudige query die aantallen rijksmonumenten
-      met een blauw‑wit schildje per provincie ophaalt.
-    </p>
+    <!-- INLEIDING -->
+    <section id="inleiding">
+      <h2>Inleiding</h2>
+      <p>Een collega met een platform over historische ijzerconstructies stelde een gerichte vraag: <em>welke rijksmonumenten bevatten metaalsoorten als ijzer, staal of gietijzer?</em></p>
+      <p>Hij zoekt monumenten waarin <strong>een of meer</strong> van de volgende materialen voorkomen:</p>
+      <ul>
+        <li>ijzer</li>
+        <li>gietijzer</li>
+        <li>smeedijzer</li>
+        <li>staal (inclusief cortenstaal en RVS)</li>
+        <li>welijzer</li>
+      </ul>
+      <p>Daarnaast wil hij weten:</p>
+      <ul>
+        <li>hoofdcategorie, subcategorie en functie</li>
+        <li>locatiegegevens</li>
+      </ul>
+      <p>Met deze gegevens kan hij vragen beantwoorden zoals:</p>
+      <blockquote class="blockquote">
+        Hoeveel stalen bruggen zijn er? Waar staan gietijzeren grafzerken? Welke fonteinen zijn van smeedijzer?
+      </blockquote>
+      <p>De resultaten verwerkt hij tot kennisitems voor zijn platform.</p>
+    </section>
 
-    <query data-query-ref="template/queries/internationaal-kenteken-per-provincie.rq"></query>
+    <!-- PARAGRAAF 1 -->
+    <section id="par1">
+      <h2>SPARQL‑query’s en de Rijksmonumentendataset</h2>
+      <p>Om de vraag te beantwoorden schreven we SPARQL‑query’s op de linked‑data‑voorziening van de RCE. Daarmee zoeken we gericht naar monumenten waarin metalen als ijzer, gietijzer, smeedijzer, staal, cortenstaal of RVS voorkomen.</p>
+      <p>De dataset bevat per monument:</p>
+      <ul>
+        <li>materiaalomschrijving</li>
+        <li>hoofdcategorie, subcategorie en functie</li>
+        <li>locatiegegevens</li>
+      </ul>
+      <p>Met de query’s verzamelen we snel en nauwkeurig de informatie die nodig is. Zo brengen we niet alleen de spreiding van metaaltoepassingen in beeld, maar ook hun rol in het erfgoed.</p>
+      <p>De uitkomsten gebruikt de collega om kennisitems te maken voor zijn platform over historische ijzerconstructies.</p>
+    </section>
 
-    <p>
-      Handig om geografische spreiding te tonen. Combineer meerdere queries
-      met tekst, kaarten, grafieken of tabellen.
-    </p>
+    <!-- QUERY 1 PLACEHOLDER -->
+    <query data-query-ref="TODO/query1.rq"></query>
 
-    <h2>Voorbeeldquery 2: Top 20 gemeenten (BarChart)</h2>
-    <p>
-      Niet alles hoeft een kaart te zijn. Hieronder een query die de
-      <strong>top 20 gemeenten</strong> toont met de meeste rijksmonumenten
-      met een blauw‑wit schildje (BarChart).
-    </p>
+    <!-- PARAGRAAF 2 -->
+    <section id="par2" class="mt-4">
+      <h2>Voorbeeld van een query</h2>
+      <p>Met deze SPARQL‑query zoeken we in de Rijksmonumentendataset naar monumenten waarin specifieke metaaltermen voorkomen. Voor elk resultaat halen we op:</p>
+      <ul>
+        <li>omschrijving</li>
+        <li>monumentnummer</li>
+        <li>functie</li>
+        <li>locatie</li>
+      </ul>
+      <p>We voegen ook een korte samenvatting toe met functie, monumentnummer en de gevonden materialen. Zo ontstaat een bruikbaar overzicht van monumenten waarin metaal een rol speelt.</p>
 
-    <query 
-      data-config="https://api.linkeddata.cultureelerfgoed.nl/datasets/rce/cho/services/cho/sparql#query=prefix%20ceo%3A%20%3Chttps%3A%2F%2Flinkeddata.cultureelerfgoed.nl%2Fdef%2Fceo%23%3E%0Aprefix%20skos%3A%20%3Chttp%3A%2F%2Fwww.w3.org%2F2004%2F02%2Fskos%2Fcore%23%3E%0APREFIX%20owms%3A%20%20%3Chttps%3A%2F%2Flinkeddata.cultureelerfgoed.nl%2Fgraph%2Fowms%3E%0Aprefix%20rn%3A%20%3Chttps%3A%2F%2Fdata.cultureelerfgoed.nl%2Fterm%2Fid%2Frn%2F%3E%0A%0ASELECT%20%3Fgemeente%20(COUNT(DISTINCT%20%3Frijksmonument)%20AS%20%3Faantal)%0AWHERE%20%7B%0A%20%20%3Frijksmonument%0A%20%20%20%20ceo%3AinternationaalKenteken%20true%20%3B%0A%20%20%20%20%20%20%20%20%20%20ceo%3AheeftJuridischeStatus%20rn%3Ab2d9a59a-fe1e-4552-9a05-3c2acddff864%20%3B%0A%20%20%20%20ceo%3Arijksmonumentnummer%20%3Frijksmonumentnummer%20%3B%0A%20%20%20%20ceo%3AheeftBasisregistratieRelatie%20%3Fbasisrel%20.%0A%0A%20%20%3Fbasisrel%0A%20%20%20%20ceo%3AheeftGemeente%20%3Fgem%20%3B%0A%20%20%20%20ceo%3AheeftProvincie%20%3Fprov%20.%0A%0A%20%20GRAPH%20owms%3A%20%7B%0A%20%20%20%20%3Fgem%20%20skos%3AprefLabel%20%3Fgemeente%20.%0A%20%20%20%20%3Fprov%20skos%3AprefLabel%20%3Fprovincie%20.%0A%20%20%7D%0A%7D%0AGROUP%20BY%20%3Fgemeente%0AORDER%20BY%20DESC(%3Faantal)%0ALIMIT%2020%0A&endpoint=https%3A%2F%2Fapi.linkeddata.cultureelerfgoed.nl%2Fdatasets%2Frce%2Fcho%2Fservices%2Fcho%2Fsparql&requestMethod=POST&tabTitle=Query&headers=%7B%7D&contentTypeConstruct=application%2Fn-triples%2C*%2F*%3Bq%3D0.9&contentTypeSelect=application%2Fsparql-results%2Bjson%2C*%2F*%3Bq%3D0.9&outputFormat=gchart&outputSettings=%7B%22chartConfig%22%3A%7B%22options%22%3A%7B%22legacyScatterChartLabels%22%3Atrue%2C%22tooltip%22%3A%7B%22isHtml%22%3Atrue%2C%22ignoreBounds%22%3Afalse%7D%2C%22isStacked%22%3Afalse%2C%22booleanRole%22%3A%22certainty%22%2C%22vAxes%22%3A%5B%7B%22minValue%22%3Anull%2C%22maxValue%22%3Anull%2C%22viewWindow%22%3Anull%2C%22viewWindowMode%22%3Anull%2C%22useFormatFromData%22%3Atrue%7D%2C%7B%22useFormatFromData%22%3Atrue%7D%5D%2C%22hAxis%22%3A%7B%22viewWindow%22%3A%7B%22max%22%3Anull%2C%22min%22%3Anull%7D%2C%22minValue%22%3Anull%2C%22maxValue%22%3Anull%2C%22useFormatFromData%22%3Atrue%2C%22title%22%3A%22Aantal%22%7D%2C%22legend%22%3A%22right%22%2C%22width%22%3A%22100%25%22%2C%22height%22%3A%22100%25%22%2C%22title%22%3A%22Overzicht%20per%20gemeente%20-%20top%2020%22%7D%2C%22state%22%3A%7B%7D%2C%22view%22%3A%7B%22columns%22%3Anull%2C%22rows%22%3Anull%7D%2C%22isDefaultVisualization%22%3Afalse%2C%22chartType%22%3A%22BarChart%22%7D%7D">
-    </query>
+      <h3>Zoektermen</h3>
+      <ul class="columns-2">
+        <li>ijzer</li><li>staal</li><li>stalen</li><li>welijzer</li><li>smeedijzer</li><li>rvs</li><li>corten</li><li>cortenstaal</li><li>roestvast</li><li>roestvrij</li><li>ijzeren</li><li>roest</li>
+      </ul>
 
-    <p>
-      Dit type visualisatie is handig voor <strong>vergelijkingen</strong>, zoals een top 10 of top 20.
-    </p>
+      <h3>Uitsluitingen</h3>
+      <p>Termen die niets met materiaal te maken hebben:</p>
+      <ul>
+        <li>Corten (als persoons‑ of plaatsnaam)</li>
+        <li>J.P. Corten</li>
+        <li>Cortenbach</li>
+        <li>Cortensstraat</li>
+        <li>Huis Corten</li>
+      </ul>
+      <p>De resultaten worden als tabel weergegeven. Deze indeling is geschikt voor export naar CSV of verdere analyse.</p>
+    </section>
 
-    <h2>Methodeverantwoording</h2>
-    <p>
-      Beschrijf hier kort selectie, filters, beperkingen en verantwoording.
-    </p>
-    <ul>
-      <li>Welke dataset(s) zijn gebruikt (bijv. CHO)?</li>
-      <li>Welke filters worden toegepast?</li>
-      <li>Beperkingen/onvolledigheid van data.</li>
-      <li>Hoe zijn aantallen en grafieken tot stand gekomen?</li>
-    </ul>
+    <!-- QUERY 2 PLACEHOLDER -->
+    <query data-query-ref="TODO/query2.rq"></query>
 
-    <h2>Literatuur</h2>
-    <ol>
-      <li>Voeg hier relevante verwijzingen toe.</li>
-    </ol>
+    <!-- PARAGRAAF 3 -->
+    <section id="par3" class="mt-4">
+      <h2>Opmerkingen</h2>
+      <table class="table table-bordered align-middle">
+        <tbody>
+          <tr>
+            <td><img src="https://linkeddata.cultureelerfgoed.nl/rce/Asset-dataset/assets/66acca8cd497931671dd4316" alt="Try this query yourself" width="300"></td>
+            <td>Om te downloaden: ga naar <span class="text-primary">TRY THIS QUERY YOURSELF</span>.</td>
+          </tr>
+          <tr>
+            <td><img src="https://linkeddata.cultureelerfgoed.nl/rce/Asset-dataset/assets/66acca8cdde41bc1f71f059e" alt="Scroll" width="300"></td>
+            <td>Scrol naar beneden.</td>
+          </tr>
+          <tr>
+            <td><img src="https://linkeddata.cultureelerfgoed.nl/rce/Asset-dataset/assets/66acca8cd497931671dd432c" alt="Continue" width="300"></td>
+            <td>Laat de query lopen.</td>
+          </tr>
+          <tr>
+            <td><img src="https://linkeddata.cultureelerfgoed.nl/rce/Asset-dataset/assets/66acca8cdde41bc1f71f05b4" alt="Export" width="300"></td>
+            <td>Klik op export en kies CSV.</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
 
-    <h2>Contact</h2>
-    <p>
-      Vragen over deze template of het gebruik van RCE linked data?
-      Mail ons via <a href="mailto:thesauri@cultureelerfgoed.nl">thesauri@cultureelerfgoed.nl</a>.
-    </p>
+    <!-- METHODE -->
+    <section id="methode" class="mt-4">
+      <h2>Methodeverantwoording</h2>
+      <p>Deze story gebruikt de CHO‑dataset van de RCE, gefilterd op termen die wijzen op het gebruik van ijzer of staal. We hebben:</p>
+      <ul>
+        <li>alle monumentrecords doorzocht op materiaalomschrijvingen;</li>
+        <li>uitsluitingen toegepast op persoons‑ en plaatsnamen;</li>
+        <li>de resultaten verrijkt met hoofdcategorie, subcategorie, functie en locatie via bestaande relaties in de dataset;</li>
+        <li>dezelfde query‑logica gebruikt in beide voorbeelden, zodat cijfers consistent zijn.</li>
+      </ul>
+      <p>Beperkingen:</p>
+      <ul>
+        <li>materiaaltermen komen niet altijd voor in de omschrijving; aantallen kunnen dus lager uitvallen dan in werkelijkheid;</li>
+        <li>niet alle monumenten hebben gedetailleerde functie‑ of locatievelden ingevuld;</li>
+        <li>inhoud van records wijzigt; resultaten zijn een momentopname (<time datetime="2025-07-29">29‑07‑2025</time>).</li>
+      </ul>
+    </section>
+
+    <!-- AFSLUITING -->
+    <section id="afsluiting" class="mt-4">
+      <h2>Afsluiting</h2>
+      <p>Door gericht te zoeken op materiaaltermen in monumentomschrijvingen bouwen we kennis op over het gebruik van metaal in het gebouwde erfgoed. De resultaten zijn een waardevolle bron voor kennisdeling en instandhouding.</p>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="mt-4">
+      <h2>Contact</h2>
+      <p>Vragen of aanvullingen? Mail ons via <a href="mailto:thesauri@cultureelerfgoed.nl">thesauri@cultureelerfgoed.nl</a>.</p>
+    </section>
 
   </main>
 
   <!-- FOOTER -->
   <footer class="footer-rce-full" role="contentinfo">
     <div class="footer-inner">
-      © Rijksdienst voor het Cultureel Erfgoed ·
+      © Rijksdienst voor het Cultureel Erfgoed ·
       <a href="mailto:thesauri@cultureelerfgoed.nl" class="footer-link">thesauri@cultureelerfgoed.nl</a>
     </div>
   </footer>
@@ -183,9 +254,8 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
           integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
           crossorigin="anonymous" defer></script>
-
-  <script src="https://yasgui.triply.cc/yasgui.polyfill.min.js"></script>
-  <script src="../assets/js/stories.min.js"></script>
+  <script src="https://yasgui.triply.cc/yasgui.polyfill.min.js" defer></script>
+  <script src="../assets/js/stories.min.js" defer></script>
   <script>
     window.onload = function () {
       stories();
