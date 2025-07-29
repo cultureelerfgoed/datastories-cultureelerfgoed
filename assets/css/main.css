@@ -249,6 +249,18 @@ img.float-end { float: right; margin-left: 1rem; }
 img.small { max-width: 300px; float: left; margin: 0 1rem 1rem 0; }
 
 /* =====================================================
+   5a. Multicolumn‑utilities
+   ===================================================== */
+.columns-2{
+  column-count: 2;          /* twee kolommen op desktop */
+  column-gap: 1.5rem;       /* >>> hier je gewenste tussenruimte <<< */
+}
+
+@media (max-width: 576px){
+  .columns-2{ column-count: 1; }  /* op mobiel gewoon één kolom */
+}
+
+/* =====================================================
    6. Story banners & kaarten
 ===================================================== */
 .storyBanner { display: flex; align-items: center; margin-bottom: 2rem; }
