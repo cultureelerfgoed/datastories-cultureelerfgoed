@@ -352,6 +352,19 @@ img.small { max-width: 300px; float: left; margin: 0 1rem 1rem 0; }
   }
 }
 
+/* ===== Fix: floats in YASGUI‑widgets niet laten overlappen ===== */
+.story figure{               /* alle figuren binnen een story */
+  display:block;
+  margin:1.5rem 0;           /* wat lucht erboven en eronder   */
+  clear:both;                /* forceer dat de volgende sectie eronder begint */
+}
+
+.story figure::after{        /* klassieke clearfix‑hack       */
+  content:"";
+  display:table;
+  clear:both;
+}
+
 /* =====================================================
    10. Print
 ===================================================== */
