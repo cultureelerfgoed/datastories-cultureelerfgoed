@@ -592,3 +592,60 @@ query > div::after{                 /* clearfix zodat de tekst eronder stopt*/
 body{
   outline: 6px solid fuchsia !important;   /* DEBUG – moet je direct zien */
 }
+/* =========================================================
+   #foto — definitieve YASGUI‑fix: breder kaartje, nette lijst
+   ========================================================= */
+#foto .yasr_gallery_item {
+  /* kaartje zelf */
+  width: 100% !important;          /* kaart vult figuur */
+  max-width: 680px !important;     /* of pas aan naar smaak */
+  padding: 1rem;
+  box-sizing: border-box;
+  overflow: hidden;                /* niets steekt uit */
+  background: #fafafa;
+  border: 1px solid #e5e5e5;
+  border-radius: 6px;
+  position: relative;              /* lost evt. abs‑positie in sub‑items op */
+}
+
+/* foto links – tekst ernaast */
+#foto .yasr_gallery_item img {
+  max-width: 310px !important;     /* breder beeld */
+  height: auto;
+  float: left;
+  margin: 0 1.25rem .75rem 0;
+}
+
+/* lijst terug naar ‘normaal’ */
+#foto .yasr_gallery_item ul,
+#foto .yasr_gallery_item li {
+  position: static   !important;
+  float:    none     !important;
+  display:  list-item!important;
+  width:    auto     !important;
+
+  margin: 0 0 .35rem 1.25rem;
+  padding: 0;
+  list-style: disc inside;
+  line-height: 1.45;
+}
+
+/* clearfix zodat alles eronder weer netjes begint */
+#foto .yasr_gallery_item::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* tab‑paneel onbeperkt hoog + geen scrollbars */
+#foto .yasgui .tabPanel,
+#foto .yasgui .tabPanel.active {
+  max-height: none   !important;
+  height:     auto   !important;
+  overflow:   visible!important;
+}
+
+/* optioneel: de tab‑balk zelf verbergen (er is toch maar één tab) */
+#foto .yasgui .tabList {
+  display: none !important;
+}
