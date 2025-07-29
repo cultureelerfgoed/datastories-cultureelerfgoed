@@ -373,6 +373,22 @@ query{
   clear:both;
 }
 
+/* optioneel: geef het widget zelf een zachte rand & padding */
+query{
+  border:1px solid #eee;
+  border-radius:6px;
+  padding:0.75rem;
+  background:#fafafa;
+}
+/* ===== layout binnen YASGUI‑widgets fixen ===== */
+query > div > center{               /* het blok met de thumbnail            */
+  float:left;                       /* zet het plaatje links                */
+  margin:0 1.25rem .75rem 0;        /* wat ruimte eromheen                  */
+}
+query > div::after{                 /* clearfix zodat de tekst eronder stopt*/
+  content:""; display:block; clear:both;
+}
+
 /* =====================================================
    10. Print
 ===================================================== */
