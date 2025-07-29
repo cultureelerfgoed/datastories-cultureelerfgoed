@@ -529,3 +529,19 @@ query > div::after{                 /* clearfix zodat de tekst eronder stopt*/
   line-height: 1.5;
 }
 
+/* --- override YASGUI bullet‑list gedrag in fotosectie --- */
+#foto figure ul,
+#foto figure li,
+#foto figure ul ul,
+#foto figure ul li  {
+  /* reset layout‑eigenschappen die voor een gallerij bedoeld zijn */
+  position: static !important;
+  float: none !important;
+
+  /* normale lijst‑eigenschappen */
+  display: list-item !important;
+  width: auto !important;
+  margin: 0 0 .25rem 1.25rem;   /* nette opsomming */
+  padding: 0;
+  list-style: disc inside;
+}
