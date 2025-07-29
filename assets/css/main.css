@@ -352,16 +352,24 @@ img.small { max-width: 300px; float: left; margin: 0 1rem 1rem 0; }
   }
 }
 
-/* ===== Fix: floats in YASGUI‑widgets niet laten overlappen ===== */
-.story figure{               /* alle figuren binnen een story */
+/* ===== YASGUI‑widgets netjes afronden ===== */
+
+/* 1. Maak van het <query>‑element een block formatting context       */
+/*    → overflow:auto zorgt dat de hoogte van het element de floats   */
+/*      omvat, zodat er eronder weer ‘schone’ ruimte is.              */
+query{
   display:block;
-  margin:1.5rem 0;           /* wat lucht erboven en eronder   */
-  clear:both;                /* forceer dat de volgende sectie eronder begint */
+  overflow:auto;        /* creëert BFC = clears inner floats       */
+  margin:1.5rem 0;      /* wat lucht erboven en eronder            */
 }
 
-.story figure::after{        /* klassieke clearfix‑hack       */
-  content:"";
-  display:table;
+/* 2. Extra vangnet: elk groot kop‑ of paragraafelement na een widget */
+/*    moet sowieso onder eventuele resterende floats beginnen.       */
+.story h2,
+.story h3,
+.story p,
+.story ul,
+.story ol{
   clear:both;
 }
 
