@@ -465,7 +465,7 @@ query > div::after{                 /* clearfix zodat de tekst eronder stopt*/
 /* ===== Landing: storyBanner geforceerd in kader ===== */
 .storyBanner.storyBanner--landing{
   display: flex !important;
-  align-items: flex-start;
+  align-items: center; /* blijft behouden */
   gap: 16px;
   background: #f3f3f3;
   border: 1px solid #ddd;
@@ -480,10 +480,18 @@ query > div::after{                 /* clearfix zodat de tekst eronder stopt*/
 }
 
 /* Icon links kleiner en vast formaat */
-.storyBanner.storyBanner--landing .storyIcon img{
-  width: 96px;              /* was 200px */
-  height: auto;
-  display: block;
+.storyBanner.storyBanner--landing .storyIcon {
+  flex: 0 0 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.storyBanner.storyBanner--landing .storyIcon img {
+  width: 96px;
+  height: 96px;
+  object-fit: cover;
+  border-radius: 50%;
 }
 
 /* Tekstblok strak */
