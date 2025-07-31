@@ -680,3 +680,37 @@ query > div::after{                 /* clearfix zodat de tekst eronder stopt*/
 #foto .yasgui .tabList {
   display: none !important;
 }
+/* ================================
+   Yasgui: nette weergave RDF-HTML met afbeelding + tekst
+   ================================ */
+query > div {
+  overflow: auto;
+  padding: 1rem;
+  background-color: #fafafa;
+  border-radius: 6px;
+  margin-bottom: 2rem;
+}
+
+query > div > center,
+query > div > div:first-child > center {
+  float: left;
+  margin: 0 1.25rem .75rem 0;
+  max-width: 300px;
+}
+
+query > div ul {
+  list-style: disc inside;
+  margin: 0;
+  padding: 0;
+}
+
+query > div li {
+  margin-bottom: .25rem;
+  word-break: break-word;
+}
+
+query > div::after {
+  content: "";
+  display: table;
+  clear: both;
+}
