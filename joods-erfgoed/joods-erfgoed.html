@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Joods erfgoed in monumenten</title>
+  <meta name="description" content="Data‑story over Joods cultureel erfgoed in rijksmonumenten met SPARQL en linked data.">
+  <meta name="author" content="Rijksdienst voor het Cultureel Erfgoed">
+  <link rel="canonical" href="https://cultureelerfgoed.github.io/datastories-cultureelerfgoed/joods-erfgoed/">
+  <meta property="og:title" content="Joods erfgoed in monumenten">
+  <meta property="og:description" content="Ontdek Joods erfgoed in rijksmonumenten via SPARQL‑query’s en linked data.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://cultureelerfgoed.github.io/datastories-cultureelerfgoed/joods-erfgoed/joods-erfgoed.html">
+  <meta property="og:image" content="https://cultureelerfgoed.github.io/datastories-cultureelerfgoed/assets/imgs/og-joods-erfgoed.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:alt" content="Joods erfgoed in Nederland.">
+  <meta property="og:locale" content="nl_NL">
+  <meta property="og:site_name" content="Rijksdienst voor het Cultureel Erfgoed">
+
+  <!-- Stylesheets -->
+  <link rel="icon" href="../assets/imgs/favicon_rce.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="../assets/imgs/favicon_rce.png" sizes="180x180">
+  <meta name="theme-color" content="#ffb612">
+  <link rel="manifest" href="../assets/manifest.webmanifest">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.cdnfonts.com/css/ro-sans" />
+  <link href="../assets/css/main.css?v=0.8.1" rel="stylesheet" type="text/css">
+  <link href="../assets/css/stories.min.css" rel="stylesheet" type="text/css">
+  <link href="../assets/css/yasgui.bootstrap.css" rel="stylesheet" type="text/css">
+  <meta name="version" content="1.0-joods-erfgoed">
+</head>
+
+<body>
+<a href="#main" class="visually-hidden-focusable">Direct naar hoofdinhoud</a>
+
+<header class="rce-header-full"><div class="wrapper"><img class="rce-logo" src="../assets/imgs/logo_cultureelerfgoed.svg" alt="Rijksdienst voor het Cultureel Erfgoed"></div></header>
+<div class="rce-yellow-bar"><div class="breadcrumb-container">
+<nav aria-label="breadcrumb"><a href="https://cultureelerfgoed.github.io/datastories-cultureelerfgoed/">Home</a> <span class="breadcrumb-sep">&gt;</span> <span aria-current="page">Joods erfgoed</span></nav></div></div>
+
+<main id="main" role="main" class="container mt-3 mb-4 story" aria-label="Joods erfgoed">
+
+<h1>Joods erfgoed in rijksmonumenten</h1>
+
+<nav aria-label="Inhoudsopgave" class="mb-4"><h2 id="inhoudsopgave">Inhoudsopgave</h2>
+<ul>
+  <li><a href="#inleiding">Inleiding</a></li>
+  <li><a href="#sparql">SPARQL‑query’s en dataset</a></li>
+  <li><a href="#query-tabel">Query tabel</a></li>
+  <li><a href="#kaart">Query kaartje</a></li>
+  <li><a href="#methode">Methodeverantwoording</a></li>
+  <li><a href="#disclaimer">Disclaimer</a></li>
+</ul>
+</nav>
+
+<section id="inleiding"><h2>Inleiding</h2>
+<p>Voor een stagiair bouwkunde zijn we op zoek gegaan naar Joods erfgoed in het monumentenregister.</p>
+<p>Deze wil graag weten hoeveel rijksmonumenten in het register verwijzen naar termen zoals:</p>
+<ul>
+<li>Asjkenazisch, Hebreeuws, Hoogduits, Isr., Israëlitisch, Jiddisch, Joden, Jood, Joodse, Joods, Kille, Kosher, Koosjer, Mikwe, Portugees, Rabbijn, Sefardisch, Sjabbat, sabbat, Sjoel, Synagoge</li>
+</ul>
+<p>Daarnaast is er interesse in hoofdcategorie, subcategorie, functie en locatie van deze monumenten.</p>
+<p>Het doel: vragen beantwoorden zoals hoeveel sjoels, Joodse begraafplaatsen, scholen of Hebreeuwse inscripties er zijn.</p>
+</section>
+
+<section id="sparql"><h2>SPARQL‑query’s en de Rijksmonumentendataset</h2>
+<p>SPARQL‑query’s op de linked data voorziening van de RCE helpen bij het gericht zoeken naar monumenten met termen zoals Jood, Joods, Jiddisch, Hebreeuws, Mikwe, enzovoorts.</p>
+<p>De resultaten leveren per monument o.a. hoofdcategorie, subcategorie, functie en locatie op. Dit helpt bij het documenteren en behouden van Joods cultureel erfgoed.</p>
+</section>
+
+<section id="query-tabel"><h2>Query tabel</h2>
+<p>Deze query doorzoekt de dataset op Joodse termen. Per monument worden omschrijving, nummer, functie en locatie opgehaald. </p>
+<p><strong>Zoektermen:</strong> Jood, Joods, Joodse, Joden, Israëlitisch, Hebreeuws, Jiddisch, Kosher, Koosjer, Sjabbat, Kille, Mikwe, Sjoel, Hoogduits, Asjkenazisch, Portugees, etc.</p>
+<p><strong>Uitsluitingen:</strong> Jodenbreestraat, Jozef Israëls.</p>
+<p><span style="background-color: yellow; color: black;">Deze opmaak is het beste indien de data verwerkt moet worden als CSV.</span></p>
+<query> <!-- SPARQL-query voor tabel komt hier --> </query>
+</section>
+
+<section id="kaart"><h2>Query kaartje</h2>
+<p>Op basis van dezelfde logica kan deze dataset ook geografisch worden weergegeven.</p>
+<query> <!-- SPARQL-query voor kaart komt hier --> </query>
+</section>
+
+<section id="methode"><h2>Methodeverantwoording</h2>
+<ul>
+  <li>Monumenten zijn doorzocht op omschrijvingen met Joodse termen.</li>
+  <li>Resultaten verrijkt met functie, categorie en locatie.</li>
+  <li>Dataset: dynamisch, momentopname (extractdatum 2025-02-21).</li>
+</ul>
+</section>
+
+<section id="disclaimer"><h2>Disclaimer</h2>
+<blockquote class="disclaimer-box">
+<p><strong>DISCLAIMER</strong></p>
+<p><em>Er kunnen geen rechten worden ontleend aan de weergegeven resultaten. De verstrekte informatie is uitsluitend bedoeld voor informatieve doeleinden en biedt geen garantie op volledigheid, juistheid, of actualiteit.</em></p>
+<hr>
+<ul>
+<li>Titel: Joods erfgoed</li>
+<li>Beschrijving: Deze DataStory is gemaakt met behulp van de CHO en afbeeldingen 2 dataset en wordt gebruikt zoals deze is verstrekt.</li>
+<li>Publisher: RCE</li>
+<li>Licentie: <a href="https://opendatacommons.org/licenses/by/1-0/" target="_blank">Open Data Commons BY</a></li>
+<li>Dataset(s):
+  <ul>
+    <li><a href="https://linkeddata.cultureelerfgoed.nl/rce/cho" target="_blank">CHO</a></li>
+    <li><a href="https://linkeddata.cultureelerfgoed.nl/rce/afbeeldingen2" target="_blank">Afbeeldingen 2</a></li>
+    <li><a href="https://linkeddata.cultureelerfgoed.nl/rce/Rijksmonumenten-sdo" target="_blank">Rijksmonumenten-sdo</a></li>
+  </ul>
+</li>
+<li>Datum created: 2025-02-21</li>
+<li>Datum modified: 2025-08-24</li>
+<li>Data status: <em><del>Statisch</del> / Dynamisch</em></li>
+<li>Story status: <em><del>Afgerond</del> / In bewerking</em></li>
+</ul>
+</blockquote>
+</section>
+
+</main>
+
+<footer class="footer-rce-full" role="contentinfo">
+  <div class="footer-inner">
+    © Rijksdienst voor het Cultureel Erfgoed · <a href="mailto:info@cultureelerfgoed.nl" class="footer-link">info@cultureelerfgoed.nl</a>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" defer></script>
+<script src="https://yasgui.triply.cc/yasgui.polyfill.min.js" defer></script>
+<script src="../assets/js/stories.min.js" defer></script>
+<script>window.onload = function () { stories(); };</script>
+
+</body>
+</html>
