@@ -283,10 +283,35 @@ img.small { max-width: 300px; float: left; margin: 0 1rem 1rem 0; }
 
 /* Optioneel: subtiele rand voor de template-banner */
 .storyBanner--template {
-  border-style: dashed;
-  border-color: #cfd8dc;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  border: 1px dashed #cfd8dc;
   background: #fafafa;
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 1.5rem;
 }
+
+.storyBanner--template .storyIcon {
+  flex: 0 0 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.storyBanner--template .storyIcon img {
+  width: 96px;
+  height: 96px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.storyBanner--template .storyInfo {
+  padding: 0;
+  flex: 1 1 auto;
+}
+
 .storyBanner--template .storyLabel {
   color: #01689b; /* RO-blauw */
 }
