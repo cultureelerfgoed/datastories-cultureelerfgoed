@@ -220,36 +220,84 @@
        <query data-config="https://api.linkeddata.cultureelerfgoed.nl/datasets/rce/cho/services/cho/sparql#query=prefix%20ceo%3A%20%3Chttps%3A%2F%2Flinkeddata.cultureelerfgoed.nl%2Fdef%2Fceo%23%3E%0Aprefix%20rdf%3A%20%3Chttp%3A%2F%2Fwww.w3.org%2F1999%2F02%2F22-rdf-syntax-ns%23%3E%0Aprefix%20rdfs%3A%20%3Chttp%3A%2F%2Fwww.w3.org%2F2000%2F01%2Frdf-schema%23%3E%0Aprefix%20graph%3A%20%3Chttps%3A%2F%2Flinkeddata.cultureelerfgoed.nl%2Fgraph%2F%3E%0Aprefix%20geo%3A%20%3Chttp%3A%2F%2Fwww.opengis.net%2Font%2Fgeosparql%23%3E%0Aprefix%20skos%3A%20%3Chttp%3A%2F%2Fwww.w3.org%2F2004%2F02%2Fskos%2Fcore%23%3E%0A%0Aselect%20distinct%0A%20%20(strdt(concat(%0A%20%20%20%20'%3Ctable%3E'%2C%0A%20%20%20%20'%3Ctr%3E'%2C%0A%20%20%20%20'%3Ctd%3E%3Cb%3ERijksmonumenten%20met%20ijzer%3C%2Fb%3E%3C%2Ftd%3E'%2C%0A%20%20%20%20'%3C%2Ftr%3E'%2C%0A%20%20%20%20'%3Ctr%3E'%2C%0A%20%20%20%20'%3Ctd%3E%3Cb%3EMonument%3A%20%3C%2Fb%3E'%2C%20str(%3Frijksmonumentnummer)%2C%20'%3C%2Ftd%3E'%2C%0A%20%20%20%20'%3C%2Ftr%3E'%2C%0A%20%20%20%20'%3Ctr%3E'%2C%0A%20%20%20%20'%3Ctd%3E%3Cb%3EFunctie%3A%20%3C%2Fb%3E'%2C%20group_concat(distinct%20str(%3Ffunctiel)%3B%20separator%3D'%3B%20')%2C%20'%3C%2Ftd%3E'%2C%0A%20%20%20%20'%3C%2Ftr%3E'%2C%0A%20%20%20%20'%3Ctr%3E'%2C%0A%20%20%20%20'%3Ctd%3E%3Cb%3EGevonden%20materiaal%3A%20%3C%2Fb%3E'%2C%20(group_concat(distinct%20%3Fmateriaal%3B%20separator%3D%22%3B%20%22)%20)%2C%20'%3C%2Ftd%3E'%2C%0A%20%20%20%20'%3C%2Ftr%3E'%2C%0A%20%20%20%20'%3Ctr%3E'%2C%0A%20%20%20%20'%3Ctd%3E%3Cb%3EOmschrijving%3A%20%3C%2Fb%3E'%2C%0A%20%20%20%20if(strlen(str(%3Fomschrijving))%20%3E%20250%2C%0A%20%20%20%20concat(substr(str(%3Fomschrijving)%2C%201%2C%20250)%2C%20%22...%20%3Ca%20href%3D'https%3A%2F%2Fmonumentenregister.cultureelerfgoed.nl%2Fmonumenten%2F%22%2C%20str(%3Frijksmonumentnummer)%2C%20%22'%20target%3D'_blank'%3Elees%20hier%20verder%3C%2Fa%3E%22)%2C%0A%20%20%20%20str(%3Fomschrijving))%2C%0A%20%20%20%20'%3C%2Ftd%3E'%2C%0A%20%20%20%20'%3C%2Ftr%3E'%2C%0A%20%20%20%20'%3Ctd%3E%3Cb%3ERegister%3A%20%3C%2Fb%3E'%2C'%3Ca%20href%3D%22https%3A%2F%2Fmonumentenregister.cultureelerfgoed.nl%2Fmonumenten%2F'%2Cstr(%3Frijksmonumentnummer)%2C'%22%20target%3D%22_blank%22%3E'%2Cstr(%3Frijksmonumentnummer)%2C'%3C%2Fa%3E%3C%2Ftd%3E'%2C%0A%20%20%20%20'%3C%2Ftable%3E')%2C%20rdf%3AHTML)%20as%20%3FgeometrieLabel)%0A%20%20%3Fgeometrie%20%3Fprovincie%0A%0A%0Awhere%20%7B%0A%20%20graph%20graph%3Ainstanties-rce%20%7B%0A%20%20%20%20%3Fchoi%20rdf%3Atype%20ceo%3ARijksmonument.%0A%20%20%20%20%3Fchoi%20ceo%3AheeftJuridischeStatus%20%3Chttps%3A%2F%2Fdata.cultureelerfgoed.nl%2Fterm%2Fid%2Frn%2Fb2d9a59a-fe1e-4552-9a05-3c2acddff864%3E.%0A%20%20%20%20%3Fchoi%20ceo%3Arijksmonumentnummer%20%3Frijksmonumentnummer%20.%0A%20%20%20%20%23%20%20%20%3Fchoi%20ceo%3AheeftGeometrie%2Fgeo%3AasWKT%20%3Fgeometrie.%0A%20%20%20%20%3Fchoi%20ceo%3AheeftOmschrijving%2Fceo%3Aomschrijving%20%3Fomschrijving_%20.%0A%20%20%20%20%3Fchoi%20ceo%3AheeftOmschrijving%20%3Fstandpunt_omschrijving.%0A%20%20%20%20%3Fstandpunt_omschrijving%20ceo%3AformeelStandpunt%20%221%22%5E%5E%3Chttp%3A%2F%2Fwww.w3.org%2F2001%2FXMLSchema%23boolean%3E.%0A%20%20%20%20bind(replace(replace(%3Fomschrijving_%2C%20%22%5Cr%22%2C%20%22%22)%2C%20%22%5Cn%22%2C%20%22%22)%20as%20%3Fomschrijving)%0A%0A%0A%20%20%20%20bind(if(regex(%3Fomschrijving%2C%20%22%5C%5Cb(ijzer)%5C%5Cb%22%2C%20%22i%22)%2C%20%22ijzer%22%2C%20%22%22)%20as%20%3FmatchLabel1)%0A%20%20%20%20bind(if(regex(%3Fomschrijving%2C%20%22staal%22%2C%20%22i%22)%2C%20%22staal%22%2C%20%22%22)%20as%20%3FmatchLabel2)%0A%20%20%20%20bind(if(regex(%3Fomschrijving%2C%20%22stalen%22%2C%20%22i%22)%2C%20%22stalen%22%2C%20%22%22)%20as%20%3FmatchLabel3)%0A%20%20%20%20bind(if(regex(%3Fomschrijving%2C%20%22welijzer%22%2C%20%22i%22)%2C%20%22welijzer%22%2C%20%22%22)%20as%20%3FmatchLabel4)%0A%20%20%20%20bind(if(regex(%3Fomschrijving%2C%20%22gietijzer%22%2C%20%22i%22)%2C%20%22gietijzer%22%2C%20%22%22)%20as%20%3FmatchLabel5)%0A%20%20%20%20bind(if(regex(%3Fomschrijving%2C%20%22smeedijzer%22%2C%20%22i%22)%2C%20%22smeedijzer%22%2C%20%22%22)%20as%20%3FmatchLabel6)%0A%20%20%20%20bind(if(regex(%3Fomschrijving%2C%20%22rvs%22%2C%20%22i%22)%2C%20%22RVS%22%2C%20%22%22)%20as%20%3FmatchLabel7)%0A%20%20%20%20bind(if(regex(%3Fomschrijving%2C%20%22corten%22%2C%20%22i%22)%2C%20%22corten%22%2C%20%22%22)%20as%20%3FmatchLabel8)%0A%20%20%20%20bind(if(regex(%3Fomschrijving%2C%20%22roestvast%22%2C%20%22i%22)%2C%20%22roestvast%22%2C%20%22%22)%20as%20%3FmatchLabel9)%0A%20%20%20%20bind(if(regex(%3Fomschrijving%2C%20%22roestvrij%22%2C%20%22i%22)%2C%20%22roestvrij%22%2C%20%22%22)%20as%20%3FmatchLabel10)%0A%20%20%20%20bind(if(regex(%3Fomschrijving%2C%20%22ijzeren%22%2C%20%22i%22)%2C%20%22ijzeren%22%2C%20%22%22)%20as%20%3FmatchLabel11)%0A%20%20%20%20bind(if(regex(%3Fomschrijving%2C%20%22roest%22%2C%20%22i%22)%2C%20%22roest%22%2C%20%22%22)%20as%20%3FmatchLabel12)%0A%0A%20%20%20%20bind(concat(if(%3FmatchLabel1%20!%3D%20%22%22%2C%20%22%20%22%2C%20%22%22)%2C%20%3FmatchLabel1%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20if(%3FmatchLabel2%20!%3D%20%22%22%2C%20%22%20%22%2C%20%22%22)%2C%20%3FmatchLabel2%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20if(%3FmatchLabel3%20!%3D%20%22%22%2C%20%22%20%22%2C%20%22%22)%2C%20%3FmatchLabel3%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20if(%3FmatchLabel4%20!%3D%20%22%22%2C%20%22%20%22%2C%20%22%22)%2C%20%3FmatchLabel4%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20if(%3FmatchLabel5%20!%3D%20%22%22%2C%20%22%20%22%2C%20%22%22)%2C%20%3FmatchLabel5%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20if(%3FmatchLabel6%20!%3D%20%22%22%2C%20%22%20%22%2C%20%22%22)%2C%20%3FmatchLabel6%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20if(%3FmatchLabel7%20!%3D%20%22%22%2C%20%22%20%22%2C%20%22%22)%2C%20%3FmatchLabel7%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20if(%3FmatchLabel8%20!%3D%20%22%22%2C%20%22%20%22%2C%20%22%22)%2C%20%3FmatchLabel8%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20if(%3FmatchLabel9%20!%3D%20%22%22%2C%20%22%20%22%2C%20%22%22)%2C%20%3FmatchLabel9%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20if(%3FmatchLabel10%20!%3D%20%22%22%2C%20%22%20%22%2C%20%22%22)%2C%20%3FmatchLabel10%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20if(%3FmatchLabel11%20!%3D%20%22%22%2C%20%22%20%22%2C%20%22%22)%2C%20%3FmatchLabel11%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20if(%3FmatchLabel12%20!%3D%20%22%22%2C%20%22%20%22%2C%20%22%22)%2C%20%3FmatchLabel12)%20as%20%3Fmateriaal)%0A%0A%0A%20%20%7D%0A%20%20filter(%3Fmateriaal%20!%3D%20%22%22)%0A%20%20filter(!regex(%3Fomschrijving%2C%20%22Corten%2C%20J.P.%7CJ.P.%20Corten%7CCortenbach%7CCortensstraat%7CHuis%20Corten%22%2C%20%22i%22))%0A%0A%0A%0A%20%20optional%20%7B%0A%20%20%20%20%3Fchoi%20ceo%3AheeftOorspronkelijkeFunctie%20%3Ffuncties_.%0A%20%20%20%20%3Ffuncties_%20ceo%3AheeftFunctieNaam%20%3Ffuncties%20.%0A%20%20%20%20%3Ffuncties%20skos%3AprefLabel%20%3Ffunctie%20.%0A%20%20%20%20bind(replace(%3Ffunctie%2C%20%22%5C%5Cs%5C%5C(.*%5C%5C)%7C%5C%5C(.*%5C%5C)%22%2C%20%22%22)%20as%20%3Ffunctiel)%0A%20%20%7D%0A%20%20%3Fchoi%20ceo%3AheeftBasisregistratieRelatie%2Fceo%3AheeftProvincie%20%3Fprov.%0A%20%20graph%20graph%3Aowms%20%7B%0A%20%20%20%20%3Fprov%20skos%3AprefLabel%20%3Fprovincie.%0A%20%20%7D%0A%0A%20%20graph%20graph%3Apunten%20%7B%0A%20%20%20%20optional%20%7B%0A%20%20%20%20%20%20%3Fchoi%20ceo%3AheeftGeometrie%2Fgeo%3AasWKT%20%3Fgeometrie.%0A%20%20%20%20%7D%0A%20%20%7D%0A%0A%7D%0Agroup%20by%20%3Fchoi%20%3Fprovincie%20%3Fomschrijving%20%3Frijksmonumentnummer%20%3Fgeometrie%20%3FgeometrieLabel%0A%0A&endpoint=https%3A%2F%2Fapi.linkeddata.cultureelerfgoed.nl%2Fdatasets%2Frce%2Fcho%2Fsparql&requestMethod=POST&tabTitle=Query&headers=%7B%7D&contentTypeConstruct=application%2Fn-triples%2C*%2F*%3Bq%3D0.9&contentTypeSelect=application%2Fsparql-results%2Bjson%2C*%2F*%3Bq%3D0.9&outputFormat=geo&outputSettings=%7B%22visualization%22%3A%22grouped%22%7D"></query>
     </section>
 
-    <!-- METHODE -->
-    <section id="methode" class="mt-4">
-      <h2>Methodeverantwoording</h2>
-      <p>Deze story gebruikt de CHO‑dataset van de RCE, gefilterd op termen die wijzen op het gebruik van ijzer of staal. We hebben:</p>
-      <ul>
-        <li>alle monumentrecords doorzocht op materiaalomschrijvingen;</li>
-        <li>uitsluitingen toegepast op persoons‑ en plaatsnamen;</li>
-        <li>de resultaten verrijkt met hoofdcategorie, subcategorie, functie en locatie via bestaande relaties in de dataset;</li>
-        <li>dezelfde query‑logica gebruikt in beide voorbeelden, zodat cijfers consistent zijn.</li>
-      </ul>
-      <p>Beperkingen:</p>
-      <ul>
-        <li>materiaaltermen komen niet altijd voor in de omschrijving; aantallen kunnen dus lager uitvallen dan in werkelijkheid;</li>
-        <li>niet alle monumenten hebben gedetailleerde functie‑ of locatievelden ingevuld;</li>
-        <li>inhoud van records wijzigt; resultaten zijn een momentopname (<time datetime="2025-07-29">29‑07‑2025</time>).</li>
-      </ul>
-    </section>
+<!-- ===== GEÜPDATE SECTIES VOOR IJZERSTERK.HTML ===== -->
 
-    <!-- AFSLUITING -->
-    <section id="afsluiting" class="mt-4">
-      <h2>Afsluiting</h2>
-      <p>Door gericht te zoeken op materiaaltermen in monumentomschrijvingen bouwen we kennis op over het gebruik van metaal in het gebouwde erfgoed. De resultaten zijn een waardevolle bron voor kennisdeling en instandhouding.</p>
-    </section>
+<!-- =============================== -->
+<!-- METHODEVERANTWOORDING           -->
+<!-- =============================== -->
+<section id="methode" class="mt-4" aria-labelledby="methode-title">
+  <h2 id="methode-title" class="mb-2">Methodeverantwoording</h2>
 
-    <!-- CONTACT -->
-    <section id="contact" class="mt-4">
-      <h2>Contact</h2>
-      <p>Vragen of aanvullingen? Mail ons via <a href="mailto:thesauri@cultureelerfgoed.nl">thesauri@cultureelerfgoed.nl</a>.</p>
-    </section>
+  <p>
+    Voor deze data&nbsp;story is de <em>Cultureel Erfgoed Objecten</em> (CHO)-dataset van de
+    Rijksdienst voor het Cultureel Erfgoed (RCE) geanalyseerd met SPARQL‑query&#x2019;s.
+    De focus lag op rijksmonumenten waarvan de materiaalomschrijvingen termen voor
+    ijzer en staal bevatten.
+  </p>
 
+  <h4>Gebruikte datasets</h4>
+  <ul>
+    <li>RCE CHO – Cultureel Erfgoed Objecten</li>
+    <li>Graphs: <code>instanties-rce</code>, <code>punten</code> en <code>owms</code></li>
+  </ul>
+
+  <h3>Hoe is de selectie gemaakt?</h3>
+  <ul>
+    <li>Alleen objecten met <code>JuridischeStatus = Rijksmonument</code> zijn meegenomen.</li>
+    <li>Omschrijvingvelden zijn gefilterd op de materiaaltermen <code>ijzer</code>,
+        <code>gietijzer</code>, <code>smeedijzer</code> en <code>staal</code> (inclusief <code>cortenstaal</code>).</li>
+    <li>Uitsluitingen zijn toegepast op persoons‑ en plaatsnamen (bijv. <em>IJzer</em> in West‑Vlaanderen).</li>
+    <li>Functie‑, categorie‑ en locatiedata zijn toegevoegd via bestaande relaties in de dataset.</li>
+  </ul>
+
+  <h3>Wat zijn de beperkingen?</h3>
+  <ul>
+    <li>Materiaaltermen komen niet altijd expliciet voor; aantallen kunnen daarom lager uitvallen dan in werkelijkheid.</li>
+    <li>Niet alle monumenten beschikken over gedetailleerde functie‑ of locatievelden.</li>
+    <li>De CHO‑dataset verandert continu; resultaten vormen een momentopname (<time datetime="2025-07-29">29&nbsp;juli&nbsp;2025</time>).</li>
+  </ul>
+</section>
+
+<!-- =============================== -->
+<!-- DISCLAIMER                      -->
+<!-- =============================== -->
+<section id="disclaimer" aria-labelledby="disclaimer-title" class="mt-4">
+  <h2 id="disclaimer-title" class="mb-2">Disclaimer</h2>
+
+  <details class="disclaimer-box">
+    <summary><strong>Lees de disclaimer</strong></summary>
+
+    <p><strong>Let op</strong></p>
+    <p><em>U kunt aan de getoonde resultaten geen rechten ontlenen. De informatie is bedoeld om te informeren en biedt geen garantie op volledigheid, juistheid of actualiteit.</em></p>
+
+    <dl class="row small">
+      <dt class="col-sm-3">Titel</dt>
+      <dd class="col-sm-9">IJzersterk erfgoed: staal, gietijzer en smeedijzer in rijksmonumenten</dd>
+
+      <dt class="col-sm-3">Beschrijving</dt>
+      <dd class="col-sm-9">Deze data&nbsp;story gebruikt de CHO‑dataset van de RCE. Bewerking en samenstelling door de Rijksdienst voor het Cultureel Erfgoed.</dd>
+
+      <dt class="col-sm-3">Publisher</dt>
+      <dd class="col-sm-9"><a href="https://www.cultureelerfgoed.nl" target="_blank" rel="noopener">Rijksdienst voor het Cultureel Erfgoed</a></dd>
+
+      <dt class="col-sm-3">Licentie</dt>
+      <dd class="col-sm-9"><a href="https://opendatacommons.org/licenses/by/1-0/" target="_blank" rel="noopener">Open Data Commons Attribution&nbsp;1.0</a></dd>
+
+      <dt class="col-sm-3">Datasets</dt>
+      <dd class="col-sm-9">
+        <ul class="mb-0 ps-3">
+          <li><a href="https://linkeddata.cultureelerfgoed.nl/rce/cho" target="_blank" rel="noopener">CHO – Cultureel Erfgoed Objecten</a></li>
+          <li><a href="https://linkeddata.cultureelerfgoed.nl/graph/punten" target="_blank" rel="noopener">Punten</a></li>
+          <li><a href="https://linkeddata.cultureelerfgoed.nl/graph/owms" target="_blank" rel="noopener">OWMS‑thesauri</a></li>
+        </ul>
+      </dd>
+
+      <dt class="col-sm-3">Data‑extract</dt>
+      <dd class="col-sm-9"><time datetime="2025-07-29">29&nbsp;juli&nbsp;2025</time></dd>
+    </dl>
+  </details>
+</section>
+<!-- ========== EINDE SECTIES ====== -->
   </main>
 
   <!-- FOOTER -->

@@ -97,38 +97,82 @@
       </figure>
     </section>
 
-<section id="methode"><h2>Methodeverantwoording</h2>
-<ul>
-  <li>Monumenten zijn doorzocht op omschrijvingen met Joodse termen.</li>
-  <li>Resultaten verrijkt met functie, categorie en locatie.</li>
-  <li>Dataset: dynamisch, momentopname (extractdatum 2025-02-21).</li>
-</ul>
+<!-- ===== GEÜPDATE SECTIES VOOR JOODS-ERFGOED.HTML ===== -->
+
+<!-- =============================== -->
+<!-- METHODEVERANTWOORDING           -->
+<!-- =============================== -->
+<section id="methode" class="mt-4" aria-labelledby="methode-title">
+  <h2 id="methode-title" class="mb-2">Methodeverantwoording</h2>
+
+  <p>
+    Voor deze data&nbsp;story is de <em>Cultureel Erfgoed Objecten</em> (CHO)‑dataset van de
+    Rijksdienst voor het Cultureel Erfgoed (RCE) geanalyseerd met SPARQL‑query&#x2019;s.
+    De focus lag op rijksmonumenten waarvan de beschrijving Joodse termen bevat.
+  </p>
+
+  <h4>Gebruikte datasets</h4>
+  <ul>
+    <li>RCE CHO – Cultureel Erfgoed Objecten</li>
+    <li>Graphs: <code>instanties-rce</code>, <code>punten</code> en <code>owms</code></li>
+  </ul>
+
+  <h3>Hoe is de selectie gemaakt?</h3>
+  <ul>
+    <li>Alleen objecten met <code>JuridischeStatus = Rijksmonument</code> zijn meegenomen.</li>
+    <li>Beschrijvingen zijn gefilterd op een lijst Joodse zoektermen (bijv. <code>Joods</code>, <code>Synagoge</code>, <code>Mikwe</code>).</li>
+    <li>Niet‑relevante hits zijn uitgesloten&nbsp;(zoals <em>Jodenbreestraat</em> of <em>Jozef Israëls</em>).</li>
+    <li>Functies, categorieën en locatiedata zijn toegevoegd via bestaande relaties in de dataset.</li>
+  </ul>
+
+  <h3>Wat zijn de beperkingen?</h3>
+  <ul>
+    <li>Zoektermen komen niet altijd expliciet voor; aantallen kunnen daarom lager uitvallen dan in werkelijkheid.</li>
+    <li>Niet alle monumenten beschikken over gedetailleerde functie‑ of locatievelden.</li>
+    <li>De CHO‑dataset verandert continu; resultaten vormen een momentopname (<time datetime="2025-07-28">28&nbsp;juli&nbsp;2025</time>).</li>
+  </ul>
 </section>
 
-<section id="disclaimer"><h2>Disclaimer</h2>
-<blockquote class="disclaimer-box">
-<p><strong>DISCLAIMER</strong></p>
-<p><em>Er kunnen geen rechten worden ontleend aan de weergegeven resultaten. De verstrekte informatie is uitsluitend bedoeld voor informatieve doeleinden en biedt geen garantie op volledigheid, juistheid, of actualiteit.</em></p>
-<hr>
-<ul>
-<li>Titel: Joods erfgoed</li>
-<li>Beschrijving: Deze DataStory is gemaakt met behulp van de CHO en afbeeldingen 2 dataset en wordt gebruikt zoals deze is verstrekt.</li>
-<li>Publisher: RCE</li>
-<li>Licentie: <a href="https://opendatacommons.org/licenses/by/1-0/" target="_blank">Open Data Commons BY</a></li>
-<li>Dataset(s):
-  <ul>
-    <li><a href="https://linkeddata.cultureelerfgoed.nl/rce/cho" target="_blank">CHO</a></li>
-    <li><a href="https://linkeddata.cultureelerfgoed.nl/rce/afbeeldingen2" target="_blank">Afbeeldingen 2</a></li>
-    <li><a href="https://linkeddata.cultureelerfgoed.nl/rce/Rijksmonumenten-sdo" target="_blank">Rijksmonumenten-sdo</a></li>
-  </ul>
-</li>
-<li>Datum created: 2025-02-21</li>
-<li>Datum modified: 2025-08-24</li>
-<li>Data status: <em><del>Statisch</del> / Dynamisch</em></li>
-<li>Story status: <em><del>Afgerond</del> / In bewerking</em></li>
-</ul>
-</blockquote>
+<!-- =============================== -->
+<!-- DISCLAIMER                      -->
+<!-- =============================== -->
+<section id="disclaimer" aria-labelledby="disclaimer-title" class="mt-4">
+  <h2 id="disclaimer-title" class="mb-2">Disclaimer</h2>
+
+  <details class="disclaimer-box">
+    <summary><strong>Lees de disclaimer</strong></summary>
+
+    <p><strong>Let op</strong></p>
+    <p><em>U kunt aan de getoonde resultaten geen rechten ontlenen. De informatie is bedoeld om te informeren en biedt geen garantie op volledigheid, juistheid of actualiteit.</em></p>
+
+    <dl class="row small">
+      <dt class="col-sm-3">Titel</dt>
+      <dd class="col-sm-9">Joods erfgoed in rijksmonumenten</dd>
+
+      <dt class="col-sm-3">Beschrijving</dt>
+      <dd class="col-sm-9">Deze data&nbsp;story gebruikt de CHO‑dataset van de RCE. Bewerking en samenstelling door de Rijksdienst voor het Cultureel Erfgoed.</dd>
+
+      <dt class="col-sm-3">Publisher</dt>
+      <dd class="col-sm-9"><a href="https://www.cultureelerfgoed.nl" target="_blank" rel="noopener">Rijksdienst voor het Cultureel Erfgoed</a></dd>
+
+      <dt class="col-sm-3">Licentie</dt>
+      <dd class="col-sm-9"><a href="https://opendatacommons.org/licenses/by/1-0/" target="_blank" rel="noopener">Open Data Commons Attribution&nbsp;1.0</a></dd>
+
+      <dt class="col-sm-3">Datasets</dt>
+      <dd class="col-sm-9">
+        <ul class="mb-0 ps-3">
+          <li><a href="https://linkeddata.cultureelerfgoed.nl/rce/cho" target="_blank" rel="noopener">CHO – Cultureel Erfgoed Objecten</a></li>
+          <li><a href="https://linkeddata.cultureelerfgoed.nl/graph/punten" target="_blank" rel="noopener">Punten</a></li>
+          <li><a href="https://linkeddata.cultureelerfgoed.nl/graph/owms" target="_blank" rel="noopener">OWMS‑thesauri</a></li>
+        </ul>
+      </dd>
+
+      <dt class="col-sm-3">Data‑extract</dt>
+      <dd class="col-sm-9"><time datetime="2025-07-28">28&nbsp;juli&nbsp;2025</time></dd>
+    </dl>
+  </details>
 </section>
+<!-- ========== EINDE SECTIES ====== -->
 
 </main>
 
