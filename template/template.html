@@ -99,6 +99,15 @@
   <main id="main" role="main" class="container mt-3 mb-4 story"
         aria-label="RCE Data Stories template"
         data-endpoint="https://api.linkeddata.cultureelerfgoed.nl/datasets/rce/cho/sparql">
+<nav class="mb-4" aria-label="Inhoudsopgave" role="doc-toc">
+  <ul>
+    <li><a href="#inleiding">Inleiding</a></li>
+    <!-- ... -->
+    <li><a href="#methode">Methodeverantwoording</a></li>
+    <li><a href="#disclaimer">Disclaimer</a></li>
+    <li><a href="#literatuur">Literatuur</a></li>
+  </ul>
+</nav>
 
     <h1>RCE Data Stories – Template</h1>
     <p>
@@ -147,27 +156,62 @@
       Dit type visualisatie is handig voor <strong>vergelijkingen</strong>, zoals een top 10 of top 20.
     </p>
 
-    <h2>Methodeverantwoording</h2>
-    <p>
-      Beschrijf hier kort selectie, filters, beperkingen en verantwoording.
-    </p>
-    <ul>
-      <li>Welke dataset(s) zijn gebruikt (bijv. CHO)?</li>
-      <li>Welke filters worden toegepast?</li>
-      <li>Beperkingen/onvolledigheid van data.</li>
-      <li>Hoe zijn aantallen en grafieken tot stand gekomen?</li>
-    </ul>
+<section id="methode">
+  <h2>Methodeverantwoording</h2>
+  <p>
+    <em>Beschrijf hier kort selectie, filters, beperkingen en verantwoording van de gebruikte data. Vervang deze placeholder door jouw tekst.</em>
+  </p>
+  <ul>
+    <li>Welke dataset(s) zijn gebruikt (bijv. CHO)?</li>
+    <li>Welke filters worden toegepast?</li>
+    <li>Beperkingen/onvolledigheid van data.</li>
+    <li>Hoe zijn aantallen en grafieken tot stand gekomen?</li>
+  </ul>
+</section>
 
-    <h2>Literatuur</h2>
-    <ol>
-      <li>Voeg hier relevante verwijzingen toe.</li>
-    </ol>
 
-    <h2>Contact</h2>
-    <p>
-      Vragen over deze template of het gebruik van RCE linked data?
-      Mail ons via <a href="mailto:thesauri@cultureelerfgoed.nl">thesauri@cultureelerfgoed.nl</a>.
-    </p>
+<section id="literatuur">
+  <h2>Literatuur</h2>
+  <p>
+    <em>Voeg hier relevante verwijzingen toe. Deze sectie is een placeholder.</em>
+  </p>
+</section>
+
+
+<!-- disclaimer -->
+<section id="disclaimer" aria-labelledby="disclaimer-title" class="mt-4">
+  <h2 id="disclaimer-title" class="mb-2">Disclaimer</h2>
+  <details class="disclaimer-box">
+    <summary><strong>Lees de disclaimer</strong></summary>
+    <p><strong>Let op</strong></p>
+    <p><em>U kunt aan de getoonde resultaten geen rechten ontlenen. De informatie is bedoeld om te informeren en biedt geen garantie op volledigheid, juistheid of actualiteit.</em></p>
+    <dl class="row small">
+      <dt class="col-sm-3">Titel</dt>
+      <dd class="col-sm-9">Titel van deze data story</dd>
+
+      <dt class="col-sm-3">Beschrijving</dt>
+      <dd class="col-sm-9">Korte beschrijving van deze data story, aan te passen door de auteur.</dd>
+
+      <dt class="col-sm-3">Publisher</dt>
+      <dd class="col-sm-9"><a href="https://www.cultureelerfgoed.nl" target="_blank" rel="noopener">Rijksdienst voor het Cultureel Erfgoed</a></dd>
+
+      <dt class="col-sm-3">Licentie</dt>
+      <dd class="col-sm-9"><a href="https://opendatacommons.org/licenses/by/1-0/" target="_blank" rel="noopener">Open Data Commons Attribution&nbsp;1.0</a></dd>
+
+      <dt class="col-sm-3">Datasets</dt>
+      <dd class="col-sm-9">
+        <ul class="mb-0 ps-3">
+          <li><a href="https://linkeddata.cultureelerfgoed.nl/rce/cho" target="_blank" rel="noopener">CHO – Cultureel Erfgoed Objecten</a></li>
+          <li><a href="https://linkeddata.cultureelerfgoed.nl/graph/punten" target="_blank" rel="noopener">Punten</a></li>
+          <li><a href="https://linkeddata.cultureelerfgoed.nl/graph/owms" target="_blank" rel="noopener">OWMS‑thesauri</a></li>
+        </ul>
+      </dd>
+
+      <dt class="col-sm-3">Data‑extract</dt>
+      <dd class="col-sm-9"><time datetime="YYYY-MM-DD">[Datum invullen]</time></dd>
+    </dl>
+  </details>
+</section>
 
   </main>
 
